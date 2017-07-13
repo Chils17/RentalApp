@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.Fragment;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.CardView;
@@ -25,6 +26,7 @@ import com.webmyne.rentalapp.adapter.PopularRecyclerAdapter;
 import com.webmyne.rentalapp.adapter.ProductPagerAdapter;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.ui.BaseActivity;
+import com.webmyne.rentalapp.ui.DashboardActivity;
 import com.webmyne.rentalapp.ui.customviews.LayoutView;
 
 import java.util.ArrayList;
@@ -48,7 +50,7 @@ public class DashBoardFragment extends BaseFragment {
     private Handler handler = null;
     private Timer swipeTimer;
     //region views
-    private LinearLayout ll_new_arrivals_content, ll_new_arrivals_content_top, ll_new_arrivals_content_bottom, ll_popular_content_bottom, ll_populars_content_top, ll_featured_content_top, ll_featured_content_bottom;
+    private LinearLayout ll_new_arrivals_viewall,ll_new_arrivals_content, ll_new_arrivals_content_top, ll_new_arrivals_content_bottom, ll_popular_content_bottom, ll_populars_content_top, ll_featured_content_top, ll_featured_content_bottom;
     private LayoutView layoutView;
 
 
@@ -89,6 +91,7 @@ public class DashBoardFragment extends BaseFragment {
 
     private void init(View view) {
         ll_new_arrivals_content = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_content);
+        ll_new_arrivals_viewall = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_viewall);
         ll_new_arrivals_content_top = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_content_top);
         ll_new_arrivals_content_bottom = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_content_bottom);
         ll_populars_content_top = (LinearLayout) view.findViewById(R.id.ll_populars_content_top);
@@ -97,6 +100,13 @@ public class DashBoardFragment extends BaseFragment {
         ll_popular_content_bottom = (LinearLayout) view.findViewById(R.id.ll_populars_content_bottom);
         indicator = (CircleIndicator) view.findViewById(R.id.indicator);
         mProductPager = (ViewPager) view.findViewById(R.id.product_pager);
+        ll_new_arrivals_viewall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragmentToPush = ShopFragment.getFragment(getBaseActivity());
+                getBaseActivity().pushAddFragments(fragmentToPush, true, true);
+            }
+        });
         /*tv_footer_account.setOnClickListener(this);
         tv_footer_rent.setOnClickListener(this);
         tv_footer_shop.setOnClickListener(this);*/

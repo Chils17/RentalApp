@@ -3,20 +3,8 @@
     <color name="colorPrimary">#2196f3</color>
     <color name="colorPrimaryDark">#1976d2</color>
     <color name="colorAccent">#5D5D5D</color>
-    <color name="transparent">#00FFFFFF</color>
-    <color name="transparent_light">#88FFFFFF</color>
-    <color name="alpha_black_50">#50000000</color>
-    <color name="menu_text_color">#00BFFF</color>
-    <color name="light_blue">#3279AD</color>
-    <color name="drawer_bg">#aaaaaa</color>
-    <color name="dark_blue">#24489E</color>
-    <color name="fragment_bg">@android:color/white</color>
-    <color name="shadow_color">#20000000</color>
-    <color name="dashbord_horizonta_bg">#F5F5F5</color>
 
     <color name="color1">#EF8F1C</color>
-    <color name="libon_blue">#002060</color>
-    <color name="color_yellow">#F4C305</color>
     <color name="color2">#2978D9</color>
     <color name="color3">#00B49A</color>
     <color name="color4">#43A047</color>
@@ -32,7 +20,45 @@
     <color name="off_white">#dddddd</color>
     <color name="black">#000000</color>
     <color name="half_black">#5d5d5d</color>
+
+    <color name="space_black">#8e8e8e</color>
     <color name="yellow">#fbc02d</color>
+
+    <color name="button_bg">#212121</color>
+
+    <color name="colorWhiteSmoke">#F7F7F7</color>
+    <color name="colorGrey">#616161</color>
+    <color name="colorLightGrey">#eeeeee</color>
+    <color name="colorPurple">#d500f9</color>
+    <color name="colorOrange">#ff6d00</color>
+    <color name="colorRed">#F5511E</color>
+    <color name="colorGreen">#7AB439</color>
+
+    <color name="colorLightGreen">#00D498</color>
+    <color name="colorLGreen">#00D498</color>
+
+    <color name="colorBlue">#385AD8</color>
+    <color name="colorLightBlue">#7769FF</color>
+    <color name="color_transparent">@android:color/transparent</color>
+    <color name="colorYellow">#FFBF25</color>
+    <color name="colorDarkYellow">#EE9367</color>
+    <color name="colorFB">#3B5997</color>
+    <color name="colorTW">#00ACEE</color>
+
+
+    <color name="transparent">#00FFFFFF</color>
+    <color name="transparent_light">#88FFFFFF</color>
+    <color name="alpha_black_50">#50000000</color>
+    <color name="menu_text_color">#00BFFF</color>
+    <color name="light_blue">#3279AD</color>
+    <color name="drawer_bg">#aaaaaa</color>
+    <color name="dark_blue">#24489E</color>
+    <color name="fragment_bg">@android:color/white</color>
+    <color name="shadow_color">#20000000</color>
+    <color name="dashbord_horizonta_bg">#F5F5F5</color>
+
+    <color name="libon_blue">#002060</color>
+    <color name="color_yellow">#F4C305</color>
     <color name="light_yellow">#A16A2A</color>
     <color name="create_profile_text">#919191</color>
     <color name="menu_line_color">#8c000000</color>
@@ -40,6 +66,5 @@
     <color name="color_green">#32CD32</color>
 
 
-    <color name="button_bg">#212121</color>
 
 </resources>

@@ -21,7 +21,46 @@
     <string name="left_drawer_tv_settings">Settings</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
-    <string name="share_text">Share Text</string>
     <string name="left_drawer_tv_logout">Logout</string>
     <string name="account">Account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shop">Shop</string>
+    <string name="rent">Rent</string>
+    <string name="search">Search your Book Name, Author</string>
+    <string name="shop_category">Categories for Shop</string>
+    <string name="no_found">No result found</string>
+    <string name="rent_category">Categories for Rent</string>
+    <string name="name">Name</string>
+    <string name="product_list">Product List</string>
+    <string name="dummy_text">Right after installing WooCommerce you may find you have an empty store. There are no products, orders, reviews, and more by default. We’ve done that so you can get started right away creating your own products and setting up WooCommerce exactly for the needs of your store.</string>
+    <string name="description">Description</string>
+    <string name="harry">Harry Potter</string>
+    <string name="author_name">Author</string>
+    <string name="sortby">Sort By</string>
+    <string name="popular">Popular</string>
+    <string name="low_to_high">Low to high</string>
+    <string name="high_to_low">High to low</string>
+    <string name="newest">Newest First</string>
+    <string name="price">Price</string>
+    <string name="min_price">Min Price :</string>
+    <string name="max_price">Max Price :</string>
+    <string name="category">Category</string>
+    <string name="reset">Reset</string>
+    <string name="edition">Edition</string>
+    <string name="apply">Apply</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="sort_filter">Sort and Filter</string>
+    <string name="cart">Cart</string>
+    <string name="my_cart">My Cart</string>
+    <string name="rental_cart">Rental Cart</string>
+    <string name="share_text">Share Text</string>
+
+    <string-array name="book_edition">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
 </resources>

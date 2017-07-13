@@ -94,7 +94,7 @@ public class BaseActivity extends AppCompatActivity {
             fragmentBackStack.push(fragment);
             FragmentManager manager = getSupportFragmentManager();
             FragmentTransaction ft = manager.beginTransaction();
-            ft.add(R.id.content_frame, fragment, String.valueOf(fragmentBackStack.size()));
+            ft.replace(R.id.content_frame, fragment, String.valueOf(fragmentBackStack.size()));
             ft.commit();
             manager.executePendingTransactions();
             if (drawerLayout != null && fragmentBackStack.size() > 1) {

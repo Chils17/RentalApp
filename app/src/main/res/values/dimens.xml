@@ -107,6 +107,7 @@
     <dimen name="height_1_px">1px</dimen>
     <dimen name="height_2_px">2px</dimen>
     <dimen name="sp11">11sp</dimen>
+    <dimen name="dimen_280dp">280dp</dimen>
 
 
 </resources>
