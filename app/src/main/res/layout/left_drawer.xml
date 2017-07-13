@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_main_drawer"
+    style="@style/ColorDrawerTheme"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/partial_left_drawer_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dimen_10dp">
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:id="@+id/left_drawer_tv_home"
+                    style="@style/left_menu_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_menu_home"
+                    android:drawablePadding="@dimen/height_15"
+                    android:gravity="center|left"
+                    android:text="@string/left_drawer_tv_home"
+                    app:ftype="medium" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/menu_line_color" />
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:id="@+id/left_drawer_tv_search"
+                    style="@style/left_menu_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableLeft="@drawable/ic_menu_search"
+                    android:drawablePadding="@dimen/height_15"
+                    android:gravity="center|left"
+                    android:text="@string/left_drawer_tv_search"
+                    app:ftype="medium" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/menu_line_color" />
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:id="@+id/left_drawer_tv_rent"
+                    style="@style/left_menu_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableLeft="@drawable/ic_menu_rent"
+                    android:drawablePadding="@dimen/height_15"
+                    android:gravity="center|left"
+                    android:text="@string/left_drawer_tv_rent"
+                    app:ftype="medium" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/menu_line_color" />
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:id="@+id/left_drawer_tv_shop"
+                    style="@style/left_menu_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:drawableLeft="@drawable/ic_menu_shop"
+                    android:drawablePadding="@dimen/height_15"
+                    android:gravity="center|left"
+                    android:text="@string/left_drawer_tv_shop"
+                    app:ftype="medium" />
+
+
+                <LinearLayout
+                    android:id="@+id/left_drawer_ll_user_menus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/dimen_8dp"
+                        android:layout_marginRight="@dimen/dimen_8dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/create_profile_text" />
+
+                        <com.webmyne.rentalapp.custom.TfTextView
+                            android:id="@+id/tfTextView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingLeft="@dimen/dimen_8dp"
+                            android:paddingRight="@dimen/dimen_8dp"
+                            android:text="Account"
+                            android:textColor="@color/create_profile_text"
+                            android:textSize="@dimen/sp14"
+                            app:ftype="medium" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"
+                            android:background="@color/create_profile_text" />
+
+                    </LinearLayout>
+
+
+                    <com.webmyne.rentalapp.custom.TfTextView
+                        android:id="@+id/left_drawer_tv_wishlist"
+                        style="@style/left_menu_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:drawableLeft="@drawable/ic_menu_wishlist"
+                        android:drawablePadding="@dimen/height_15"
+                        android:gravity="center|left"
+                        android:text="@string/left_drawer_tv_wishlist"
+                        app:ftype="medium" />
+
+                    <com.webmyne.rentalapp.custom.TfTextView
+                        android:id="@+id/left_drawer_tv_my_cart"
+                        style="@style/left_menu_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:drawableLeft="@drawable/ic_menu_cart"
+                        android:drawablePadding="@dimen/height_15"
+                        android:gravity="center|left"
+                        android:text="@string/left_drawer_tv_my_cart"
+                        app:ftype="medium" />
+
+
+                    <com.webmyne.rentalapp.custom.TfTextView
+                        android:id="@+id/left_drawer_tv_rewards"
+                        style="@style/left_menu_tv"
+                        android:layout_width="318dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:drawableLeft="@drawable/ic_menu_reward"
+                        android:drawablePadding="@dimen/height_15"
+                        android:gravity="center|left"
+                        android:text="@string/left_drawer_tv_rewards"
+                        app:ftype="medium" />
+
+
+                    <com.webmyne.rentalapp.custom.TfTextView
+                        android:id="@+id/left_drawer_tv_my_account"
+                        style="@style/left_menu_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:drawableLeft="@drawable/ic_menu_account"
+                        android:drawablePadding="@dimen/height_15"
+                        android:gravity="center|left"
+                        android:text="@string/left_drawer_tv_my_account"
+                        app:ftype="medium" />
+                    <com.webmyne.rentalapp.custom.TfTextView
+                        android:id="@+id/left_drawer_tv_logout"
+                        style="@style/left_menu_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:drawableLeft="@drawable/ic_menu_logout"
+                        android:drawablePadding="@dimen/height_15"
+                        android:gravity="center|left"
+                        android:text="@string/left_drawer_tv_logout"
+                        app:ftype="medium" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/menu_line_color" />
+                    <com.webmyne.rentalapp.custom.TfTextView
+                        android:id="@+id/left_drawer_tv_settings"
+                        style="@style/left_menu_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:drawableLeft="@drawable/ic_menu_setting"
+                        android:drawablePadding="@dimen/height_15"
+                        android:gravity="center|left"
+                        android:text="@string/left_drawer_tv_settings"
+                        app:ftype="medium" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

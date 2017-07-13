@@ -18,4 +18,29 @@
         <item name="colorSwitchThumbNormal">@color/half_black</item>
     </style>
 
+    <style name="ColorDrawerTheme">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+    <style name="left_menu_tv">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">@color/menu_text_color</item>
+        <item name="android:paddingLeft">@dimen/dimen_10dp</item>
+        <item name="android:background">@drawable/view_clickable_state</item>
+        <item name="android:paddingRight">@dimen/dimen_8dp</item>
+        <item name="android:paddingTop">@dimen/dimen_10dp</item>
+        <item name="android:paddingBottom">@dimen/dimen_10dp</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+    <style name="footer_tv">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
 </resources>

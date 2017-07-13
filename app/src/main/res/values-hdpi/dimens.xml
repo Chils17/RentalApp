@@ -1,0 +1,11 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="signup_left_right_margin">25dp</dimen>
+
+    <dimen name="button_height_normal">35dp</dimen>
+
+    <dimen name="user_list_image_size">55dp</dimen>
+    <dimen name="user_list_name_width">80dp</dimen>
+
+</resources>

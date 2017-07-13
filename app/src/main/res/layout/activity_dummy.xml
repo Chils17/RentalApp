@@ -8,4 +8,10 @@
     android:orientation="vertical"
     tools:context="com.webmyne.rentalapp.ui.DummyActivity">
 
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
 </LinearLayout>

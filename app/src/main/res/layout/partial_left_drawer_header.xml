@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:padding="@dimen/dimen_16dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profilePic"
+                android:layout_width="@dimen/height_70"
+                android:layout_height="@dimen/height_70"
+                android:src="@drawable/user_default_pic"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="1dp"
+                app:civ_fill_color="#d5d5d5" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chintan soni"
+                    app:ftype="medium"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:id="@+id/tfTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="1dp"
+                    android:text="cvsoni22@gmail.com"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    app:ftype="medium" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right|top"
+            android:padding="@dimen/dimen_8dp"
+            android:src="@drawable/ic_menu_pencil"
+            android:tint="@android:color/white" />
+
+    </FrameLayout>
+
+</LinearLayout>
