@@ -76,6 +76,7 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         mDrawerToggle = new ActionBarDrawerToggle(this, getDrawerLayout(), R.string.drawer_open, R.string.drawer_close) {
             public void onDrawerClosed(View view) {
                 LogUtils.showInfo(view.toString());
+                ((DrawerLayout) findViewById(R.id.drawer_layout)).requestLayout();
                 invalidateOptionsMenu();
             }
 

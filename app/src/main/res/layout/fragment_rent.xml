@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context="com.webmyne.rentalapp.fragment.RentFragment">
 
-    <include layout="@layout/app_bar" />
+    <!--<include layout="@layout/app_bar" />-->
 
     <LinearLayout
         android:padding="@dimen/dimen_6dp"

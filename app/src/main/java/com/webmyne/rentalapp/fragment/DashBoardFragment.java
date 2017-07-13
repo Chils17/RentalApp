@@ -50,7 +50,7 @@ public class DashBoardFragment extends BaseFragment {
     private Handler handler = null;
     private Timer swipeTimer;
     //region views
-    private LinearLayout ll_new_arrivals_viewall,ll_new_arrivals_content, ll_new_arrivals_content_top, ll_new_arrivals_content_bottom, ll_popular_content_bottom, ll_populars_content_top, ll_featured_content_top, ll_featured_content_bottom;
+    private LinearLayout ll_popular_books_viewall,ll_new_arrivals_viewall,ll_new_arrivals_content, ll_new_arrivals_content_top, ll_new_arrivals_content_bottom, ll_popular_content_bottom, ll_populars_content_top, ll_featured_content_top, ll_featured_content_bottom;
     private LayoutView layoutView;
 
 
@@ -91,6 +91,7 @@ public class DashBoardFragment extends BaseFragment {
 
     private void init(View view) {
         ll_new_arrivals_content = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_content);
+        ll_popular_books_viewall = (LinearLayout) view.findViewById(R.id.ll_popular_books_viewall);
         ll_new_arrivals_viewall = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_viewall);
         ll_new_arrivals_content_top = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_content_top);
         ll_new_arrivals_content_bottom = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_content_bottom);
@@ -107,7 +108,14 @@ public class DashBoardFragment extends BaseFragment {
                 getBaseActivity().pushAddFragments(fragmentToPush, true, true);
             }
         });
-        /*tv_footer_account.setOnClickListener(this);
+
+        ll_popular_books_viewall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragmentToPush = RentFragment.getFragment(getBaseActivity());
+                getBaseActivity().pushAddFragments(fragmentToPush, true, true);
+            }
+        });/*tv_footer_account.setOnClickListener(this);
         tv_footer_rent.setOnClickListener(this);
         tv_footer_shop.setOnClickListener(this);*/
         for (int i = 0; i < mBookArray.length; i++) {

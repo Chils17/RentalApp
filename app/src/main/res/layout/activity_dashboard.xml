@@ -31,6 +31,7 @@
                 android:id="@+id/content_frame"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:clickable="true"
                 android:background="@color/fragment_bg" />
 
         </LinearLayout>

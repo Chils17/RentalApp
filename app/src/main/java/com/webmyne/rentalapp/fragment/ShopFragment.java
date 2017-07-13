@@ -66,9 +66,9 @@ public class ShopFragment extends BaseFragment {
         // Inflate the layout for this fragment
         View itemView = inflater.inflate(R.layout.fragment_shop, container, false);
 
-        Toolbar toolbar = (Toolbar) itemView.findViewById(R.id.toolbar);
-        txtTitle = (TfTextView) itemView.findViewById(R.id.txtTitle);
-        txtTitle.setText(R.string.shop_category);
+        /*Toolbar toolbar = (Toolbar) itemView.findViewById(R.id.toolbar);*/
+        /*txtTitle = (TfTextView) itemView.findViewById(R.id.txtTitle);
+        txtTitle.setText(R.string.shop_category);*/
 
         emptyView = (TfTextView) itemView.findViewById(R.id.emptyView);
         rvShop = (RecyclerView) itemView.findViewById(R.id.rvShop);
