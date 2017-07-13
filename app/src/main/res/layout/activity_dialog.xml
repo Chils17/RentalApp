@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#002060"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="@dimen/dimen_50dp"
+            android:layout_height="@dimen/dimen_50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_key_white" />
+
+    </LinearLayout>
+
+    <com.webmyne.rentalapp.custom.TfTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_8dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:text="@string/change_password"
+        android:textColor="@color/half_black"
+        android:textSize="@dimen/sp18"
+        app:ftype="bold" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edtOldPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:hint="Old Password"
+        android:maxLines="1"
+        android:textSize="@dimen/sp16"
+        app:met_floatingLabel="normal" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edtNewPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:hint="New Password"
+        android:maxLength="25"
+        android:maxLines="1"
+        android:textSize="@dimen/sp16"
+        app:met_floatingLabel="normal" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/edtConformPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:layout_marginRight="@dimen/dimen_10dp"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:hint="Conform Password"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:textSize="@dimen/sp16"
+        app:met_floatingLabel="normal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_20dp"
+        android:gravity="bottom|end"
+        android:orientation="horizontal">
+
+        <com.webmyne.rentalapp.custom.TfButton
+            android:id="@+id/btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:textColor="#002060"
+            android:textSize="@dimen/sp16"
+            app:ftype="bold"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+
+        <com.webmyne.rentalapp.custom.TfButton
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_30dp"
+            android:text="@string/save"
+            android:textColor="#002060"
+            android:textSize="@dimen/sp16"
+            app:ftype="bold"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+    </LinearLayout>
+
+</LinearLayout>
