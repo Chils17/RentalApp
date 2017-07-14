@@ -20,7 +20,6 @@
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_search"
             android:hint="@string/search"
-            android:imeOptions="actionSearch"
             android:textSize="@dimen/sp16" />
 
     </LinearLayout>
