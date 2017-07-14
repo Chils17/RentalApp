@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:overScrollMode="never"
+    tools:context="com.webmyne.rentalapp.ui.MembershipActivity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash_image"
+        android:scaleType="center"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/splash_background"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_16dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:id="@+id/imgFrame"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imgUploadImage"
+                        android:layout_width="@dimen/dimen_96dp"
+                        android:layout_height="@dimen/dimen_96dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="@dimen/dimen_14dp"
+                        android:layout_marginTop="@dimen/dimen_20dp"
+                        android:src="@drawable/man" />
+
+                    <ImageView
+                        android:layout_width="@dimen/dimen_50dp"
+                        android:layout_height="@dimen/dimen_50dp"
+                        android:layout_gravity="bottom|right"
+                        android:src="@drawable/camera" />
+                </FrameLayout>
+            </LinearLayout>
+
+
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/profile_detail"
+                    android:layout_marginTop="@dimen/dimen_14dp"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/sp18"
+                    app:ftype="bold"
+                    android:textColor="@color/white"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@drawable/login_edt"
+                    android:minHeight="@dimen/dimen_48dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_email"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:clickable="false"
+                        android:hint="@string/email"
+                        android:maxLines="1"
+                        android:textSize="@dimen/sp16" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@drawable/login_edt"
+                    android:minHeight="@dimen/dimen_48dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_key"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:hint="@string/password"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textSize="@dimen/sp16" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@drawable/login_edt"
+                    android:minHeight="@dimen/dimen_48dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_key"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:hint="@string/confirm_password"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textSize="@dimen/sp16" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@drawable/login_edt"
+                    android:minHeight="@dimen/dimen_48dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_smartphone_call"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:hint="@string/referance_code"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:textSize="@dimen/sp16" />
+                </LinearLayout>
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Do you want to receive newsletter from the site?"
+                    android:textSize="@dimen/sp14"
+                    android:textColor="@color/white"/>
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/yes"
+                        android:textSize="@dimen/sp14"
+                        android:textStyle="normal"
+                        android:textColor="@color/white"
+                        android:buttonTint="@color/white"/>
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/no"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:textColor="@color/white"
+                        android:buttonTint="@color/white"/>
+
+                </RadioGroup>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_1dp"
+                android:layout_marginTop="@dimen/dimen_8dp"
+                android:layout_marginBottom="@dimen/dimen_8dp"
+                android:layout_marginRight="@dimen/dimen_60dp"
+                android:layout_marginLeft="@dimen/dimen_60dp"
+                android:background="@color/white" />
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/address"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/sp18"
+                    android:layout_marginTop="@dimen/dimen_20dp"
+                    app:ftype="bold"
+                    android:textColor="@color/white"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@drawable/login_edt"
+                    android:minHeight="@dimen/dimen_48dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_avatar"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:hint="@string/first_name"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textSize="@dimen/sp16" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@drawable/login_edt"
+                    android:minHeight="@dimen/dimen_48dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_avatar"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:hint="@string/middle_name"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textSize="@dimen/sp16" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@drawable/login_edt"
+                    android:minHeight="@dimen/dimen_48dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_avatar"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:hint="@string/last_name"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:textSize="@dimen/sp16" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/dimen_48dp"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@drawable/login_edt">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_location_pin"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:hint="@string/address_1"
+                        android:textSize="@dimen/sp16" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/dimen_48dp"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@drawable/login_edt">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_location_pin"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:hint="@string/address_2"
+                        android:textSize="@dimen/sp16" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/dimen_48dp"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@drawable/login_edt">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_location_pin"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:hint="@string/select_country"
+                        android:textSize="@dimen/sp16" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/dimen_48dp"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@drawable/login_edt">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_location_pin"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:hint="@string/select_state"
+                        android:textSize="@dimen/sp16" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/dimen_48dp"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@drawable/login_edt">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_location_pin"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:hint="@string/select_city"
+                        android:textSize="@dimen/sp16" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/dimen_48dp"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:background="@drawable/login_edt">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_location_pin"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:hint="@string/zipcode"
+                        android:textSize="@dimen/sp16" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/dimen_48dp"
+                    android:layout_marginTop="@dimen/dimen_12dp"
+                    android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:background="@drawable/login_edt">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:src="@drawable/ic_smartphone_call"
+                        android:tint="@color/half_black" />
+
+                    <EditText
+                        android:id="@+id/edtMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dimen_10dp"
+                        android:layout_marginRight="@dimen/dimen_10dp"
+                        android:background="#00000000"
+                        android:hint="@string/mobile"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:maxLines="1"
+                        android:textSize="@dimen/sp16" />
+                </LinearLayout>
+
+            <com.webmyne.rentalapp.custom.TfButton
+                android:id="@+id/btnSubmit"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_18dp"
+                android:background="@drawable/button"
+                android:text="@string/submit"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

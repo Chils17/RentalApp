@@ -112,17 +112,19 @@
                 app:ftype="regular" />
         </LinearLayout>
 
-        <com.webmyne.rentalapp.custom.TfTextView
-            android:id="@+id/txtBookReturn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/returnBook"
-            android:textColor="@color/yellow"
-            android:textSize="@dimen/sp16"
-            app:ftype="bold"
-            android:layout_marginTop="@dimen/dimen_4dp"
-            android:layout_marginRight="@dimen/dimen_10dp"
-            android:layout_gravity="end"/>
+            <com.webmyne.rentalapp.custom.TfTextView
+                android:id="@+id/txtBookReturn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/returnBook"
+                android:layout_gravity="end"
+                android:layout_marginLeft="@dimen/dimen_20dp"
+                android:layout_marginTop="@dimen/dimen_20dp"
+                android:layout_marginRight="@dimen/dimen_20dp"
+                android:layout_marginBottom="@dimen/dimen_6dp"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/sp16"
+                app:ftype="bold" />
 
     </LinearLayout>
 </LinearLayout>

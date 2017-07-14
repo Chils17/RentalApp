@@ -82,6 +82,8 @@ public class MyAccountFragment extends BaseFragment implements View.OnClickListe
         txtWishlist.setOnClickListener(this);
         txtMembership.setOnClickListener(this);
 
+        imgUser.setOnClickListener(this);
+
         Glide.with(getBaseActivity()).load(R.drawable.man).asBitmap().centerCrop().into(new BitmapImageViewTarget(imgUser) {
             @Override
             protected void setResource(Bitmap resource) {
@@ -120,6 +122,11 @@ public class MyAccountFragment extends BaseFragment implements View.OnClickListe
             case R.id.txtWishlist:
                 Intent intentWishlist = new Intent(getBaseActivity(), WishlistActivity.class);
                 startActivity(intentWishlist);
+                break;
+
+            case  R.id.imgUser:
+                Intent intentSplash = new Intent(getBaseActivity(),SplashActivity.class);
+                startActivity(intentSplash);
                 break;
         }
     }

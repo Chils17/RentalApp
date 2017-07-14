@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.webmyne.rentalapp.ui.MyAccountFragment">
+    android:background="@color/background"
+    tools:context="com.webmyne.rentalapp.ui.MyAccountActivity">
 
 
     <ScrollView
@@ -54,6 +55,7 @@
                     android:id="@+id/txtMembership"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_8dp"
                     android:text="@string/membership"
                     android:textColor="@color/half_black"
                     android:textSize="@dimen/sp16" />
@@ -79,6 +81,7 @@
                     android:id="@+id/txtWishlist"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
                     android:text="@string/wish_list"
                     android:textColor="@color/half_black"
                     android:textSize="@dimen/sp16" />
@@ -103,6 +106,7 @@
                     android:id="@+id/txtPersonalInfo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
                     android:text="@string/personal_information"
                     android:textColor="@color/half_black"
                     android:textSize="@dimen/sp16" />
@@ -127,6 +131,7 @@
                     android:id="@+id/txtReferfriend"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
                     android:text="@string/refer_friend"
                     android:textColor="@color/half_black"
                     android:textSize="@dimen/sp16" />
@@ -151,6 +156,7 @@
                 <com.webmyne.rentalapp.custom.TfTextView
                     android:id="@+id/txtOrderhistory"
                     android:layout_width="match_parent"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
                     android:layout_height="wrap_content"
                     android:text="@string/order_history"
                     android:textColor="@color/half_black"

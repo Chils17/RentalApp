@@ -35,7 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
     private EditText edtMobile;
     private EditText edtPassword;
     private EditText edtAddress;
-    private TfButton txtSubmit;
+    private TfButton btnSubmit;
     boolean passwordPress = false;
     private Toolbar toolbar;
     private TfTextView txtTitle;
@@ -50,7 +50,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void init() {
-        txtSubmit = (TfButton) findViewById(R.id.txtSubmit);
+        btnSubmit = (TfButton) findViewById(R.id.btnSubmit);
         edtAddress = (EditText) findViewById(R.id.edtAddress);
         // edtPassword = (EditText) findViewById(R.id.edtPassword);
         edtMobile = (EditText) findViewById(R.id.edtMobile);
@@ -150,7 +150,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void clickListener() {
-        txtSubmit.setOnClickListener(new View.OnClickListener() {
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

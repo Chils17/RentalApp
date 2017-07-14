@@ -68,6 +68,6 @@
     <color name="color_38A4DB">#38A4DB</color>
     <color name="color_green">#32CD32</color>
 
-
-
+    <color name="background">#eeeeee</color>
+    <color name="splash_background">#99002060</color>
 </resources>
