@@ -27,6 +27,7 @@ import com.webmyne.rentalapp.adapter.ProductPagerAdapter;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.ui.BaseActivity;
 import com.webmyne.rentalapp.ui.DashboardActivity;
+import com.webmyne.rentalapp.ui.MyAccountActivity;
 import com.webmyne.rentalapp.ui.customviews.LayoutView;
 
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class DashBoardFragment extends BaseFragment {
     private Handler handler = null;
     private Timer swipeTimer;
     //region views
-    private LinearLayout ll_popular_books_viewall,ll_new_arrivals_viewall,ll_new_arrivals_content, ll_new_arrivals_content_top, ll_new_arrivals_content_bottom, ll_popular_content_bottom, ll_populars_content_top, ll_featured_content_top, ll_featured_content_bottom;
+    private LinearLayout ll_featured_books_viewall, ll_popular_books_viewall, ll_new_arrivals_viewall, ll_new_arrivals_content, ll_new_arrivals_content_top, ll_new_arrivals_content_bottom, ll_popular_content_bottom, ll_populars_content_top, ll_featured_content_top, ll_featured_content_bottom;
     private LayoutView layoutView;
 
 
@@ -91,6 +92,7 @@ public class DashBoardFragment extends BaseFragment {
 
     private void init(View view) {
         ll_new_arrivals_content = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_content);
+        ll_featured_books_viewall = (LinearLayout) view.findViewById(R.id.ll_featured_books_viewall);
         ll_popular_books_viewall = (LinearLayout) view.findViewById(R.id.ll_popular_books_viewall);
         ll_new_arrivals_viewall = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_viewall);
         ll_new_arrivals_content_top = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_content_top);
@@ -109,6 +111,13 @@ public class DashBoardFragment extends BaseFragment {
             }
         });
 
+        ll_featured_books_viewall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragmentToPush = MyAccountActivity.getFragment(getBaseActivity());
+                getBaseActivity().pushAddFragments(fragmentToPush, true, true);
+            }
+        });
         ll_popular_books_viewall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

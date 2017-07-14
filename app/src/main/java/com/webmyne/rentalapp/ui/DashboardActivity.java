@@ -1,5 +1,6 @@
 package com.webmyne.rentalapp.ui;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -37,6 +38,7 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
      *
      */
     private ActionBarDrawerToggle mDrawerToggle;
+    private Toolbar toolbar;
     /*private Toolbar toolbar;*/
 
     /**
@@ -93,7 +95,11 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         super.onPostCreate(savedInstanceState);
         mDrawerToggle.syncState();
     }
-
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mDrawerToggle.onConfigurationChanged(newConfig);
+    }
     private void init() {
         profilePic = (CircleImageView) findViewById(R.id.profilePic);
         profilePic.setOnClickListener(new View.OnClickListener() {
@@ -113,7 +119,14 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 pushAddFragments(fragmentToPush, true, true);
             }
         });
-        /*toolbar = (Toolbar) findViewById(R.id.toolbar);*/
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_menu_toolbar));
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              getDrawerLayout().openDrawer(findViewById(R.id.drawer));
+            }
+        });
         tv_footer_account = (TfTextView) findViewById(R.id.tv_footer_account);
         tv_footer_shop = (TfTextView) findViewById(R.id.tv_footer_shop);
         tv_footer_rent = (TfTextView) findViewById(R.id.tv_footer_rent);

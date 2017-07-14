@@ -1,13 +1,17 @@
 package com.webmyne.rentalapp.ui;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -16,9 +20,11 @@ import com.bumptech.glide.request.target.BitmapImageViewTarget;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
+import com.webmyne.rentalapp.fragment.BaseFragment;
+import com.webmyne.rentalapp.fragment.ShopFragment;
 
 
-public class MyAccountActivity extends AppCompatActivity implements View.OnClickListener{
+public class MyAccountActivity extends BaseFragment implements View.OnClickListener{
 
     private ImageView imgUser;
     private Context context;
@@ -28,23 +34,49 @@ public class MyAccountActivity extends AppCompatActivity implements View.OnClick
     private TfTextView txtPersonalInfo;
     private TfTextView txtReferfriend;
     private TfTextView txtOrderhistory;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_account);
 
-        context = this;
-        init();
+
+    @SuppressLint({"ValidFragment", "Unused"})
+    private MyAccountActivity() {
     }
 
-    private void init() {
-        txtOrderhistory = (TfTextView) findViewById(R.id.txtOrderhistory);
-        txtReferfriend = (TfTextView) findViewById(R.id.txtReferfriend);
-        txtPersonalInfo = (TfTextView) findViewById(R.id.txtPersonalInfo);
-        txtWishlist = (TfTextView) findViewById(R.id.txtWishlist);
-        txtMembership = (TfTextView) findViewById(R.id.txtMembership);
-        txtUsername = (TfTextView) findViewById(R.id.txtUsername);
-        imgUser = (ImageView) findViewById(R.id.imgUser);
+    @SuppressLint("ValidFragment")
+    private MyAccountActivity(BaseActivity activity) {
+        setBaseActivity(activity);
+    }
+
+
+    public static BaseFragment getFragment(BaseActivity activity) {
+        BaseFragment fragment = new MyAccountActivity(activity);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setBaseActivity((BaseActivity) getActivity());
+        /*setContentView(R.layout.activity_my_account);
+
+        context = this;
+        init();*/
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View itemView = inflater.inflate(R.layout.activity_my_account, container, false);
+        init(itemView);
+        return itemView;
+    }
+
+    private void init(View itemView) {
+        txtOrderhistory = (TfTextView) itemView.findViewById(R.id.txtOrderhistory);
+        txtReferfriend = (TfTextView) itemView.findViewById(R.id.txtReferfriend);
+        txtPersonalInfo = (TfTextView) itemView.findViewById(R.id.txtPersonalInfo);
+        txtWishlist = (TfTextView) itemView.findViewById(R.id.txtWishlist);
+        txtMembership = (TfTextView) itemView.findViewById(R.id.txtMembership);
+        txtUsername = (TfTextView) itemView.findViewById(R.id.txtUsername);
+        imgUser = (ImageView) itemView.findViewById(R.id.imgUser);
 
         txtOrderhistory.setOnClickListener(this);
         txtReferfriend.setOnClickListener(this);
@@ -52,11 +84,11 @@ public class MyAccountActivity extends AppCompatActivity implements View.OnClick
         txtWishlist.setOnClickListener(this);
         txtMembership.setOnClickListener(this);
 
-        Glide.with(context).load(R.drawable.man).asBitmap().centerCrop().into(new BitmapImageViewTarget(imgUser) {
+        Glide.with(getBaseActivity()).load(R.drawable.man).asBitmap().centerCrop().into(new BitmapImageViewTarget(imgUser) {
             @Override
             protected void setResource(Bitmap resource) {
                 RoundedBitmapDrawable circularBitmapDrawable =
-                        RoundedBitmapDrawableFactory.create(context.getResources(), resource);
+                        RoundedBitmapDrawableFactory.create(getBaseActivity().getResources(), resource);
                 circularBitmapDrawable.setCircular(true);
                 imgUser.setImageDrawable(circularBitmapDrawable);
             }
@@ -69,26 +101,26 @@ public class MyAccountActivity extends AppCompatActivity implements View.OnClick
         switch (v.getId()){
 
             case R.id.txtMembership:
-                Intent intentMembership = new Intent(context,MembershipActivity.class);
+                Intent intentMembership = new Intent(getBaseActivity(),MembershipActivity.class);
                 startActivity(intentMembership);
                 break;
 
             case R.id.txtOrderhistory:
-                Intent intentOderhistory = new Intent(context,OrderhistoryActivity.class);
+                Intent intentOderhistory = new Intent(getBaseActivity(),OrderhistoryActivity.class);
                 startActivity(intentOderhistory);
                 break;
 
             case R.id.txtPersonalInfo:
-                Intent intentPersonalInfo = new Intent(context,ProfileActivity.class);
+                Intent intentPersonalInfo = new Intent(getBaseActivity(),ProfileActivity.class);
                 startActivity(intentPersonalInfo);
                 break;
 
             case R.id.txtReferfriend:
-                Functions.shareApp(context);
+                Functions.shareApp(getBaseActivity());
                 break;
 
             case  R.id.txtWishlist:
-                Intent intentWishlist = new Intent(context,WishlistActivity.class);
+                Intent intentWishlist = new Intent(getBaseActivity(),WishlistActivity.class);
                 startActivity(intentWishlist);
                 break;
         }

@@ -71,7 +71,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/libon_blue"
+                            android:background="@color/off_white"
                             android:gravity="center"
                             android:orientation="horizontal"
                             android:padding="@dimen/dimen_4dp">
@@ -84,7 +84,7 @@
                                 android:gravity="center_vertical|left"
                                 android:paddingLeft="@dimen/dimen_10dp"
                                 android:text="@string/new_arrivals"
-                                android:textColor="@color/white"
+                                android:textColor="@color/libon_blue"
                                 android:textSize="@dimen/sp18"
                                 app:ftype="semibold" />
 
@@ -100,13 +100,14 @@
                                     android:layout_height="match_parent"
                                     android:gravity="center_vertical"
                                     android:text="View All"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/libon_blue"
                                     android:textSize="@dimen/sp18"
                                     app:ftype="regular" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:tint="@color/libon_blue"
                                     android:layout_marginRight="@dimen/dimen_10dp"
                                     android:src="@drawable/ic_arrow_right" />
                             </LinearLayout>
@@ -174,7 +175,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/libon_blue"
+                            android:background="@color/off_white"
                             android:gravity="center"
                             android:orientation="horizontal"
                             android:padding="@dimen/dimen_4dp">
@@ -187,7 +188,7 @@
                                 android:gravity="center_vertical|left"
                                 android:paddingLeft="@dimen/dimen_10dp"
                                 android:text="Popular Books"
-                                android:textColor="@color/white"
+                                android:textColor="@color/libon_blue"
                                 android:textSize="@dimen/sp18"
                                 app:ftype="semibold" />
 
@@ -203,7 +204,7 @@
                                     android:layout_height="match_parent"
                                     android:gravity="center_vertical"
                                     android:text="View All"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/libon_blue"
                                     android:textSize="@dimen/sp18"
                                     app:ftype="regular" />
 
@@ -211,6 +212,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_marginRight="@dimen/dimen_10dp"
+                                    android:tint="@color/libon_blue"
                                     android:src="@drawable/ic_arrow_right" />
                             </LinearLayout>
                         </LinearLayout>
@@ -290,7 +292,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/libon_blue"
+                            android:background="@color/off_white"
                             android:gravity="center"
                             android:orientation="horizontal"
                             android:padding="@dimen/dimen_4dp">
@@ -303,7 +305,7 @@
                                 android:gravity="center_vertical|left"
                                 android:paddingLeft="@dimen/dimen_10dp"
                                 android:text="Featured Books"
-                                android:textColor="@color/white"
+                                android:textColor="@color/libon_blue"
                                 android:textSize="@dimen/sp18"
                                 app:ftype="semibold" />
 
@@ -319,13 +321,14 @@
                                     android:layout_height="match_parent"
                                     android:gravity="center_vertical"
                                     android:text="View All"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/libon_blue"
                                     android:textSize="@dimen/sp18"
                                     app:ftype="regular" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
+                                    android:tint="@color/libon_blue"
                                     android:layout_marginRight="@dimen/dimen_10dp"
                                     android:src="@drawable/ic_arrow_right" />
                             </LinearLayout>
