@@ -82,6 +82,14 @@
     <string name="my_cart">My Cart</string>
     <string name="rental_cart">Rental Cart</string>
     <string name="share_text">Share Text</string>
+    <string name="viewer">Viewers</string>
+    <string name="check_out">Checkout</string>
+    <string name="book_available">Available</string>
+    <string name="order_history_details">Order Detail</string>
+    <string name="book_total">Total amount : </string>
+    <string name="book_id">Order Id : </string>
+    <string name="book_no">No. of Books : </string>
+    <string name="book_deliverd">Delivered On :</string>
     <string name="book_quantity">Quantity</string>
 
     <string-array name="book_edition">

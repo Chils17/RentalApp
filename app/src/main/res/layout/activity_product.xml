@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/off_white"
     android:orientation="vertical"
     tools:context="com.webmyne.rentalapp.ui.ProductActivity">
 
@@ -31,12 +32,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <android.support.v4.view.ViewPager
-                        android:id="@+id/viewPager"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/dimen_280dp" />
+                      <android.support.v4.view.ViewPager
+                          android:id="@+id/viewPager"
+                          android:layout_width="match_parent"
+                          android:layout_height="@dimen/dimen_280dp" />
 
-                    <com.varunest.sparkbutton.SparkButton
+                  <!--  <com.varunest.sparkbutton.SparkButton
                         android:id="@+id/img_like"
                         android:layout_width="@dimen/dimen_30dp"
                         android:layout_height="@dimen/dimen_30dp"
@@ -44,33 +45,119 @@
                         android:layout_margin="@dimen/dimen_10dp"
                         app:sparkbutton_activeImage="@drawable/ic_heart_on"
                         app:sparkbutton_iconSize="@dimen/dimen_28dp"
-                        app:sparkbutton_inActiveImage="@drawable/ic_heart_off" />
+                        app:sparkbutton_inActiveImage="@drawable/ic_heart_off" />-->
 
-                    <ImageButton
-                        android:id="@+id/left_nav"
-                        android:layout_width="@dimen/dimen_48dp"
-                        android:layout_height="@dimen/dimen_48dp"
-                        android:layout_gravity="center_vertical|left"
-                        android:background="@color/color_transparent"
-                        android:src="@drawable/ic_arrowback" />
-
-                    <ImageButton
-                        android:id="@+id/right_nav"
-                        android:layout_width="@dimen/dimen_48dp"
-                        android:layout_height="@dimen/dimen_48dp"
-                        android:layout_gravity="center_vertical|right"
-                        android:background="@color/color_transparent"
-                        android:src="@drawable/ic_arrowright" />
-
-                    <me.relex.circleindicator.CircleIndicator
-                        android:id="@+id/indicator"
+                   <!-- <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:layout_marginBottom="@dimen/dimen_8dp"
-                        app:ci_drawable="@color/colorPrimary" />
+                        android:layout_height="@dimen/dimen_280dp"
+                        android:src="@drawable/image1" />-->
+
+                    <!--   <ImageButton
+                           android:id="@+id/left_nav"
+                           android:layout_width="@dimen/dimen_48dp"
+                           android:layout_height="@dimen/dimen_48dp"
+                           android:layout_gravity="center_vertical|left"
+                           android:background="@color/color_transparent"
+                           android:src="@drawable/ic_arrowback" />
+
+                       <ImageButton
+                           android:id="@+id/right_nav"
+                           android:layout_width="@dimen/dimen_48dp"
+                           android:layout_height="@dimen/dimen_48dp"
+                           android:layout_gravity="center_vertical|right"
+                           android:background="@color/color_transparent"
+                           android:src="@drawable/ic_arrowright" />
+
+                       <me.relex.circleindicator.CircleIndicator
+                           android:id="@+id/indicator"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_gravity="bottom"
+                           android:layout_marginBottom="@dimen/dimen_8dp"
+                           app:ci_drawable="@color/colorPrimary" />-->
 
                 </FrameLayout>
+
+              <!--  <HorizontalScrollView
+                    android:scrollbars="none"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dimen_10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_96dp"
+                            android:layout_height="@dimen/dimen_96dp"
+                            android:src="@drawable/image1" />
+
+                        <Space
+                            android:layout_width="@dimen/dimen_10dp"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_96dp"
+                            android:layout_height="@dimen/dimen_96dp"
+                            android:src="@drawable/image1" />
+
+                        <Space
+                            android:layout_width="@dimen/dimen_10dp"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_96dp"
+                            android:layout_height="@dimen/dimen_96dp"
+                            android:src="@drawable/image1" />
+
+                        <Space
+                            android:layout_width="@dimen/dimen_10dp"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_96dp"
+                            android:layout_height="@dimen/dimen_96dp"
+                            android:src="@drawable/image1" />
+
+                        <Space
+                            android:layout_width="@dimen/dimen_10dp"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_96dp"
+                            android:layout_height="@dimen/dimen_96dp"
+                            android:src="@drawable/image1" />
+
+                        <Space
+                            android:layout_width="@dimen/dimen_10dp"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_96dp"
+                            android:layout_height="@dimen/dimen_96dp"
+                            android:src="@drawable/image1" />
+
+                        <Space
+                            android:layout_width="@dimen/dimen_10dp"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_96dp"
+                            android:layout_height="@dimen/dimen_96dp"
+                            android:src="@drawable/image1" />
+                    </LinearLayout>
+                </HorizontalScrollView>-->
+
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvProductImages"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never"
+                    android:padding="@dimen/dimen_6dp"
+                    android:scrollbars="horizontal" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -141,7 +228,7 @@
                                     android:layout_gravity="center"
                                     android:maxLines="1"
                                     android:padding="@dimen/dimen_2dp"
-                                    android:text="₹7500"
+                                    android:text="₹ 7500"
                                     android:textColor="@color/colorPrimary"
                                     android:textSize="@dimen/sp14"
                                     app:ftype="medium" />
@@ -155,7 +242,7 @@
                                     android:gravity="center"
                                     android:maxLines="1"
                                     android:padding="@dimen/dimen_2dp"
-                                    android:text="₹10000"
+                                    android:text="₹ 10000"
                                     android:textColor="@color/colorPrimary"
                                     android:textSize="@dimen/sp14"
                                     app:ftype="medium" />
@@ -176,10 +263,10 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:numStars="5"
-                                    android:padding="@dimen/dimen_2dp"
+                                    android:layout_margin="@dimen/dimen_2dp"
                                     android:progressTint="@color/colorPrimary"
                                     android:rating="4"
-                                    android:secondaryProgressTint="@android:color/transparent" />
+                                    android:secondaryProgressTint="@color/off_white" />
 
                                 <com.webmyne.rentalapp.custom.TfTextView
                                     android:id="@+id/textViewer"
@@ -188,6 +275,17 @@
                                     android:layout_gravity="center"
                                     android:padding="@dimen/dimen_2dp"
                                     android:text="(215)"
+                                    android:textColor="@color/half_black"
+                                    android:textSize="@dimen/sp14"
+                                    app:ftype="medium" />
+
+                                <com.webmyne.rentalapp.custom.TfTextView
+                                    android:id="@+id/textViewer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:padding="@dimen/dimen_2dp"
+                                    android:text="@string/viewer"
                                     android:textColor="@color/half_black"
                                     android:textSize="@dimen/sp14"
                                     app:ftype="medium" />

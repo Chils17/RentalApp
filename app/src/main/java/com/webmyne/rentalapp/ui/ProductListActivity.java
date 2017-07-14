@@ -1,6 +1,7 @@
 package com.webmyne.rentalapp.ui;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.TabLayout;
@@ -21,6 +22,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -54,6 +56,10 @@ public class ProductListActivity extends AppCompatActivity {
     private TfTextView txtMax;
     private Spinner spinCustom;
     private TfTextView txtFilter;
+    private RadioButton rbPopular;
+    private RadioButton rbLH;
+    private RadioButton rbHL;
+    private RadioButton rbNewest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,11 +76,15 @@ public class ProductListActivity extends AppCompatActivity {
 
         init();
 
+        setTypeFace();
+
         actionListener();
 
         initRecyclerView();
 
     }
+
+
 
 
     private void init() {
@@ -96,10 +106,22 @@ public class ProductListActivity extends AppCompatActivity {
         // get min and max text view
         txtMin = (TfTextView) headerView.findViewById(R.id.txtMin);
         txtMax = (TfTextView) headerView.findViewById(R.id.txtMax);
-        spinCustom = (Spinner) headerView.findViewById(R.id.spinCustom);
+        //spinCustom = (Spinner) headerView.findViewById(R.id.spinCustom);
 
+        rbPopular = (RadioButton) headerView.findViewById(R.id.rbPopular);
+        rbLH = (RadioButton) headerView.findViewById(R.id.rbLH);
+        rbHL = (RadioButton) headerView.findViewById(R.id.rbHL);
+        rbNewest = (RadioButton) headerView.findViewById(R.id.rbNewest);
         setRangeSeekbar();
-        initCustomSpinner();
+       // initCustomSpinner();
+    }
+
+    private void setTypeFace() {
+        Typeface tf = Typeface.createFromAsset(getResources().getAssets(), "fonts/regular.ttf");
+        rbPopular.setTypeface(tf);
+        rbLH.setTypeface(tf);
+        rbHL.setTypeface(tf);
+        rbNewest.setTypeface(tf);
     }
 
 
@@ -127,14 +149,14 @@ public class ProductListActivity extends AppCompatActivity {
 
         productArrayList = new ArrayList<>();
 
-        productArrayList.add(new Product(R.drawable.image1, "Killing", "J. K. Rowling", "₹500", 4.2f));
-        productArrayList.add(new Product(R.drawable.image1, "Infinite of Cloud", "J. K. Rowling", "₹2000", 3.7f));
-        productArrayList.add(new Product(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹500", 3.9f));
-        productArrayList.add(new Product(R.drawable.image1, "Product Launch Secrets", "J. K. Rowling", "₹2500", 4.1f));
-        productArrayList.add(new Product(R.drawable.image1, "Forte", "J. K. Rowling", "₹500", 4.4f));
-        productArrayList.add(new Product(R.drawable.image1, "Killing", "J. K. Rowling", "₹2050", 4.6f));
-        productArrayList.add(new Product(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹500", 4.8f));
-        productArrayList.add(new Product(R.drawable.image1, "Product Launch Secret", "J. K. Rowling", "₹2500", 4.2f));
+        productArrayList.add(new Product(R.drawable.image1, "Killing", "J. K. Rowling", "₹ 500", 4.2f));
+        productArrayList.add(new Product(R.drawable.image1, "Infinite of Cloud", "J. K. Rowling", "₹ 2000", 3.7f));
+        productArrayList.add(new Product(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹ 500", 3.9f));
+        productArrayList.add(new Product(R.drawable.image1, "Product Launch Secrets", "J. K. Rowling", "₹ 2500", 4.1f));
+        productArrayList.add(new Product(R.drawable.image1, "Forte", "J. K. Rowling", "₹ 500", 4.4f));
+        productArrayList.add(new Product(R.drawable.image1, "Killing", "J. K. Rowling", "₹ 2050", 4.6f));
+        productArrayList.add(new Product(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹ 500", 4.8f));
+        productArrayList.add(new Product(R.drawable.image1, "Product Launch Secret", "J. K. Rowling", "₹ 2500", 4.2f));
 
 
         adapter = new ProductListAdapter(getApplicationContext(), productArrayList);

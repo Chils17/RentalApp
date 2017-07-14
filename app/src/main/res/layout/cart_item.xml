@@ -4,17 +4,10 @@
     android:id="@+id/mainLinear"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dimen_10dp"
     android:background="@color/white"
     android:gravity="center"
     android:orientation="horizontal">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_margin="@dimen/dimen_8dp"
-        android:layout_height="match_parent">
-
-
 
     <ImageView
         android:id="@+id/imgBook"
@@ -27,17 +20,18 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center|left"
         android:orientation="vertical">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="vertical"
                 android:padding="@dimen/dimen_4dp">
 
@@ -54,7 +48,6 @@
                     android:id="@+id/txtBookCategory"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_2dp"
                     android:text="Age 1 to 5"
                     android:textColor="@color/half_black"
                     android:textSize="@dimen/sp14"
@@ -69,36 +62,37 @@
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/sp14"
                     app:ftype="bold" />
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|left"
-                    android:layout_marginTop="@dimen/dimen_2dp"
-                    android:gravity="center|left"
-                    android:orientation="vertical">
-                    <com.webmyne.rentalapp.custom.TfTextView
-                        android:layout_width="match_parent"
-                        android:text="Qty"
-                        android:gravity="center"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/sp14"
-                        android:layout_height="wrap_content" />
-                    <me.himanshusoni.quantityview.QuantityView
-                        android:id="@+id/numQty"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dimen_2dp"
-                        app:qv_addButtonTextColor="@color/colorGrey"
-                        app:qv_quantity="10"
-                        android:textSize="@dimen/sp14"
-                        app:qv_removeButtonTextColor="@color/colorGrey" />
-
-                </LinearLayout>
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginRight="@dimen/dimen_10dp"
+                android:orientation="vertical">
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:id="@+id/txtBookPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/book_quantity"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp16"
+                    app:ftype="bold" />
+
+                <me.himanshusoni.quantityview.QuantityView
+                    android:id="@+id/numQty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_2dp"
+                    app:qv_addButtonTextColor="@color/colorGrey"
+                    app:qv_quantity="10"
+                    app:qv_removeButtonTextColor="@color/colorGrey" />
+
+            </LinearLayout>
         </LinearLayout>
 
-    </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

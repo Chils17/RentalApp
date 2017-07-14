@@ -34,7 +34,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:maxLines="1"
-                    android:text="₹7500"
+                    android:text="₹ 7500"
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/sp16"
                     app:ftype="medium" />
@@ -111,7 +111,7 @@
                         android:numStars="5"
                         android:progressTint="@color/colorPrimary"
                         android:rating="4"
-                        android:secondaryProgressTint="@android:color/transparent" />
+                        android:secondaryProgressTint="@color/off_white" />
                 </LinearLayout>
 
             </RelativeLayout>

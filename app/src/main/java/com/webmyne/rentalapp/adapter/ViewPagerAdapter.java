@@ -64,7 +64,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         tfTextView.setTypeface(Functions.getFontType(context, FontType.Bold.getId()));
         //Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/ArchivoBlack-Regular.ttf");
         //tfTextView.setTypeface(typeface);
-        tfTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+        tfTextView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
         //tfTextView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
         tfTextView.setTextColor(ContextCompat.getColor(context, android.R.color.white));
         tfTextView.setGravity(Gravity.CENTER);

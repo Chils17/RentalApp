@@ -2,8 +2,11 @@ package com.webmyne.rentalapp.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 
@@ -18,21 +21,44 @@ import java.util.ArrayList;
  * Created by chintans on 14-07-2017.
  */
 
-public class CheckoutOrderActivity extends Activity {
+public class CheckoutOrderActivity extends AppCompatActivity {
     RecyclerView rvMyCart;
     private ArrayList<MyCart> myCartList;
     private MyCartAdapter adapter;
+    private Toolbar toolbar;
+    private TfTextView txtTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        txtTitle = (TfTextView) findViewById(R.id.txtTitle);
+
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        //toolbar.setTitleTextColor(Color.WHITE);
+        txtTitle.setText(R.string.check_out);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         rvMyCart = (RecyclerView) findViewById(R.id.rvMyCart);
         initRecyclerView();
 
-
+        actionListener();
 
     }
+
+    private void actionListener() {
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+    }
+
     private void initRecyclerView() {
         rvMyCart.setLayoutManager(new LinearLayoutManager(this));
         myCartList = new ArrayList<>();

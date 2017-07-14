@@ -6,13 +6,13 @@ import java.io.Serializable;
  * Created by gulamhusen on 12-07-2017.
  */
 
-public class ShopHistoryList implements Serializable{
+public class OrderHistory implements Serializable{
 
     private int  bookImage;
     private String bookName, bookPrice, bookAuthor, bookCategories, bookDeliverTime;
 
 
-    public ShopHistoryList(int bookImage, String bookName, String bookPrice, String bookAuthor, String bookCategories, String bookDeliverTime) {
+    public OrderHistory(int bookImage, String bookName, String bookPrice, String bookAuthor, String bookCategories, String bookDeliverTime) {
         this.bookImage = bookImage;
         this.bookName = bookName;
         this.bookPrice = bookPrice;

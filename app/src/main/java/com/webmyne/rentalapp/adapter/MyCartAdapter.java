@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.NumberPicker;
 
 import com.webmyne.rentalapp.R;
+import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.model.MyCart;
-import com.webmyne.rentalapp.model.ShopHistoryList;
+import com.webmyne.rentalapp.ui.CheckoutOrderActivity;
 
 import java.util.ArrayList;
 
@@ -31,14 +31,20 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.MyViewHold
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyCartAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.cart_item, parent, false);
-        return new MyViewHolder(view);
+        return new MyCartAdapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyCartAdapter.MyViewHolder holder, int position) {
         holder.setValues(myCartArrayList.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override

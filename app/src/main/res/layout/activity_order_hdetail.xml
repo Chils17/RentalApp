@@ -1,11 +1,14 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/off_white"
-    tools:context="com.webmyne.rentalapp.fragment.RentalCartFragment">
+    tools:context="com.webmyne.rentalapp.ui.OrderHDetailActivity">
+
+    <include layout="@layout/app_bar" />
 
     <com.webmyne.rentalapp.custom.TfTextView
         android:id="@+id/emptyView"
@@ -19,11 +22,11 @@
         app:ftype="medium" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvRentCart"
+        android:id="@+id/rvOrderDetail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:overScrollMode="never"
-        android:padding="@dimen/dimen_6dp"
-        android:scrollbars="vertical" />
+        android:padding="@dimen/dimen_4dp"
+        android:scrollbars="none" />
 
 </LinearLayout>
