@@ -4,7 +4,11 @@ import android.graphics.Point;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.Display;
+import android.view.View;
+import android.widget.TextView;
 
+import com.webmyne.rentalapp.R;
+import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.ui.BaseActivity;
 
 /**
@@ -12,6 +16,11 @@ import com.webmyne.rentalapp.ui.BaseActivity;
  */
 
 public class BaseFragment extends Fragment {
+    /**
+     * The View.
+     */
+    protected View view;
+
     /**
      * The Default string.
      */
@@ -55,5 +64,7 @@ public class BaseFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
+
+
 
 }

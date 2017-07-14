@@ -4,7 +4,7 @@
     android:id="@+id/ll_root_dashboard"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/app_bg"
     android:orientation="vertical">
 
     <LinearLayout
@@ -71,7 +71,6 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/off_white"
                             android:gravity="center"
                             android:orientation="horizontal"
                             android:padding="@dimen/dimen_4dp">
@@ -84,8 +83,8 @@
                                 android:gravity="center_vertical|left"
                                 android:paddingLeft="@dimen/dimen_10dp"
                                 android:text="@string/new_arrivals"
-                                android:textColor="@color/libon_blue"
-                                android:textSize="@dimen/sp18"
+                                android:textColor="@color/half_black_light"
+                                android:textSize="@dimen/sp16"
                                 app:ftype="semibold" />
 
                             <LinearLayout
@@ -100,16 +99,16 @@
                                     android:layout_height="match_parent"
                                     android:gravity="center_vertical"
                                     android:text="View All"
-                                    android:textColor="@color/libon_blue"
-                                    android:textSize="@dimen/sp18"
+                                    android:textColor="@color/half_black_light"
+                                    android:textSize="@dimen/sp16"
                                     app:ftype="regular" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:tint="@color/libon_blue"
                                     android:layout_marginRight="@dimen/dimen_10dp"
-                                    android:src="@drawable/ic_arrow_right" />
+                                    android:src="@drawable/ic_arrow_right"
+                                    android:tint="@color/half_black_light" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -118,6 +117,8 @@
                             android:id="@+id/ll_new_arrivals_content"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/height_2"
+                            android:background="@color/white"
                             android:orientation="vertical">
 
                             <LinearLayout
@@ -175,7 +176,6 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/off_white"
                             android:gravity="center"
                             android:orientation="horizontal"
                             android:padding="@dimen/dimen_4dp">
@@ -188,8 +188,8 @@
                                 android:gravity="center_vertical|left"
                                 android:paddingLeft="@dimen/dimen_10dp"
                                 android:text="Popular Books"
-                                android:textColor="@color/libon_blue"
-                                android:textSize="@dimen/sp18"
+                                android:textColor="@color/half_black_light"
+                                android:textSize="@dimen/sp16"
                                 app:ftype="semibold" />
 
                             <LinearLayout
@@ -204,16 +204,16 @@
                                     android:layout_height="match_parent"
                                     android:gravity="center_vertical"
                                     android:text="View All"
-                                    android:textColor="@color/libon_blue"
-                                    android:textSize="@dimen/sp18"
+                                    android:textColor="@color/half_black_light"
+                                    android:textSize="@dimen/sp16"
                                     app:ftype="regular" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:layout_marginRight="@dimen/dimen_10dp"
-                                    android:tint="@color/libon_blue"
-                                    android:src="@drawable/ic_arrow_right" />
+                                    android:src="@drawable/ic_arrow_right"
+                                    android:tint="@color/half_black_light" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -221,6 +221,8 @@
                             android:id="@+id/ll_new_populars_content"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/height_2"
+                            android:background="@color/white"
                             android:orientation="vertical">
 
                             <LinearLayout
@@ -292,7 +294,6 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/off_white"
                             android:gravity="center"
                             android:orientation="horizontal"
                             android:padding="@dimen/dimen_4dp">
@@ -305,8 +306,8 @@
                                 android:gravity="center_vertical|left"
                                 android:paddingLeft="@dimen/dimen_10dp"
                                 android:text="Featured Books"
-                                android:textColor="@color/libon_blue"
-                                android:textSize="@dimen/sp18"
+                                android:textColor="@color/half_black_light"
+                                android:textSize="@dimen/sp16"
                                 app:ftype="semibold" />
 
                             <LinearLayout
@@ -321,16 +322,16 @@
                                     android:layout_height="match_parent"
                                     android:gravity="center_vertical"
                                     android:text="View All"
-                                    android:textColor="@color/libon_blue"
-                                    android:textSize="@dimen/sp18"
+                                    android:textColor="@color/half_black_light"
+                                    android:textSize="@dimen/sp16"
                                     app:ftype="regular" />
 
                                 <ImageView
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:tint="@color/libon_blue"
                                     android:layout_marginRight="@dimen/dimen_10dp"
-                                    android:src="@drawable/ic_arrow_right" />
+                                    android:src="@drawable/ic_arrow_right"
+                                    android:tint="@color/half_black_light" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -339,6 +340,8 @@
                             android:id="@+id/ll_new_featured_content"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/height_2"
+                            android:background="@color/white"
                             android:orientation="vertical">
 
                             <LinearLayout

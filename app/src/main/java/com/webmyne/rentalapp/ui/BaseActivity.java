@@ -16,8 +16,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.webmyne.rentalapp.R;
+import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.fragment.BaseFragment;
 import com.webmyne.rentalapp.fragment.DashBoardFragment;
+import com.webmyne.rentalapp.fragment.RentFragment;
+import com.webmyne.rentalapp.fragment.ShopFragment;
 import com.webmyne.rentalapp.helper.LogUtils;
 
 import java.util.Stack;
@@ -120,11 +123,6 @@ public class BaseActivity extends AppCompatActivity {
         } else if (!fragmentBackStack.isEmpty()) {
             fragment = fragmentBackStack.elementAt(fragmentBackStack.size() - 1);
         }
-        /*if (fragment instanceof MerchantMyShopFragment) {
-            MerchantMyShopFragment.setHeaderShop();
-        } else if (fragment instanceof MerchantAccountSettingsFragment) {
-            *//*MerchantAccountSettingsFragment.setHeaderShop();*//*
-        }*/
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction ft = manager.beginTransaction();
         if (fragment != null) {
@@ -139,14 +137,21 @@ public class BaseActivity extends AppCompatActivity {
             fragmentBackStack.pop();
             manager.executePendingTransactions();
             // Here we checking that whether we have to close navigation drawer on fragments or not.
-            if (!fragmentBackStack.isEmpty() /*&& isSlideBarOpen(fragmentBackStack.get(fragmentBackStack.size() - 1)) */ && drawerLayout != null) {
+            if (!fragmentBackStack.isEmpty() && isSlideBarOpen(fragmentBackStack.get(fragmentBackStack.size() - 1)) && drawerLayout != null) {
                 drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-                /*if (fragmentBackStack.get(fragmentBackStack.size() - 1) instanceof MerchantHomeFragment) {
-                    MerchantHomeFragment homeFragment = (MerchantHomeFragment) fragmentBackStack.get(fragmentBackStack.size() - 1);
-                    *//*homeFragment.loadMapData();*//*
-                }*/
+                if (fragmentBackStack.get(fragmentBackStack.size() - 1) instanceof DashBoardFragment) {
+                    DashBoardFragment homeFragment = (DashBoardFragment) fragmentBackStack.get(fragmentBackStack.size() - 1);
+                }
             }
         }
+    }
+
+    /**
+     * @param currentFragment current Fragment
+     * @return is we have to open navigation drawer.
+     */
+    private boolean isSlideBarOpen(Fragment currentFragment) {
+        return currentFragment instanceof DashBoardFragment;
     }
 
     @Override
@@ -192,12 +197,38 @@ public class BaseActivity extends AppCompatActivity {
         } else {
             if (!((BaseFragment) fragmentBackStack.get(fragmentBackStack.size() - 1)).onFragmentBackPress()) {
                 Fragment currentFragment = fragmentBackStack.get(fragmentBackStack.size() - 1);
-                /*if (currentFragment instanceof ChangePinFragment) {
-                    MerchantMyShopFragment.setHeaderShop();
-                }*/
-                popFragments(true);
+                if (currentFragment instanceof ShopFragment) {
+                    loadHomeFragment();
+                } else if (currentFragment instanceof RentFragment) {
+                    loadHomeFragment();
+                } else if (currentFragment instanceof MyAccountFragment) {
+                    loadHomeFragment();
+                } else if (currentFragment instanceof DashBoardFragment) {
+                    doubleTapOnBackPress();
+                } else {
+                    popFragments(true);
+                }
             }
         }
+    }
+
+    /**
+     * this method load dashboard fragment
+     */
+    public void loadHomeFragment() {
+        getFragments().clear();
+        Fragment fragmentToPush = DashBoardFragment.getFragment(this);
+        pushAddFragments(fragmentToPush, false, true);
+    }
+
+
+    /**
+     * This method is used to set text of header
+     *
+     * @param headerText the header text
+     */
+    public void setHeader(String headerText) {
+        ((TfTextView) findViewById(R.id.txtTitle)).setText(headerText);
     }
 
     /**

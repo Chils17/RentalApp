@@ -19,7 +19,6 @@ import com.webmyne.rentalapp.custom.TfTextView;
 
 import me.relex.circleindicator.CircleIndicator;
 
-import static com.webmyne.rentalapp.R.id.img_like;
 
 public class ProductActivity extends AppCompatActivity {
 
@@ -120,7 +119,7 @@ public class ProductActivity extends AppCompatActivity {
         floatingCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Functions.fireIntent(getApplicationContext(),CartActivity.class);
+                Functions.fireIntent(ProductActivity.this,CartActivity.class);
             }
         });
 

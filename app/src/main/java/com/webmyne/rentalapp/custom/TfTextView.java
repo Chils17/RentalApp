@@ -5,7 +5,6 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
 import com.webmyne.rentalapp.R;
-import com.webmyne.rentalapp.ui.MyAccountActivity;
 
 public class TfTextView extends android.support.v7.widget.AppCompatTextView {
 

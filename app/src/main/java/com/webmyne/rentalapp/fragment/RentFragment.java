@@ -65,18 +65,18 @@ public class RentFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View itemView = inflater.inflate(R.layout.fragment_rent, container, false);
-        /*Toolbar toolbar = (Toolbar) itemView.findViewById(R.id.toolbar);
-        txtTitle = (TfTextView) itemView.findViewById(R.id.txtTitle);
-        txtTitle.setText(R.string.rent_category);*/
-
         emptyView = (TfTextView) itemView.findViewById(R.id.emptyView);
         rvRent = (RecyclerView) itemView.findViewById(R.id.rvRent);
         edtSearch = (TfEditText) itemView.findViewById(R.id.edtSearch);
-
+        initToolbar();
         initRecyclerView();
-
         return itemView;
     }
+
+    private void initToolbar() {
+        getBaseActivity().setHeader(getResources().getString(R.string.rent_category));
+    }
+
 
     private void initRecyclerView() {
         rvRent.setLayoutManager(new LinearLayoutManager(getContext()));

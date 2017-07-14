@@ -33,6 +33,7 @@
     <string name="change_password">Change Password</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="confirm_order">CONFIRM ORDER</string>
 
     ************************************drawermenu*********************************
     <string name="left_drawer_tv_home">Home</string>
@@ -81,6 +82,7 @@
     <string name="my_cart">My Cart</string>
     <string name="rental_cart">Rental Cart</string>
     <string name="share_text">Share Text</string>
+    <string name="book_quantity">Quantity</string>
 
     <string-array name="book_edition">
         <item>1</item>

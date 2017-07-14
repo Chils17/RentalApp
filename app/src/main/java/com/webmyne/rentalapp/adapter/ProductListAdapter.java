@@ -15,6 +15,7 @@ import com.varunest.sparkbutton.SparkButton;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.model.Product;
+import com.webmyne.rentalapp.ui.CheckoutOrderActivity;
 import com.webmyne.rentalapp.ui.ProductActivity;
 
 import java.util.ArrayList;

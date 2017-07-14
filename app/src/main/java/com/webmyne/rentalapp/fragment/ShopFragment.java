@@ -66,19 +66,18 @@ public class ShopFragment extends BaseFragment {
         // Inflate the layout for this fragment
         View itemView = inflater.inflate(R.layout.fragment_shop, container, false);
 
-        /*Toolbar toolbar = (Toolbar) itemView.findViewById(R.id.toolbar);*/
-        /*txtTitle = (TfTextView) itemView.findViewById(R.id.txtTitle);
-        txtTitle.setText(R.string.shop_category);*/
-
         emptyView = (TfTextView) itemView.findViewById(R.id.emptyView);
         rvShop = (RecyclerView) itemView.findViewById(R.id.rvShop);
         edtSearch = (TfEditText) itemView.findViewById(R.id.edtSearch);
-
+        initToolbar();
         initRecyclerView();
-
         actionListener();
 
         return itemView;
+    }
+
+    private void initToolbar() {
+        getBaseActivity().setHeader(getResources().getString(R.string.left_drawer_tv_shop));
     }
 
     private void actionListener() {

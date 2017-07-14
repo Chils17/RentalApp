@@ -1,33 +1,18 @@
 package com.webmyne.rentalapp.fragment;
 
 import android.annotation.SuppressLint;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.Fragment;
-import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.webmyne.rentalapp.R;
-import com.webmyne.rentalapp.adapter.FeaturedBooksRecyclerAdapter;
-import com.webmyne.rentalapp.adapter.NewArrivalRecyclerAdapter;
-import com.webmyne.rentalapp.adapter.PopularRecyclerAdapter;
 import com.webmyne.rentalapp.adapter.ProductPagerAdapter;
-import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.ui.BaseActivity;
-import com.webmyne.rentalapp.ui.DashboardActivity;
-import com.webmyne.rentalapp.ui.MyAccountActivity;
 import com.webmyne.rentalapp.ui.customviews.LayoutView;
 
 import java.util.ArrayList;
@@ -40,7 +25,7 @@ import me.relex.circleindicator.CircleIndicator;
  * Created by chintans on 11-07-2017.
  */
 
-public class DashBoardFragment extends BaseFragment {
+public class DashBoardFragment extends BaseFragment implements View.OnClickListener {
 
     //region variables
     private static ViewPager mProductPager;
@@ -86,10 +71,12 @@ public class DashBoardFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         init(view);
+        initToolbar();
         return view;
     }
-
-
+    private void initToolbar() {
+        getBaseActivity().setHeader(getResources().getString(R.string.app_name));
+    }
     private void init(View view) {
         ll_new_arrivals_content = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_content);
         ll_featured_books_viewall = (LinearLayout) view.findViewById(R.id.ll_featured_books_viewall);
@@ -103,30 +90,9 @@ public class DashBoardFragment extends BaseFragment {
         ll_popular_content_bottom = (LinearLayout) view.findViewById(R.id.ll_populars_content_bottom);
         indicator = (CircleIndicator) view.findViewById(R.id.indicator);
         mProductPager = (ViewPager) view.findViewById(R.id.product_pager);
-        ll_new_arrivals_viewall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragmentToPush = ShopFragment.getFragment(getBaseActivity());
-                getBaseActivity().pushAddFragments(fragmentToPush, true, true);
-            }
-        });
-
-        ll_featured_books_viewall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragmentToPush = MyAccountActivity.getFragment(getBaseActivity());
-                getBaseActivity().pushAddFragments(fragmentToPush, true, true);
-            }
-        });
-        ll_popular_books_viewall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Fragment fragmentToPush = RentFragment.getFragment(getBaseActivity());
-                getBaseActivity().pushAddFragments(fragmentToPush, true, true);
-            }
-        });/*tv_footer_account.setOnClickListener(this);
-        tv_footer_rent.setOnClickListener(this);
-        tv_footer_shop.setOnClickListener(this);*/
+        if (mBookArrayList != null) {
+            mBookArrayList.clear();
+        }
         for (int i = 0; i < mBookArray.length; i++) {
             mBookArrayList.add(mBookArray[i]);
         }
@@ -186,8 +152,10 @@ public class DashBoardFragment extends BaseFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         getBaseActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-
     }
 
+    @Override
+    public void onClick(View v) {
 
+    }
 }

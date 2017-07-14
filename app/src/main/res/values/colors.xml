@@ -18,8 +18,13 @@
     <color name="white">#ffffff</color>
     <color name="red">#F44336</color>
     <color name="off_white">#dddddd</color>
+    <color name="off_white_light">#f1f1f1</color>
+    <color name="app_bg">#eeeeee</color>
     <color name="black">#000000</color>
     <color name="half_black">#5d5d5d</color>
+    <color name="half_black_light">#5e5e5e</color>
+    <color name="half_black_checkout">#2a2a2a</color>
+
 
     <color name="space_black">#8e8e8e</color>
     <color name="yellow">#fbc02d</color>

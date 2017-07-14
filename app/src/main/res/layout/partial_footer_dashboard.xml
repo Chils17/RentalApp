@@ -15,9 +15,11 @@
         android:layout_height="?actionBarSize"
         android:background="@android:color/white"
         android:gravity="center"
+        android:padding="@dimen/height_2"
         android:orientation="horizontal">
 
         <LinearLayout
+            android:id="@+id/ll_footer_home"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -42,6 +44,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_footer_shop"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -66,6 +69,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_footer_rent"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -90,6 +94,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/ll_footer_account"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
