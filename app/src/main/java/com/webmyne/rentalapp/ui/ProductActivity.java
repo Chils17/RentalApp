@@ -9,14 +9,13 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.varunest.sparkbutton.SparkButton;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.ProductDetailPagerAdapter;
 import com.webmyne.rentalapp.adapter.ProductImageAdapter;
-import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
-import com.webmyne.rentalapp.fragment.CartFragment;
 import com.webmyne.rentalapp.model.ProductImage;
 
 import java.util.ArrayList;
@@ -53,7 +52,6 @@ public class ProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         txtTitle = (TfTextView) findViewById(R.id.txtTitle);
 
@@ -71,6 +69,11 @@ public class ProductActivity extends AppCompatActivity {
         initRecyclerView();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
+    }
 
     private void init() {
         rvProductImages = (RecyclerView) findViewById(R.id.rvProductImages);
@@ -129,7 +132,10 @@ public class ProductActivity extends AppCompatActivity {
         floatingCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Functions.fireIntent(ProductActivity.this, CartFragment.class);
+                /*Functions.fireIntent(ProductActivity.this, CartFragment.class);*/
+                /*Fragment fragmentToPushCart = CartFragment.getFragment(ProductActivity.this);
+                pushAddFragments(fragmentToPushCart, true, true);*/
+                Toast.makeText(ProductActivity.this, "Please select cart temparory from left drawer.", Toast.LENGTH_SHORT).show();
             }
         });
 

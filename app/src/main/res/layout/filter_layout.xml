@@ -125,10 +125,10 @@
             android:layout_marginTop="@dimen/dimen_4dp"
             android:orientation="vertical">
 
-            <View
+            <!--<View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dimen_.5dp"
-                android:background="@color/space_black" />
+                android:background="@color/space_black" />-->
 
             <com.webmyne.rentalapp.custom.TfTextView
                 android:layout_width="match_parent"

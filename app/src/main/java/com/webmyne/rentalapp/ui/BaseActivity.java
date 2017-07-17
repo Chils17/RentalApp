@@ -187,7 +187,6 @@ public class BaseActivity extends AppCompatActivity {
             drawerLayout.closeDrawers();
             return;
         }
-
         if (fragmentBackStack.size() <= 1) {
             if (showBackMessage) {
                 doubleTapOnBackPress();
