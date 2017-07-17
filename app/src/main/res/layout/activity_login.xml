@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -106,7 +107,7 @@
                 android:tint="@color/half_black" />
 
             <EditText
-                android:id="@+id/edtName"
+                android:id="@+id/edtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -114,8 +115,9 @@
                 android:layout_marginRight="@dimen/dimen_10dp"
                 android:background="#00000000"
                 android:hint="@string/password"
-                android:inputType="textPersonName"
+                android:inputType="textPassword"
                 android:maxLines="1"
+                android:drawableRight="@drawable/eye_black"
                 android:textSize="@dimen/sp16" />
 
         </LinearLayout>

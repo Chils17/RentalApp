@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/white"
     android:orientation="vertical"
-    android:overScrollMode="never"
-    tools:context="com.webmyne.rentalapp.fragment.MemberShipFragment">
+    tools:context="com.webmyne.rentalapp.ui.MembershipActivity">
 
     <include layout="@layout/app_bar" />
 

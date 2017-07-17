@@ -37,9 +37,10 @@
         android:layout_marginLeft="@dimen/dimen_12dp"
         android:layout_marginRight="@dimen/dimen_12dp"
         android:layout_marginTop="@dimen/dimen_10dp"
-        android:hint="Old Password"
+        android:hint="@string/old_password"
         android:maxLines="1"
         android:textSize="@dimen/sp16"
+        android:inputType="textPassword"
         app:met_floatingLabel="normal" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
@@ -49,10 +50,11 @@
         android:layout_marginLeft="@dimen/dimen_12dp"
         android:layout_marginRight="@dimen/dimen_12dp"
         android:layout_marginTop="@dimen/dimen_10dp"
-        android:hint="New Password"
+        android:hint="@string/new_password"
         android:maxLength="25"
         android:maxLines="1"
         android:textSize="@dimen/sp16"
+        android:inputType="textPassword"
         app:met_floatingLabel="normal" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
@@ -66,6 +68,7 @@
         android:maxLength="10"
         android:maxLines="1"
         android:textSize="@dimen/sp16"
+        android:inputType="textPassword"
         app:met_floatingLabel="normal" />
 
     <LinearLayout

@@ -122,6 +122,8 @@
     <string name="book_deliverd">Delivered On :</string>
     <string name="book_quantity">Quantity</string>
     <string name="confirm_order">CONFIRM ORDER</string>
+    <string name="old_password">Old Password</string>
+    <string name="new_password">New Password</string>
 
     <string-array name="book_edition">
         <item>1</item>
