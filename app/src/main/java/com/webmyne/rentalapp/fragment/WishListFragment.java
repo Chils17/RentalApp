@@ -1,28 +1,22 @@
 package com.webmyne.rentalapp.fragment;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.WishlistAdapter;
-import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.model.WishList;
 import com.webmyne.rentalapp.ui.BaseActivity;
 
 import java.util.ArrayList;
 
 public class WishListFragment extends BaseFragment {
-    private Toolbar toolbar;
-    private TfTextView txtTitle;
     private WishlistAdapter wishlistAdapter;
-    private Context context;
     private ArrayList<WishList> wishLists;
     private RecyclerView recyclerView;
 
@@ -58,20 +52,24 @@ public class WishListFragment extends BaseFragment {
         // Inflate the layout for this fragment
         View itemView = inflater.inflate(R.layout.fragment_wishlist, container, false);
         init(itemView);
+        initToolbar();
         return itemView;
+    }
+
+    private void initToolbar() {
+        getBaseActivity().setHeader(getResources().getString(R.string.wish_list));
     }
 
     private void init(View itemView) {
         recyclerView = (RecyclerView) itemView.findViewById(R.id.wishList_recycle);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getBaseActivity()));
         wishLists = new ArrayList<>();
-
         for (int i = 0; i < bookName.length; i++){
             wishLists.add(new WishList(
                     bookImage[i], bookName[i], bookPrice[i], bookAuthor[i]
             ));
         }
-        wishlistAdapter = new WishlistAdapter(context,wishLists);
+        wishlistAdapter = new WishlistAdapter(getBaseActivity(), wishLists);
         recyclerView.setAdapter(wishlistAdapter);
     }
 

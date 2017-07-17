@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private Context context;
     private EditText edtPassword;
     private boolean passwordPress = false;
-    private TfButton btnExplore;
+    private TfButton btnExplore, btnSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +36,18 @@ public class LoginActivity extends AppCompatActivity {
         context = this;
         txtRegister = (TfTextView) findViewById(R.id.txtRegister);
         btnExplore = (TfButton) findViewById(R.id.btnExplore);
+        btnSubmit = (TfButton) findViewById(R.id.btnSubmit);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
         clickListener();
     }
 
     private void clickListener() {
-
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Functions.fireIntent(LoginActivity.this, IntroActivity.class);
+            }
+        });
         txtRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         btnExplore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Functions.fireIntent(LoginActivity.this, IntroActivity.class);
+                Functions.fireIntent(LoginActivity.this, DashboardActivity.class);
                 finish();
             }
         });

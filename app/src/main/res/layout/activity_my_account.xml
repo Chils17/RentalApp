@@ -8,9 +8,9 @@
 
 
     <ScrollView
-        android:overScrollMode="never"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,17 +56,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dimen_8dp"
+                    android:paddingTop="@dimen/dimen_18dp"
                     android:text="@string/membership"
                     android:textColor="@color/half_black"
-                    android:textSize="@dimen/sp16"
-                    android:paddingTop="@dimen/dimen_18dp"/>
+                    android:textSize="@dimen/sp16" />
 
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1dp"
-                    android:layout_marginTop="@dimen/dimen_16dp"
                     android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_16dp"
                     android:background="@color/half_black" />
             </LinearLayout>
 
@@ -83,16 +83,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:paddingTop="@dimen/dimen_18dp"
                     android:text="@string/wish_list"
                     android:textColor="@color/half_black"
-                    android:textSize="@dimen/sp16"
-                    android:paddingTop="@dimen/dimen_18dp"/>
+                    android:textSize="@dimen/sp16" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1dp"
-                    android:layout_marginTop="@dimen/dimen_16dp"
                     android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_16dp"
                     android:background="@color/half_black" />
             </LinearLayout>
 
@@ -109,16 +109,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:paddingTop="@dimen/dimen_18dp"
                     android:text="@string/personal_information"
                     android:textColor="@color/half_black"
-                    android:textSize="@dimen/sp16"
-                    android:paddingTop="@dimen/dimen_18dp"/>
+                    android:textSize="@dimen/sp16" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1dp"
-                    android:layout_marginTop="@dimen/dimen_16dp"
                     android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_16dp"
                     android:background="@color/half_black" />
             </LinearLayout>
 
@@ -135,37 +135,37 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:paddingTop="@dimen/dimen_18dp"
                     android:text="@string/refer_friend"
                     android:textColor="@color/half_black"
-                    android:textSize="@dimen/sp16"
-                    android:paddingTop="@dimen/dimen_18dp"/>
+                    android:textSize="@dimen/sp16" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dimen_1dp"
-                    android:layout_marginTop="@dimen/dimen_16dp"
                     android:layout_marginBottom="@dimen/dimen_10dp"
+                    android:layout_marginTop="@dimen/dimen_16dp"
                     android:background="@color/half_black" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_16dp"
                 android:layout_marginLeft="@dimen/dimen_10dp"
                 android:layout_marginRight="@dimen/dimen_10dp"
                 android:layout_marginTop="@dimen/dimen_14dp"
-                android:layout_marginBottom="@dimen/dimen_16dp"
                 android:orientation="vertical">
 
                 <com.webmyne.rentalapp.custom.TfTextView
                     android:id="@+id/txtOrderhistory"
                     android:layout_width="match_parent"
-                    android:layout_marginLeft="@dimen/dimen_10dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:paddingTop="@dimen/dimen_18dp"
                     android:text="@string/order_history"
                     android:textColor="@color/half_black"
-                    android:textSize="@dimen/sp16"
-                    android:paddingTop="@dimen/dimen_18dp"/>
+                    android:textSize="@dimen/sp16" />
 
             </LinearLayout>
         </LinearLayout>

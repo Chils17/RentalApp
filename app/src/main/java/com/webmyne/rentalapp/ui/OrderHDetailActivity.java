@@ -27,7 +27,6 @@ public class OrderHDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_detail);
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("");
         txtTitle = (TfTextView) findViewById(R.id.txtTitle);
@@ -35,7 +34,6 @@ public class OrderHDetailActivity extends AppCompatActivity {
         txtTitle.setText(R.string.order_history_details);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         init();
 
         actionListener();

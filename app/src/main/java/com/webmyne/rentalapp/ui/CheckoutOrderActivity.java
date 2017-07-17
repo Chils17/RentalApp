@@ -1,7 +1,6 @@
 package com.webmyne.rentalapp.ui;
 
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -9,6 +8,8 @@ import android.widget.LinearLayout;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.MyCartAdapter;
+import com.webmyne.rentalapp.custom.Functions;
+import com.webmyne.rentalapp.custom.TfButton;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.model.MyCart;
 
@@ -23,6 +24,7 @@ public class CheckoutOrderActivity extends AppCompatActivity {
     private MyCartAdapter adapter;
     private Toolbar toolbar;
     private TfTextView txtTitle;
+    private TfButton btnConfirm;
     private LinearLayout ll_cart_content, ll_cart_content_parent;
 
     @Override
@@ -46,6 +48,7 @@ public class CheckoutOrderActivity extends AppCompatActivity {
     private void init() {
         ll_cart_content = (LinearLayout) findViewById(R.id.ll_cart_content);
         ll_cart_content_parent = (LinearLayout) findViewById(R.id.ll_cart_content_parent);
+        btnConfirm = (TfButton) findViewById(R.id.btnConfirm);
     }
 
     private void actionListener() {
@@ -53,6 +56,13 @@ public class CheckoutOrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Functions.fireIntent(getApplicationContext(), OrderSuccessfullActivity.class);
+                finish();
             }
         });
     }

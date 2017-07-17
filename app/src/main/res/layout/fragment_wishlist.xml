@@ -8,7 +8,6 @@
     android:background="@color/off_white"
     android:overScrollMode="never">
 
-    <include layout="@layout/app_bar"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/wishList_recycle"

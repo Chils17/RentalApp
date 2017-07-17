@@ -55,7 +55,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/btnHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -64,7 +63,8 @@
         android:orientation="vertical">
 
         <com.webmyne.rentalapp.custom.TfButton
-            android:layout_width="wrap_content"
+            android:id="@+id/btnHome"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
             android:text="@string/go_to_home"

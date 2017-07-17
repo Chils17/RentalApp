@@ -106,7 +106,7 @@
                     android:drawableLeft="@drawable/ic_menu_membership"
                     android:drawablePadding="@dimen/height_15"
                     android:gravity="center|left"
-                    android:text="@string/left_drawer_tv_membership"
+                    android:text="@string/member_ship_plan"
                     app:ftype="medium" />
 
 

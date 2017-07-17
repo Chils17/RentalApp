@@ -1,11 +1,13 @@
 package com.webmyne.rentalapp.ui;
 
+import android.content.DialogInterface;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -15,7 +17,7 @@ import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.fragment.CartFragment;
 import com.webmyne.rentalapp.fragment.DashBoardFragment;
-import com.webmyne.rentalapp.fragment.MemberShipFragment;
+import com.webmyne.rentalapp.fragment.MemberShipPlansFragment;
 import com.webmyne.rentalapp.fragment.MyRewardsFragment;
 import com.webmyne.rentalapp.fragment.RentFragment;
 import com.webmyne.rentalapp.fragment.SettingFragment;
@@ -119,6 +121,12 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
     private void init() {
         //left drawer
         profilePic = (CircleImageView) findViewById(R.id.profilePic);
+        profilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Functions.fireIntent(DashboardActivity.this, ProfileActivity.class);
+            }
+        });
         findViewById(R.id.left_drawer_tv_home).setOnClickListener(this);
         findViewById(R.id.left_drawer_tv_search).setOnClickListener(this);
         findViewById(R.id.left_drawer_tv_rent).setOnClickListener(this);
@@ -127,13 +135,13 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         findViewById(R.id.left_drawer_tv_my_cart).setOnClickListener(this);
         findViewById(R.id.left_drawer_tv_rewards).setOnClickListener(this);
         findViewById(R.id.left_drawer_tv_my_account).setOnClickListener(this);
+        findViewById(R.id.left_drawer_tv_logout).setOnClickListener(this);
         findViewById(R.id.left_drawer_tv_membership).setOnClickListener(this);
         findViewById(R.id.left_drawer_tv_settings).setOnClickListener(this);
         findViewById(R.id.ll_footer_account).setOnClickListener(this);
         findViewById(R.id.ll_footer_home).setOnClickListener(this);
         findViewById(R.id.ll_footer_rent).setOnClickListener(this);
         findViewById(R.id.ll_footer_shop).setOnClickListener(this);
-        findViewById(R.id.ll_left_drawer_user_detail).setOnClickListener(this);
         left_drawer_ll_user_menus = (LinearLayout) findViewById(R.id.left_drawer_ll_user_menus);
     }
 
@@ -156,7 +164,7 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.left_drawer_tv_membership:
-                Fragment fragmentToPushMemberShip = MemberShipFragment.getFragment(this);
+                Fragment fragmentToPushMemberShip = MemberShipPlansFragment.getFragment(this);
                 pushAddFragments(fragmentToPushMemberShip, true, true);
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
@@ -218,12 +226,26 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
             case R.id.ll_footer_home:
                 loadHomeFragment();
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
-            case R.id.ll_left_drawer_user_detail:
-                Functions.fireIntent(this, ProfileActivity.class);
+            case R.id.left_drawer_tv_logout:
+                logOutDialogue();
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
-                break;
             default:
                 break;
         }
     }
+
+    private void logOutDialogue() {
+        new AlertDialog.Builder(this)
+                .setMessage(R.string.dailog_logOut)
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Functions.fireIntent(DashboardActivity.this, LoginActivity.class);
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", null)
+                .show();
+    }
+
 }

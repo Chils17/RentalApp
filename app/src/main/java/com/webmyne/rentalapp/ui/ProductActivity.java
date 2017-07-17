@@ -53,7 +53,6 @@ public class ProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         txtTitle = (TfTextView) findViewById(R.id.txtTitle);
         // toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
@@ -63,9 +62,7 @@ public class ProductActivity extends AppCompatActivity {
         txtTitle.setText(R.string.harry);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         init();
-
         actionListener();
-
         initRecyclerView();
     }
 
