@@ -70,4 +70,34 @@
 
     <color name="background">#eeeeee</color>
     <color name="splash_background">#99002060</color>
+
+
+    <!-- Screens background color-->
+    <color name="bg_screen1">@color/color1</color>
+    <color name="bg_screen2">@color/color2</color>
+    <color name="bg_screen3">@color/color3</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#c96d00</color>
+    <color name="dot_dark_screen2">#2278d4</color>
+    <color name="dot_dark_screen3">#14a895</color>
+
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#f9ad52</color>
+    <color name="dot_light_screen2">#93c6fd</color>
+    <color name="dot_light_screen3">#8cf9eb</color>
+
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+    </array>
 </resources>

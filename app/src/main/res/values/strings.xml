@@ -7,6 +7,7 @@
     <string name="common_message_coming_soon">Coming Soon</string>
 
     <string name="member_ship">Member ship</string>
+    <string name="member_ship_plan">Member ship plans</string>
     <string name="membership_type">Membership Type</string>
     <string name="gold">Gold</string>
     <string name="validity">Validity</string>
@@ -136,5 +137,16 @@
     *****************************Dashboard********************************
     <string name="featured_books">Featured Books</string>
     <string name="products_for_you">Products for You</string>
+    <string name="_1_year">1 Year</string>
+    <string name="_10000">₹ 10000</string>
+    <string name="facility">Facility</string>
+    <string name="_100_book_yr">100 books/yr</string>
+    <string name="_30_book_yr">30 books/yr</string>
+    <string name="sliver">Sliver</string>
+    <string name="_4500">₹ 4500</string>
+    <string name="_4_month">4 Month</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="finish">Finish</string>
 
 </resources>

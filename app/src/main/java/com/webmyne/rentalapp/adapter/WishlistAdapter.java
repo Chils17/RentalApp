@@ -1,6 +1,8 @@
 package com.webmyne.rentalapp.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
@@ -57,17 +60,44 @@ public class WishlistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private class MyViewHolder extends RecyclerView.ViewHolder {
 
+        private LinearLayout linearLayout;
         private TextView bookName, bookPrice, bookAuthor, remove, addCart;
         private ImageView bookImage;
 
         public MyViewHolder(View view) {
             super(view);
+            linearLayout = (LinearLayout) view.findViewById(R.id.mainLinear);
             bookImage = (ImageView) view.findViewById(R.id.imgBook);
             bookName = (TextView) view.findViewById(R.id.txtBookName);
             bookPrice = (TextView) view.findViewById(R.id.txtBookPrice);
             bookAuthor = (TextView) view.findViewById(R.id.txtBookAuthor);
             remove = (TextView) view.findViewById(R.id.txtRemove);
             addCart = (TextView) view.findViewById(R.id.txtMovetoCart);
+
+            remove.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                   new AlertDialog.Builder(context)
+                            .setTitle("")
+                            .setMessage("Are you sure wan't to remove.?")
+                            .setCancelable(false)
+                           .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                               @Override
+                               public void onClick(DialogInterface dialog, int which) {
+                                   // wishList.remove(position);
+                                   Toast.makeText(context, "Removed", Toast.LENGTH_SHORT).show();
+                                   dialog.cancel();
+                               }
+                           })
+                           .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                               @Override
+                               public void onClick(DialogInterface dialog, int which) {
+                                   dialog.cancel();
+                               }
+                           }).show();
+
+                }
+            });
 
         }
 

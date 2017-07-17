@@ -15,6 +15,7 @@ import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.fragment.CartFragment;
 import com.webmyne.rentalapp.fragment.DashBoardFragment;
 import com.webmyne.rentalapp.fragment.MemberShipFragment;
+import com.webmyne.rentalapp.fragment.MemberShipPlansFragment;
 import com.webmyne.rentalapp.fragment.RentFragment;
 import com.webmyne.rentalapp.fragment.ShopFragment;
 import com.webmyne.rentalapp.helper.LogUtils;
@@ -152,7 +153,8 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.left_drawer_tv_membership:
-                Fragment fragmentToPushMemberShip = MemberShipFragment.getFragment(this);
+               // Fragment fragmentToPushMemberShip = MemberShipFragment.getFragment(this);
+                Fragment fragmentToPushMemberShip = MemberShipPlansFragment.getFragment(this);
                 pushAddFragments(fragmentToPushMemberShip, true, true);
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;

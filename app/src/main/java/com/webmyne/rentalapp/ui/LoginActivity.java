@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         btnExplore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Functions.fireIntent(LoginActivity.this, DashboardActivity.class);
+                Functions.fireIntent(LoginActivity.this, IntroActivity.class);
                 finish();
             }
         });
