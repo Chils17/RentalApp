@@ -254,7 +254,7 @@
                             </LinearLayout>
 
                             <com.webmyne.rentalapp.custom.TfTextView
-                                android:id="@+id/tv_no_prev_new_arrivals"
+                                android:id="@+id/tv_no_prev_popular_books"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/height_200"
                                 android:gravity="center"
@@ -305,7 +305,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_vertical|left"
                                 android:paddingLeft="@dimen/dimen_10dp"
-                                android:text="Featured Books"
+                                android:text="@string/featured_books"
                                 android:textColor="@color/half_black_light"
                                 android:textSize="@dimen/sp16"
                                 app:ftype="semibold" />
@@ -318,6 +318,7 @@
                                 android:orientation="horizontal">
 
                                 <com.webmyne.rentalapp.custom.TfTextView
+                                    android:id="@+id/tfTextView8"
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
                                     android:gravity="center_vertical"
@@ -373,7 +374,125 @@
                             </LinearLayout>
 
                             <com.webmyne.rentalapp.custom.TfTextView
-                                android:id="@+id/tv_no_prev_new_arrivals"
+                                android:id="@+id/tv_no_prev_featured_books"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_200"
+                                android:gravity="center"
+                                android:text="@string/str_no_new_arrivals"
+                                android:textSize="@dimen/sp12"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_featured_books"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/height_200"
+                            android:visibility="gone" />
+
+                        <com.webmyne.rentalapp.custom.TfTextView
+                            android:id="@+id/tv_no_prev_featured_books"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/height_200"
+                            android:gravity="center"
+                            android:text="@string/str_no_new_arrivals"
+                            android:textSize="@dimen/sp12"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_1dp"
+                        android:background="@color/off_white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/dimen_4dp">
+
+                            <com.webmyne.rentalapp.custom.TfTextView
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_vertical|left"
+                                android:paddingLeft="@dimen/dimen_10dp"
+                                android:text="@string/products_for_you"
+                                android:textColor="@color/half_black_light"
+                                android:textSize="@dimen/sp16"
+                                app:ftype="semibold" />
+
+                            <LinearLayout
+                                android:id="@+id/ll_products_for_you_viewall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:gravity="center|right"
+                                android:orientation="horizontal">
+
+                                <com.webmyne.rentalapp.custom.TfTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="View All"
+                                    android:textColor="@color/half_black_light"
+                                    android:textSize="@dimen/sp16"
+                                    app:ftype="regular" />
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="@dimen/dimen_10dp"
+                                    android:src="@drawable/ic_arrow_right"
+                                    android:tint="@color/half_black_light" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/ll_products_for_you_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/height_2"
+                            android:background="@color/white"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="@dimen/dimen_8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/ll_products_for_you_content_top"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/ll_products_for_you_content_bottom"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/dimen_10dp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <com.webmyne.rentalapp.custom.TfTextView
+                                android:id="@+id/tv_no_prev_products_for_you"
                                 android:layout_width="match_parent"
                                 android:layout_height="@dimen/height_200"
                                 android:gravity="center"

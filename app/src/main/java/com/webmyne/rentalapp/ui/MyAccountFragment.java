@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.view.LayoutInflater;
@@ -19,6 +20,7 @@ import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.fragment.BaseFragment;
+import com.webmyne.rentalapp.fragment.MemberShipFragment;
 
 
 public class MyAccountFragment extends BaseFragment implements View.OnClickListener {
@@ -101,8 +103,8 @@ public class MyAccountFragment extends BaseFragment implements View.OnClickListe
         switch (v.getId()) {
 
             case R.id.txtMembership:
-                Intent intentMembership = new Intent(getBaseActivity(), MembershipActivity.class);
-                startActivity(intentMembership);
+                Fragment fragmentToPushWishList = MemberShipFragment.getFragment(getBaseActivity());
+                getBaseActivity().pushAddFragments(fragmentToPushWishList, true, true);
                 break;
 
             case R.id.txtOrderhistory:

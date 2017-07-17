@@ -1,34 +1,27 @@
 package com.webmyne.rentalapp.ui;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import com.varunest.sparkbutton.SparkButton;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.ProductDetailPagerAdapter;
 import com.webmyne.rentalapp.adapter.ProductImageAdapter;
-import com.webmyne.rentalapp.adapter.ProductListAdapter;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
-import com.webmyne.rentalapp.model.Product;
+import com.webmyne.rentalapp.fragment.CartFragment;
 import com.webmyne.rentalapp.model.ProductImage;
 
 import java.util.ArrayList;
 
 import me.relex.circleindicator.CircleIndicator;
-
-import static com.webmyne.rentalapp.R.id.img_like;
 
 public class ProductActivity extends AppCompatActivity {
 
@@ -136,7 +129,7 @@ public class ProductActivity extends AppCompatActivity {
         floatingCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Functions.fireIntent(ProductActivity.this, CartActivity.class);
+                Functions.fireIntent(ProductActivity.this, CartFragment.class);
             }
         });
 

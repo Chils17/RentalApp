@@ -1,61 +1,73 @@
-package com.webmyne.rentalapp.ui;
+package com.webmyne.rentalapp.fragment;
 
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.TabMenuAdapter;
 import com.webmyne.rentalapp.custom.TfTextView;
-import com.webmyne.rentalapp.fragment.MyCartFragment;
-import com.webmyne.rentalapp.fragment.RentalCartFragment;
+import com.webmyne.rentalapp.ui.BaseActivity;
 
-public class CartActivity extends AppCompatActivity {
+public class CartFragment extends BaseFragment {
     private Toolbar toolbar;
     private TfTextView txtTitle;
     private ViewPager mViewPager;
     private TabLayout tabLayout;
     private TabMenuAdapter tabMenuAdapter;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart);
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        txtTitle = (TfTextView) findViewById(R.id.txtTitle);
-
-        toolbar.setTitle("");
-        setSupportActionBar(toolbar);
-        txtTitle.setText(R.string.cart);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        init();
-        actionListener();
-
+    @SuppressLint({"ValidFragment", "Unused"})
+    private CartFragment() {
     }
 
-    private void init() {
-        mViewPager = (ViewPager) findViewById(R.id.viewPager);
+    @SuppressLint("ValidFragment")
+    private CartFragment(BaseActivity activity) {
+        setBaseActivity(activity);
+    }
+
+    public static BaseFragment getFragment(BaseActivity activity) {
+        BaseFragment fragment = new CartFragment(activity);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setBaseActivity((BaseActivity) getActivity());
+    }
+
+    private void init(View itemView) {
+        mViewPager = (ViewPager) itemView.findViewById(R.id.viewPager);
         setupViewPager(mViewPager);
 
-        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout = (TabLayout) itemView.findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
         highLightCurrentTab(0);
     }
 
-    private void actionListener() {
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onBackPressed();
-            }
-        });
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View itemView = inflater.inflate(R.layout.fragment_main_cart, container, false);
+        init(itemView);
+        actionListener(itemView);
+        initToolbar();
+        return itemView;
+    }
 
+    private void initToolbar() {
+        getBaseActivity().setHeader(getResources().getString(R.string.cart));
+    }
+
+
+    private void actionListener(View itemView) {
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -76,7 +88,7 @@ public class CartActivity extends AppCompatActivity {
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        tabMenuAdapter = new TabMenuAdapter(getSupportFragmentManager(), this);
+        tabMenuAdapter = new TabMenuAdapter(getFragmentManager(), getBaseActivity());
         tabMenuAdapter.addFragment(new MyCartFragment(), getString(R.string.my_cart));
         tabMenuAdapter.addFragment(new RentalCartFragment(), getString(R.string.rental_cart));
         viewPager.setAdapter(tabMenuAdapter);

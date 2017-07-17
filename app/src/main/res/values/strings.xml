@@ -43,6 +43,7 @@
     <string name="left_drawer_tv_my_cart">My Cart</string>
     <string name="left_drawer_tv_history">My History</string>
     <string name="left_drawer_tv_rewards">My Rewards</string>
+    <string name="left_drawer_tv_membership">MemberShip</string>
     <string name="left_drawer_tv_my_account">My Account</string>
     <string name="left_drawer_tv_settings">Settings</string>
     <string name="drawer_open">Open navigation drawer</string>
@@ -128,4 +129,9 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+
+    *****************************Dashboard********************************
+    <string name="featured_books">Featured Books</string>
+    <string name="products_for_you">Products for You</string>
+
 </resources>

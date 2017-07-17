@@ -5,9 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.webmyne.rentalapp.ui.MembershipActivity">
+    tools:context="com.webmyne.rentalapp.fragment.MemberShipFragment">
 
-    <include layout="@layout/app_bar" />
 
     <ScrollView
         android:layout_width="match_parent"

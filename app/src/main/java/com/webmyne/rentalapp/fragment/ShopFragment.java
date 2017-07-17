@@ -2,17 +2,13 @@ package com.webmyne.rentalapp.fragment;
 
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.ShopCategoryAdapter;
@@ -77,9 +73,8 @@ public class ShopFragment extends BaseFragment {
     }
 
     private void initToolbar() {
-        getBaseActivity().setHeader(getResources().getString(R.string.left_drawer_tv_shop));
+        getBaseActivity().setHeader(getResources().getString(R.string.shop_category));
     }
-
     private void actionListener() {
 
     }
@@ -88,10 +83,8 @@ public class ShopFragment extends BaseFragment {
         rvShop.setLayoutManager(new LinearLayoutManager(getContext()));
         rvShop.addItemDecoration(new DividerDecoration(getContext()));
         shopList = new ArrayList<>();
-
         shopList.add(new Shop("Art and Craft"));
         shopList.add(new Shop("Coloring and Painting"));
-
         adapter = new ShopCategoryAdapter(getContext(), shopList);
         rvShop.setAdapter(adapter);
     }

@@ -12,7 +12,9 @@ import android.widget.LinearLayout;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.ProductPagerAdapter;
+import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.ui.BaseActivity;
+import com.webmyne.rentalapp.ui.ProductListActivity;
 import com.webmyne.rentalapp.ui.customviews.LayoutView;
 
 import java.util.ArrayList;
@@ -36,7 +38,7 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
     private Handler handler = null;
     private Timer swipeTimer;
     //region views
-    private LinearLayout ll_featured_books_viewall, ll_popular_books_viewall, ll_new_arrivals_viewall, ll_new_arrivals_content, ll_new_arrivals_content_top, ll_new_arrivals_content_bottom, ll_popular_content_bottom, ll_populars_content_top, ll_featured_content_top, ll_featured_content_bottom;
+    private LinearLayout ll_featured_books_viewall, ll_popular_books_viewall, ll_new_arrivals_viewall, ll_new_arrivals_content, ll_new_arrivals_content_top, ll_new_arrivals_content_bottom, ll_popular_content_bottom, ll_populars_content_top, ll_featured_content_top, ll_featured_content_bottom, ll_products_for_you_content_top, ll_products_for_you_content_bottom;
     private LayoutView layoutView;
 
 
@@ -81,10 +83,15 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
         ll_new_arrivals_content = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_content);
         ll_featured_books_viewall = (LinearLayout) view.findViewById(R.id.ll_featured_books_viewall);
         ll_popular_books_viewall = (LinearLayout) view.findViewById(R.id.ll_popular_books_viewall);
-        ll_new_arrivals_viewall = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_viewall);
+        view.findViewById(R.id.ll_new_arrivals_viewall).setOnClickListener(this);
+        view.findViewById(R.id.ll_popular_books_viewall).setOnClickListener(this);
+        view.findViewById(R.id.ll_featured_books_viewall).setOnClickListener(this);
+        view.findViewById(R.id.ll_products_for_you_viewall).setOnClickListener(this);
         ll_new_arrivals_content_top = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_content_top);
         ll_new_arrivals_content_bottom = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_content_bottom);
         ll_populars_content_top = (LinearLayout) view.findViewById(R.id.ll_populars_content_top);
+        ll_products_for_you_content_top = (LinearLayout) view.findViewById(R.id.ll_products_for_you_content_top);
+        ll_products_for_you_content_bottom = (LinearLayout) view.findViewById(R.id.ll_products_for_you_content_bottom);
         ll_featured_content_top = (LinearLayout) view.findViewById(R.id.ll_featured_content_top);
         ll_featured_content_bottom = (LinearLayout) view.findViewById(R.id.ll_featured_content_bottom);
         ll_popular_content_bottom = (LinearLayout) view.findViewById(R.id.ll_populars_content_bottom);
@@ -146,6 +153,17 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
             ll_featured_content_bottom.addView(hiddenInfo);
 
         }
+        for (int i = 0; i < 2; i++) {
+            View hiddenInfo = getBaseActivity().getLayoutInflater().inflate(R.layout.item_product_dashboard_adapter, ll_new_arrivals_content_top, false);
+            ll_products_for_you_content_top.addView(hiddenInfo);
+
+        }
+        for (int i = 0; i < 2; i++) {
+            View hiddenInfo = getBaseActivity().getLayoutInflater().inflate(R.layout.item_product_dashboard_adapter, ll_new_arrivals_content_top, false);
+            ll_products_for_you_content_bottom.addView(hiddenInfo);
+
+        }
+
     }
 
     @Override
@@ -155,7 +173,27 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View view) {
+        onClickDashBoard(view);
+    }
 
+    private void onClickDashBoard(View view) {
+        switch (view.getId()) {
+            case R.id.ll_new_arrivals_viewall:
+                Functions.fireIntent(getBaseActivity(), ProductListActivity.class);
+                break;
+            case R.id.ll_popular_books_viewall:
+                Functions.fireIntent(getBaseActivity(), ProductListActivity.class);
+                break;
+            case R.id.ll_featured_books_viewall:
+                Functions.fireIntent(getBaseActivity(), ProductListActivity.class);
+                break;
+            case R.id.ll_products_for_you_viewall:
+                Functions.fireIntent(getBaseActivity(), ProductListActivity.class);
+                break;
+            default:
+                break;
+
+        }
     }
 }

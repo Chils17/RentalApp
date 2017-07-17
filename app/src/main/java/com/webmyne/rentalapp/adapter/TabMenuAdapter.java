@@ -13,6 +13,7 @@ import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.FontType;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
+import com.webmyne.rentalapp.fragment.CartFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,8 @@ public class TabMenuAdapter extends FragmentStatePagerAdapter {
         super(fm);
         this.context = context;
     }
+
+
 
     @Override
     public Fragment getItem(int position) {
