@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.webmyne.rentalapp.ui.OrderSuccessfullActivity">
+
+    <include layout="@layout/app_bar" />
+
+    <ImageView
+        android:id="@+id/imgView"
+        android:layout_width="@dimen/dimen_72dp"
+        android:layout_height="@dimen/dimen_72dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dimen_10dp"
+        android:src="@drawable/ic_book" />
+
+    <com.webmyne.rentalapp.custom.TfTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imgView"
+        android:layout_centerInParent="true"
+        android:text="Better Books, Better Future"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <at.markushi.ui.CircleButton
+            android:layout_width="@dimen/dimen_64dp"
+            android:layout_height="@dimen/dimen_64dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_check"
+            app:cb_color="#99CC00"
+            app:cb_pressedRingWidth="8dip" />
+
+        <com.webmyne.rentalapp.custom.TfTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/dimen_10dp"
+            android:text="Your Order placed Successfully"
+            android:textColor="@color/colorGreen"
+            android:textSize="@dimen/sp18"
+            app:ftype="semibold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnHome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/yellow"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.webmyne.rentalapp.custom.TfButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:text="@string/go_to_home"
+            android:textColor="@color/colorWhiteSmoke"
+            android:textSize="@dimen/sp16" />
+    </LinearLayout>
+
+</RelativeLayout>

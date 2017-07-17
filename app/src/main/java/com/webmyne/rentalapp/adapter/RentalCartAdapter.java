@@ -9,9 +9,11 @@ import android.widget.ImageView;
 import android.widget.NumberPicker;
 
 import com.webmyne.rentalapp.R;
+import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.model.MyCart;
 import com.webmyne.rentalapp.model.RentCart;
+import com.webmyne.rentalapp.ui.ProductActivity;
 
 import java.util.ArrayList;
 
@@ -36,6 +38,12 @@ public class RentalCartAdapter extends RecyclerView.Adapter<RentalCartAdapter.My
     @Override
     public void onBindViewHolder(RentalCartAdapter.MyViewHolder holder, int position) {
         holder.setValues(rentCartArrayList.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Functions.fireIntent(context, ProductActivity.class);
+            }
+        });
     }
 
     @Override
@@ -46,7 +54,7 @@ public class RentalCartAdapter extends RecyclerView.Adapter<RentalCartAdapter.My
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private final ImageView imgBook;
         private final TfTextView txtBookName;
-        private final TfTextView txtBookAvailable;
+       // private final TfTextView txtBookAvailable;
         private final TfTextView txtBookCategory;
         private final TfTextView txtBookReturn;
 
@@ -54,7 +62,7 @@ public class RentalCartAdapter extends RecyclerView.Adapter<RentalCartAdapter.My
             super(itemView);
             imgBook = (ImageView) itemView.findViewById(R.id.imgBook);
             txtBookName = (TfTextView) itemView.findViewById(R.id.txtBookName);
-            txtBookAvailable = (TfTextView) itemView.findViewById(R.id.txtBookAvailable);
+           // txtBookAvailable = (TfTextView) itemView.findViewById(R.id.txtBookAvailable);
             txtBookCategory = (TfTextView) itemView.findViewById(R.id.txtBookCate);
             txtBookReturn = (TfTextView) itemView.findViewById(R.id.txtBookReturn);
         }
@@ -62,7 +70,7 @@ public class RentalCartAdapter extends RecyclerView.Adapter<RentalCartAdapter.My
         public void setValues(RentCart rentCart) {
             imgBook.setImageResource(rentCart.getImage());
             txtBookName.setText(rentCart.getName());
-            txtBookAvailable.setText(rentCart.getAvailable());
+        //    txtBookAvailable.setText(rentCart.getAvailable());
             txtBookCategory.setText(rentCart.getCate());
             txtBookReturn.setText(rentCart.getRtn());
         }

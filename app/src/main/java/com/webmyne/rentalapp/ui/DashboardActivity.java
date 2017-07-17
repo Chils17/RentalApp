@@ -16,8 +16,9 @@ import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.fragment.CartFragment;
 import com.webmyne.rentalapp.fragment.DashBoardFragment;
 import com.webmyne.rentalapp.fragment.MemberShipFragment;
-import com.webmyne.rentalapp.fragment.MemberShipPlansFragment;
+import com.webmyne.rentalapp.fragment.MyRewardsFragment;
 import com.webmyne.rentalapp.fragment.RentFragment;
+import com.webmyne.rentalapp.fragment.SettingFragment;
 import com.webmyne.rentalapp.fragment.ShopFragment;
 import com.webmyne.rentalapp.fragment.WishListFragment;
 import com.webmyne.rentalapp.helper.LogUtils;
@@ -124,7 +125,6 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         findViewById(R.id.left_drawer_tv_shop).setOnClickListener(this);
         findViewById(R.id.left_drawer_tv_wishlist).setOnClickListener(this);
         findViewById(R.id.left_drawer_tv_my_cart).setOnClickListener(this);
-        findViewById(R.id.left_drawer_tv_settings).setOnClickListener(this);
         findViewById(R.id.left_drawer_tv_rewards).setOnClickListener(this);
         findViewById(R.id.left_drawer_tv_my_account).setOnClickListener(this);
         findViewById(R.id.left_drawer_tv_membership).setOnClickListener(this);
@@ -156,16 +156,11 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.left_drawer_tv_membership:
-               // Fragment fragmentToPushMemberShip = MemberShipFragment.getFragment(this);
-                Fragment fragmentToPushMemberShip = MemberShipPlansFragment.getFragment(this);
+                Fragment fragmentToPushMemberShip = MemberShipFragment.getFragment(this);
                 pushAddFragments(fragmentToPushMemberShip, true, true);
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.left_drawer_tv_search:
-                Toast.makeText(this, getResources().getString(R.string.common_message_under_development), Toast.LENGTH_SHORT).show();
-                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
-                break;
-            case R.id.left_drawer_tv_rewards:
                 Toast.makeText(this, getResources().getString(R.string.common_message_under_development), Toast.LENGTH_SHORT).show();
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
@@ -209,6 +204,17 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 pushAddFragments(fragmentToPushRentFooter, true, true);
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
+
+            case R.id.left_drawer_tv_rewards:
+                Fragment fragmentToPushMyRewards = MyRewardsFragment.getFragment(this);
+                pushAddFragments(fragmentToPushMyRewards, true, true);
+                break;
+
+            case R.id.left_drawer_tv_settings:
+                Fragment fragmentToPushSetting = SettingFragment.getFragment(this);
+                pushAddFragments(fragmentToPushSetting, true, true);
+                break;
+
             case R.id.ll_footer_home:
                 loadHomeFragment();
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
