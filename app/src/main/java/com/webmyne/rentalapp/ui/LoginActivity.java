@@ -2,9 +2,9 @@ package com.webmyne.rentalapp.ui;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.MotionEvent;
@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.webmyne.rentalapp.R;
+import com.webmyne.rentalapp.custom.Functions;
+import com.webmyne.rentalapp.custom.TfButton;
 import com.webmyne.rentalapp.custom.TfTextView;
 
 public class LoginActivity extends AppCompatActivity {
@@ -20,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private Context context;
     private EditText edtPassword;
     private boolean passwordPress = false;
+    private TfButton btnExplore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
     private void init() {
         context = this;
         txtRegister = (TfTextView) findViewById(R.id.txtRegister);
+        btnExplore = (TfButton) findViewById(R.id.btnExplore);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
         clickListener();
     }
@@ -43,6 +47,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(context, RegisterActivity.class);
                 startActivity(intent);
+            }
+        });
+        btnExplore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Functions.fireIntent(LoginActivity.this, DashboardActivity.class);
+                finish();
             }
         });
 
