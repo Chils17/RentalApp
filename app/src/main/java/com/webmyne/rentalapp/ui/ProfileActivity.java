@@ -150,6 +150,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void clickListener() {
+
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
