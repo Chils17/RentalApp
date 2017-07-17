@@ -12,7 +12,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|right|top"
+            android:padding="@dimen/dimen_8dp"
+            android:src="@drawable/ic_menu_pencil"
+            android:tint="@android:color/white" />
+
         <LinearLayout
+            android:id="@+id/ll_left_drawer_user_detail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -37,9 +46,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Chintan soni"
-                    app:ftype="medium"
                     android:textColor="@color/white"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    app:ftype="medium" />
 
                 <com.webmyne.rentalapp.custom.TfTextView
                     android:id="@+id/tfTextView"
@@ -54,14 +63,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center|right|top"
-            android:padding="@dimen/dimen_8dp"
-            android:src="@drawable/ic_menu_pencil"
-            android:tint="@android:color/white" />
 
     </FrameLayout>
 

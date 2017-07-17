@@ -21,6 +21,7 @@ import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.fragment.BaseFragment;
 import com.webmyne.rentalapp.fragment.MemberShipFragment;
+import com.webmyne.rentalapp.fragment.WishListFragment;
 
 
 public class MyAccountFragment extends BaseFragment implements View.OnClickListener {
@@ -103,8 +104,8 @@ public class MyAccountFragment extends BaseFragment implements View.OnClickListe
         switch (v.getId()) {
 
             case R.id.txtMembership:
-                Fragment fragmentToPushWishList = MemberShipFragment.getFragment(getBaseActivity());
-                getBaseActivity().pushAddFragments(fragmentToPushWishList, true, true);
+                Fragment fragmentToPushMemberShip = MemberShipFragment.getFragment(getBaseActivity());
+                getBaseActivity().pushAddFragments(fragmentToPushMemberShip, true, true);
                 break;
 
             case R.id.txtOrderhistory:
@@ -122,8 +123,8 @@ public class MyAccountFragment extends BaseFragment implements View.OnClickListe
                 break;
 
             case R.id.txtWishlist:
-                Intent intentWishlist = new Intent(getBaseActivity(), WishlistActivity.class);
-                startActivity(intentWishlist);
+                Fragment fragmentToPushWishList = WishListFragment.getFragment(getBaseActivity());
+                getBaseActivity().pushAddFragments(fragmentToPushWishList, true, true);
                 break;
 
             case  R.id.imgUser:

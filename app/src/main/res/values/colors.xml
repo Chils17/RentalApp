@@ -59,10 +59,12 @@
     <color name="fragment_bg">@android:color/white</color>
     <color name="shadow_color">#20000000</color>
     <color name="dashbord_horizonta_bg">#F5F5F5</color>
+    <color name="color_off_white">#B6B6B6</color>
 
     <color name="libon_blue">#002060</color>
     <color name="color_yellow">#F4C305</color>
     <color name="light_yellow">#A16A2A</color>
+    <color name="green">#00AC5B</color>
     <color name="create_profile_text">#919191</color>
     <color name="menu_line_color">#8c000000</color>
     <color name="color_38A4DB">#38A4DB</color>

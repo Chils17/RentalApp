@@ -54,14 +54,12 @@ public class ProductActivity extends AppCompatActivity {
         setContentView(R.layout.activity_product);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         txtTitle = (TfTextView) findViewById(R.id.txtTitle);
-
         // toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
         //toolbar.setTitleTextColor(Color.WHITE);
         txtTitle.setText(R.string.harry);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         init();
 
         actionListener();

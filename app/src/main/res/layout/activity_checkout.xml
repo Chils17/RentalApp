@@ -13,15 +13,19 @@
         <include layout="@layout/app_bar" />
 
         <ScrollView
+            android:layout_above="@+id/buttonLayout"
+            android:layout_alignParentStart="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/buttomLayout"
-            android:layout_below="@+id/toolbar">
+            android:layout_below="@+id/toolbar"
+            android:layout_marginBottom="@dimen/height_100"
+            android:scrollbars="none"
+            android:overScrollMode="never">
 
             <LinearLayout
-                android:focusableInTouchMode="true"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:focusableInTouchMode="true"
                 android:orientation="vertical">
 
                 <com.webmyne.rentalapp.custom.TfTextView
@@ -34,7 +38,6 @@
                     android:textColor="@color/half_black_checkout"
                     android:textSize="@dimen/sp16"
                     app:ftype="bold" />
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -195,7 +198,7 @@
                     android:background="@drawable/shadow_rectangle"
                     android:orientation="vertical">
 
-                    <LinearLayout
+                    <RadioGroup
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="@dimen/dimen_6dp"
@@ -234,7 +237,7 @@
                             android:textColor="@color/black"
                             android:textSize="@dimen/sp14" />
 
-                    </LinearLayout>
+                    </RadioGroup>
 
 
                 </LinearLayout>
@@ -251,26 +254,29 @@
                     app:ftype="bold" />
 
                 <LinearLayout
+                    android:id="@+id/ll_cart"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_margin="@dimen/dimen_8dp"
                     android:background="@drawable/shadow_rectangle"
                     android:orientation="vertical">
 
                     <LinearLayout
+                        android:id="@+id/ll_cart_content_parent"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@color/off_white"
                         android:gravity="center|left"
                         android:orientation="vertical">
 
-                        <android.support.v7.widget.RecyclerView
-                            android:id="@+id/rvMyCart"
+                        <LinearLayout
+                            android:id="@+id/ll_cart_content"
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/height_180">
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                        </android.support.v7.widget.RecyclerView>
-
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
@@ -300,16 +306,19 @@
                         android:layout_height="wrap_content"
                         android:paddingTop="@dimen/height_4"
                         android:text="Order Total: "
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/sp14" />
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/sp18"
+                        app:ftype="bold" />
 
                     <com.webmyne.rentalapp.custom.TfTextView
+                        android:id="@+id/tfTextView9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="@dimen/height_4"
                         android:text="₹ 7500"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/sp14" />
+                        android:textColor="@color/green"
+                        android:textSize="@dimen/sp18"
+                        app:ftype="bold" />
 
 
                 </LinearLayout>

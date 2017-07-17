@@ -12,12 +12,14 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.webmyne.rentalapp.R;
+import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.fragment.CartFragment;
 import com.webmyne.rentalapp.fragment.DashBoardFragment;
 import com.webmyne.rentalapp.fragment.MemberShipFragment;
 import com.webmyne.rentalapp.fragment.MemberShipPlansFragment;
 import com.webmyne.rentalapp.fragment.RentFragment;
 import com.webmyne.rentalapp.fragment.ShopFragment;
+import com.webmyne.rentalapp.fragment.WishListFragment;
 import com.webmyne.rentalapp.helper.LogUtils;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -131,6 +133,7 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         findViewById(R.id.ll_footer_home).setOnClickListener(this);
         findViewById(R.id.ll_footer_rent).setOnClickListener(this);
         findViewById(R.id.ll_footer_shop).setOnClickListener(this);
+        findViewById(R.id.ll_left_drawer_user_detail).setOnClickListener(this);
         left_drawer_ll_user_menus = (LinearLayout) findViewById(R.id.left_drawer_ll_user_menus);
     }
 
@@ -182,7 +185,7 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.left_drawer_tv_wishlist:
-                Fragment fragmentToPushWishList = MemberShipFragment.getFragment(this);
+                Fragment fragmentToPushWishList = WishListFragment.getFragment(this);
                 pushAddFragments(fragmentToPushWishList, true, true);
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
@@ -194,17 +197,24 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
             case R.id.ll_footer_account:
                 Fragment fragmentToPushAccountFooter = MyAccountFragment.getFragment(this);
                 pushAddFragments(fragmentToPushAccountFooter, true, true);
+                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.ll_footer_shop:
                 Fragment fragmentToPushShopFooter = ShopFragment.getFragment(this);
                 pushAddFragments(fragmentToPushShopFooter, true, true);
+                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.ll_footer_rent:
                 Fragment fragmentToPushRentFooter = RentFragment.getFragment(this);
                 pushAddFragments(fragmentToPushRentFooter, true, true);
+                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.ll_footer_home:
                 loadHomeFragment();
+                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
+            case R.id.ll_left_drawer_user_detail:
+                Functions.fireIntent(this, ProfileActivity.class);
+                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             default:
                 break;
