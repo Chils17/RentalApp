@@ -52,7 +52,7 @@
                 android:textSize="@dimen/sp14"
                 app:ftype="bold" />
 
-            <com.webmyne.rentalapp.custom.TfTextView
+          <!--  <com.webmyne.rentalapp.custom.TfTextView
                 android:id="@+id/txtBookAvailable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
                 android:text="@string/book_available"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/sp14"
-                app:ftype="bold" />
+                app:ftype="bold" />-->
         </LinearLayout>
 
         <com.webmyne.rentalapp.custom.TfTextView

@@ -137,6 +137,15 @@
     *****************************Dashboard********************************
     <string name="featured_books">Featured Books</string>
     <string name="products_for_you">Products for You</string>
+    <string name="go_to_home">Go to Home</string>
+    <string name="about_us">About Us</string>
+    <string name="conatct_us">Contact Us</string>
+    <string name="faq">FAQ</string>
+    <string name="log_out">LogOut</string>
+    <string name="dailog_logOut">Are you sure you want to logout ?</string>
+    <string name="rewards_point">Rewards Point</string>
+    <string name="avalable_balance">Available Balance</string>
+    <string name="my_rewards">My Rewards</string>
     <string name="_1_year">1 Year</string>
     <string name="_10000">₹ 10000</string>
     <string name="facility">Facility</string>

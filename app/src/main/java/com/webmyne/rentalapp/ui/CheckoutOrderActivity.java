@@ -12,6 +12,8 @@ import android.widget.RadioButton;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.MyCartAdapter;
+import com.webmyne.rentalapp.custom.Functions;
+import com.webmyne.rentalapp.custom.TfButton;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.model.MyCart;
 
@@ -27,6 +29,7 @@ public class CheckoutOrderActivity extends AppCompatActivity {
     private MyCartAdapter adapter;
     private Toolbar toolbar;
     private TfTextView txtTitle;
+    private TfButton btnConfirm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,12 +45,17 @@ public class CheckoutOrderActivity extends AppCompatActivity {
         txtTitle.setText(R.string.check_out);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        init();
 
-        rvMyCart = (RecyclerView) findViewById(R.id.rvMyCart);
         initRecyclerView();
 
         actionListener();
 
+    }
+
+    private void init() {
+        rvMyCart = (RecyclerView) findViewById(R.id.rvMyCart);
+        btnConfirm = (TfButton) findViewById(R.id.btnConfirm);
     }
 
     private void actionListener() {
@@ -55,6 +63,13 @@ public class CheckoutOrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 onBackPressed();
+            }
+        });
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Functions.fireIntent(getApplicationContext(),OrderSuccessfullActivity.class);
+                finish();
             }
         });
     }

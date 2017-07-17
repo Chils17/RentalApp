@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/off_white"
     android:orientation="vertical"
     tools:context="com.webmyne.rentalapp.ui.OrderHDetailActivity">
 
@@ -32,7 +33,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/off_white"
+        android:background="@color/light_blue"
         android:orientation="horizontal"
         android:padding="@dimen/dimen_10dp">
 
@@ -41,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/book_total"
-            android:textColor="@color/black"
+            android:textColor="@color/colorWhiteSmoke"
             android:textSize="@dimen/sp18"
             app:ftype="bold" />
 
@@ -52,7 +53,7 @@
             android:gravity="end"
             android:padding="@dimen/dimen_4dp"
             android:text="₹ 1000"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/colorWhiteSmoke"
             android:textSize="@dimen/sp16"
             app:ftype="medium" />
 

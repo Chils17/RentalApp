@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.webmyne.rentalapp.fragment.SettingFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_4dp">
+
+        <com.webmyne.rentalapp.custom.TfTextView
+            android:id="@+id/txtAbout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_14dp"
+            android:text="@string/about_us"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            app:ftype="medium" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_1"
+            android:background="@color/off_white" />
+
+        <com.webmyne.rentalapp.custom.TfTextView
+            android:id="@+id/txtContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_14dp"
+            android:text="@string/conatct_us"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            app:ftype="medium" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_1"
+            android:background="@color/off_white" />
+
+        <com.webmyne.rentalapp.custom.TfTextView
+            android:id="@+id/txtFaq"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_14dp"
+            android:text="@string/faq"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            app:ftype="medium" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_1"
+            android:background="@color/off_white" />
+
+        <com.webmyne.rentalapp.custom.TfTextView
+            android:id="@+id/txtLogOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_14dp"
+            android:text="@string/log_out"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            app:ftype="medium" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

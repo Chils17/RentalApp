@@ -289,7 +289,7 @@
                 android:background="@color/white"
                 android:padding="@dimen/dimen_3dp">
 
-                <LinearLayout
+               <!-- <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/dimen_6dp"
@@ -311,19 +311,41 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/sp14" />
 
+                </LinearLayout>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/light_blue"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dimen_10dp">
+
+                    <com.webmyne.rentalapp.custom.TfTextView
+                        android:id="@+id/txtBookTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/book_total"
+                        android:textColor="@color/colorWhiteSmoke"
+                        android:textSize="@dimen/sp18"
+                        app:ftype="bold" />
+
+                    <com.webmyne.rentalapp.custom.TfTextView
+                        android:id="@+id/txtBookPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:padding="@dimen/dimen_4dp"
+                        android:text="₹ 1000"
+                        android:textColor="@color/colorWhiteSmoke"
+                        android:textSize="@dimen/sp16"
+                        app:ftype="medium" />
 
                 </LinearLayout>
 
 
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_1"
-                android:background="@color/off_white" />
-
             <LinearLayout
-                android:id="@+id/buttonLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/yellow"
@@ -331,7 +353,8 @@
                 android:orientation="vertical">
 
                 <com.webmyne.rentalapp.custom.TfButton
-                    android:layout_width="wrap_content"
+                    android:id="@+id/btnConfirm"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:text="@string/confirm_order"

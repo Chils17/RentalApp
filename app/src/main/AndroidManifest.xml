@@ -95,6 +95,10 @@
              android:windowSoftInputMode="stateHidden|adjustResize" />
         -->
         <activity android:name=".ui.OrderHDetailActivity" />
+        <activity android:name=".ui.OrderSuccessfullActivity" />
+        <activity android:name=".ui.AboutUsActivity" />
+        <activity android:name=".ui.ContactUsActivity" />
+        <activity android:name=".ui.FAQActivity"></activity>
         <activity android:name=".ui.IntroActivity"></activity>
     </application>
 

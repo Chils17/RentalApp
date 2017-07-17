@@ -55,11 +55,11 @@ public class OrderHDetailActivity extends AppCompatActivity {
 
         orderHistories = new ArrayList<>();
 
-        orderHistories.add(new OrderHistory(R.drawable.book2, "Killing Hemingway", "₹1000", "Brian D. Meeks", "Age 1 to 5", "12 Aug, 2015"));
-        orderHistories.add(new OrderHistory(R.drawable.book3, "Infinity", "₹500", "Jenny Smith", "Age 6 to 10", "15 Aug, 2015"));
-        orderHistories.add(new OrderHistory(R.drawable.book5, "Connection Culture", "₹400", "ason Pankau", "Age 11 to 15", "15 June, 2015"));
-        orderHistories.add(new OrderHistory(R.drawable.book4, "Product Lunch", "₹200", "Tom Weaver", "Age 15 to 20", "23 June, 2015"));
-        orderHistories.add(new OrderHistory(R.drawable.book5, "Data Capture", "₹1500", "Forte", "Age 25 to 30", "07 June, 2015"));
+        orderHistories.add(new OrderHistory(R.drawable.book1, "Killing Hemingway", "₹1000", "Brian D. Meeks", "Age 1 to 5", "12 Aug, 2015"));
+        orderHistories.add(new OrderHistory(R.drawable.book1, "Infinity", "₹500", "Jenny Smith", "Age 6 to 10", "15 Aug, 2015"));
+        orderHistories.add(new OrderHistory(R.drawable.book1, "Connection Culture", "₹400", "ason Pankau", "Age 11 to 15", "15 June, 2015"));
+        orderHistories.add(new OrderHistory(R.drawable.book1, "Product Lunch", "₹200", "Tom Weaver", "Age 15 to 20", "23 June, 2015"));
+        orderHistories.add(new OrderHistory(R.drawable.book1, "Data Capture", "₹1500", "Forte", "Age 25 to 30", "07 June, 2015"));
 
         adapter = new OrderHDetailAdapter(getApplicationContext(), orderHistories);
         rvOrderDetail.setAdapter(adapter);
