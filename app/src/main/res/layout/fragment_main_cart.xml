@@ -8,7 +8,6 @@
     tools:context="com.webmyne.rentalapp.fragment.CartFragment">
 
 
-
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"
         android:layout_width="match_parent"

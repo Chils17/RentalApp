@@ -10,7 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.webmyne.rentalapp.R;
+import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.model.WishList;
+import com.webmyne.rentalapp.ui.ProductActivity;
 
 import java.util.ArrayList;
 
@@ -38,13 +40,19 @@ public class WishlistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         MyViewHolder myViewHolder = (MyViewHolder) holder;
         myViewHolder.setValues(wishList.get(position));
+
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Functions.fireIntent(context, ProductActivity.class);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return wishList.size();
     }
-
 
 
     private class MyViewHolder extends RecyclerView.ViewHolder {
@@ -70,7 +78,6 @@ public class WishlistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             bookPrice.setText(wishList.getBookPrice());
         }
     }
-
 
 
 }

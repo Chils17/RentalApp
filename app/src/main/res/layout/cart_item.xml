@@ -68,8 +68,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:gravity="center"
                 android:layout_marginRight="@dimen/dimen_10dp"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <com.webmyne.rentalapp.custom.TfTextView
@@ -86,9 +86,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_2dp"
-                    app:qv_addButtonTextColor="@color/colorGrey"
+                    android:background="@color/libon_blue"
+                    app:qv_addButtonBackground="@color/colorPrimary"
+                    app:qv_addButtonTextColor="@color/colorWhiteSmoke"
                     app:qv_quantity="10"
-                    app:qv_removeButtonTextColor="@color/colorGrey" />
+                    app:qv_quantityBackground="@color/colorPrimaryDark"
+                    app:qv_quantityDialog="false"
+                    app:qv_quantityTextColor="@color/colorWhiteSmoke"
+                    app:qv_removeButtonBackground="@color/colorPrimary"
+                    app:qv_removeButtonTextColor="@color/colorWhiteSmoke" />
 
             </LinearLayout>
         </LinearLayout>

@@ -12,6 +12,7 @@ import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.model.MyCart;
 import com.webmyne.rentalapp.ui.CheckoutOrderActivity;
+import com.webmyne.rentalapp.ui.ProductActivity;
 
 import java.util.ArrayList;
 
@@ -42,7 +43,7 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.MyViewHold
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Functions.fireIntent(context, ProductActivity.class);
             }
         });
     }

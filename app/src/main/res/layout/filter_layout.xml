@@ -1,25 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:rsb="http://schemas.android.com/apk/res-auto"
     xmlns:segmentedgroup="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/off_white"
     android:orientation="vertical">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:theme="@style/AppTheme.AppBarOverlay">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imgClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dimen_30dp"
+                android:src="@drawable/ic_close_white" />
+
+            <com.webmyne.rentalapp.custom.TfTextView
+                android:id="@+id/txtFilter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp18"
+                app:ftype="semibold" />
+
+            <com.webmyne.rentalapp.custom.TfTextView
+                android:id="@+id/txtReset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/dimen_10dp"
+                android:gravity="end"
+                android:text="@string/reset"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp18"
+                app:ftype="semibold" />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <com.webmyne.rentalapp.custom.TfTextView
+            android:id="@+id/tfTextView7"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:theme="@style/AppTheme.AppBarOverlay">
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_4dp"
+            android:padding="@dimen/dimen_4dp"
+            android:text="@string/sortby"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            app:ftype="semibold" />
+
+
+        <info.hoang8f.android.segmented.SegmentedGroup
+            android:id="@+id/segment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            segmentedgroup:sc_border_width="@dimen/dimen_2dp"
+            segmentedgroup:sc_corner_radius="@dimen/dimen_10dp">
+
+            <RadioButton
+                android:id="@+id/rbPopular"
+                style="@style/RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/popular"
+                android:textSize="@dimen/sp12" />
+
+            <RadioButton
+                android:id="@+id/rbLH"
+                style="@style/RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/low_to_high"
+                android:textSize="@dimen/sp12" />
+
+            <RadioButton
+                android:id="@+id/rbHL"
+                style="@style/RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/high_to_low"
+                android:textSize="@dimen/sp12" />
+
+            <RadioButton
+                android:id="@+id/rbNewest"
+                style="@style/RadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/newest"
+                android:textSize="@dimen/sp12" />
+        </info.hoang8f.android.segmented.SegmentedGroup>
+
+        <View
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_.5dp"
+            android:background="@color/space_black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_4dp"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_.5dp"
+                android:background="@color/space_black" />
+
+            <com.webmyne.rentalapp.custom.TfTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_4dp"
+                android:padding="@dimen/dimen_4dp"
+                android:text="@string/price"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16"
+                app:ftype="semibold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimen_8dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:id="@+id/textMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/min_price"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14"
+                    app:ftype="regular" />
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:id="@+id/txtMin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14"
+                    app:ftype="regular" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:orientation="horizontal">
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/max_price"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14"
+                    app:ftype="regular" />
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:id="@+id/txtMax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp14"
+                    app:ftype="regular" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
+            android:id="@+id/rangeSeekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:bar_color="@color/libon_blue"
+            app:bar_highlight_color="@color/colorPrimary"
+            app:data_type="_integer"
+            app:gap="10"
+            app:left_thumb_image="@drawable/ic_thumb"
+            app:right_thumb_image="@drawable/ic_thumb" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_.5dp"
+            android:layout_margin="@dimen/dimen_4dp"
+            android:background="@color/space_black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible">
+
+            <com.webmyne.rentalapp.custom.TfTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:padding="@dimen/dimen_8dp"
+                android:text="@string/category"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp16"
+                app:ftype="semibold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_arrowright" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_.5dp"
+            android:background="@color/space_black" />
+
+        <com.webmyne.rentalapp.custom.TfTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_4dp"
+            android:padding="@dimen/dimen_4dp"
+            android:text="@string/edition"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp16"
+            app:ftype="semibold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -27,387 +267,151 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/imgClose"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/dimen_30dp"
-                    android:src="@drawable/ic_close_white" />
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:layout_width="@dimen/dimen_40dp"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_margin="@dimen/dimen_6dp"
+                    android:background="@drawable/circle_textview"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/colorWhiteSmoke"
+                    android:textSize="@dimen/sp18" />
+
+                <Space
+                    android:layout_width="@dimen/dimen_10dp"
+                    android:layout_height="wrap_content" />
 
                 <com.webmyne.rentalapp.custom.TfTextView
-                    android:id="@+id/txtFilter"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    android:text="@string/app_name"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/sp18"
-                    app:ftype="semibold" />
+                    android:layout_width="@dimen/dimen_40dp"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_margin="@dimen/dimen_6dp"
+                    android:background="@drawable/circle_textview"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@color/colorWhiteSmoke"
+                    android:textSize="@dimen/sp18" />
+
+                <Space
+                    android:layout_width="@dimen/dimen_10dp"
+                    android:layout_height="wrap_content" />
+
 
                 <com.webmyne.rentalapp.custom.TfTextView
-                    android:id="@+id/txtReset"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/dimen_10dp"
-                    android:gravity="end"
-                    android:text="@string/reset"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/sp18"
-                    app:ftype="semibold" />
+                    android:layout_width="@dimen/dimen_40dp"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_margin="@dimen/dimen_6dp"
+                    android:background="@drawable/circle_textview"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@color/colorWhiteSmoke"
+                    android:textSize="@dimen/sp18" />
+
+                <Space
+                    android:layout_width="@dimen/dimen_10dp"
+                    android:layout_height="wrap_content" />
+
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:layout_width="@dimen/dimen_40dp"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_margin="@dimen/dimen_6dp"
+                    android:background="@drawable/circle_textview"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="@color/colorWhiteSmoke"
+                    android:textSize="@dimen/sp18" />
+
             </LinearLayout>
-        </android.support.v7.widget.Toolbar>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <com.webmyne.rentalapp.custom.TfTextView
-                android:id="@+id/tfTextView7"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/dimen_4dp"
-                android:layout_margin="@dimen/dimen_4dp"
-                android:text="@string/sortby"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp16"
-                app:ftype="semibold" />
-
-            <info.hoang8f.android.segmented.SegmentedGroup
-                android:id="@+id/segment"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dimen_4dp"
                 android:gravity="center"
-                android:orientation="horizontal"
-                segmentedgroup:sc_border_width="@dimen/dimen_2dp"
-                segmentedgroup:sc_corner_radius="@dimen/dimen_10dp">
-
-                <RadioButton
-                    android:id="@+id/rbPopular"
-                    style="@style/RadioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/popular"
-                    android:textSize="@dimen/sp12" />
-
-                <RadioButton
-                    android:id="@+id/rbLH"
-                    style="@style/RadioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/low_to_high"
-                    android:textSize="@dimen/sp12" />
-
-                <RadioButton
-                    android:id="@+id/rbHL"
-                    style="@style/RadioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/high_to_low"
-                    android:textSize="@dimen/sp12" />
-
-                <RadioButton
-                    android:id="@+id/rbNewest"
-                    style="@style/RadioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/newest"
-                    android:textSize="@dimen/sp12" />
-            </info.hoang8f.android.segmented.SegmentedGroup>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_.5dp"
-                android:layout_marginTop="@dimen/dimen_4dp"
-                android:background="@color/space_black" />
-
-            <com.webmyne.rentalapp.custom.TfTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/dimen_4dp"
-                android:text="@string/price"
-                android:layout_margin="@dimen/dimen_4dp"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp16"
-                app:ftype="semibold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="horizontal"
-                android:padding="@dimen/dimen_8dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.webmyne.rentalapp.custom.TfTextView
-                        android:id="@+id/textMin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/min_price"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/sp14"
-                        app:ftype="regular" />
-
-                    <com.webmyne.rentalapp.custom.TfTextView
-                        android:id="@+id/txtMin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/sp14"
-                        app:ftype="regular" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="end"
-                    android:orientation="horizontal">
-
-                    <com.webmyne.rentalapp.custom.TfTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/max_price"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/sp14"
-                        app:ftype="regular" />
-
-                    <com.webmyne.rentalapp.custom.TfTextView
-                        android:id="@+id/txtMax"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="100"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/sp14"
-                        app:ftype="regular" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar
-                android:id="@+id/rangeSeekbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:bar_color="@color/colorPrimary"
-                app:bar_highlight_color="@color/libon_blue"
-                app:data_type="_integer"
-                app:gap="10"
-                app:left_thumb_image="@drawable/ic_thumb"
-                app:right_thumb_image="@drawable/ic_thumb" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_.5dp"
-                android:layout_margin="@dimen/dimen_4dp"
-                android:background="@color/space_black" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:visibility="visible">
+                android:orientation="horizontal">
 
                 <com.webmyne.rentalapp.custom.TfTextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:padding="@dimen/dimen_8dp"
-                    android:text="@string/category"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/sp16"
-                    app:ftype="semibold" />
+                    android:layout_width="@dimen/dimen_40dp"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_margin="@dimen/dimen_6dp"
+                    android:background="@drawable/circle_textview"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textColor="@color/colorWhiteSmoke"
+                    android:textSize="@dimen/sp18" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_arrowright" />
+                <Space
+                    android:layout_width="@dimen/dimen_10dp"
+                    android:layout_height="wrap_content" />
+
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:layout_width="@dimen/dimen_40dp"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_margin="@dimen/dimen_6dp"
+                    android:background="@drawable/circle_textview"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textColor="@color/colorWhiteSmoke"
+                    android:textSize="@dimen/sp18" />
+
+                <Space
+                    android:layout_width="@dimen/dimen_10dp"
+                    android:layout_height="wrap_content" />
+
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:layout_width="@dimen/dimen_40dp"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_margin="@dimen/dimen_6dp"
+                    android:background="@drawable/circle_textview"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textColor="@color/colorWhiteSmoke"
+                    android:textSize="@dimen/sp18" />
+
+                <Space
+                    android:layout_width="@dimen/dimen_10dp"
+                    android:layout_height="wrap_content" />
+
+
+                <com.webmyne.rentalapp.custom.TfTextView
+                    android:layout_width="@dimen/dimen_40dp"
+                    android:layout_height="@dimen/dimen_40dp"
+                    android:layout_margin="@dimen/dimen_6dp"
+                    android:background="@drawable/circle_textview"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textColor="@color/colorWhiteSmoke"
+                    android:textSize="@dimen/sp18" />
+
 
             </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/dimen_.5dp"
-                android:layout_margin="@dimen/dimen_4dp"
-                android:background="@color/space_black" />
-
-            <com.webmyne.rentalapp.custom.TfTextView
-                android:layout_margin="@dimen/dimen_4dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/dimen_4dp"
-                android:text="@string/edition"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp16"
-                app:ftype="semibold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <com.webmyne.rentalapp.custom.TfTextView
-                        android:layout_width="@dimen/dimen_40dp"
-                        android:layout_height="@dimen/dimen_40dp"
-                        android:layout_margin="@dimen/dimen_6dp"
-                        android:background="@drawable/circle_textview"
-                        android:gravity="center"
-                        android:text="1"
-                        android:textColor="@color/colorWhiteSmoke"
-                        android:textSize="@dimen/sp18" />
-
-                    <Space
-                        android:layout_width="@dimen/dimen_10dp"
-                        android:layout_height="wrap_content" />
-
-
-                    <com.webmyne.rentalapp.custom.TfTextView
-                        android:layout_width="@dimen/dimen_40dp"
-                        android:layout_height="@dimen/dimen_40dp"
-                        android:layout_margin="@dimen/dimen_6dp"
-                        android:background="@drawable/circle_textview"
-                        android:gravity="center"
-                        android:text="2"
-                        android:textColor="@color/colorWhiteSmoke"
-                        android:textSize="@dimen/sp18" />
-
-                    <Space
-                        android:layout_width="@dimen/dimen_10dp"
-                        android:layout_height="wrap_content" />
-
-
-                    <com.webmyne.rentalapp.custom.TfTextView
-                        android:layout_width="@dimen/dimen_40dp"
-                        android:layout_height="@dimen/dimen_40dp"
-                        android:layout_margin="@dimen/dimen_6dp"
-                        android:background="@drawable/circle_textview"
-                        android:gravity="center"
-                        android:text="3"
-                        android:textColor="@color/colorWhiteSmoke"
-                        android:textSize="@dimen/sp18" />
-
-                    <Space
-                        android:layout_width="@dimen/dimen_10dp"
-                        android:layout_height="wrap_content" />
-
-
-                    <com.webmyne.rentalapp.custom.TfTextView
-                        android:layout_width="@dimen/dimen_40dp"
-                        android:layout_height="@dimen/dimen_40dp"
-                        android:layout_margin="@dimen/dimen_6dp"
-                        android:background="@drawable/circle_textview"
-                        android:gravity="center"
-                        android:text="4"
-                        android:textColor="@color/colorWhiteSmoke"
-                        android:textSize="@dimen/sp18" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <com.webmyne.rentalapp.custom.TfTextView
-                        android:layout_width="@dimen/dimen_40dp"
-                        android:layout_height="@dimen/dimen_40dp"
-                        android:layout_margin="@dimen/dimen_6dp"
-                        android:background="@drawable/circle_textview"
-                        android:gravity="center"
-                        android:text="5"
-                        android:textColor="@color/colorWhiteSmoke"
-                        android:textSize="@dimen/sp18" />
-
-                    <Space
-                        android:layout_width="@dimen/dimen_10dp"
-                        android:layout_height="wrap_content" />
-
-
-                    <com.webmyne.rentalapp.custom.TfTextView
-                        android:layout_width="@dimen/dimen_40dp"
-                        android:layout_height="@dimen/dimen_40dp"
-                        android:layout_margin="@dimen/dimen_6dp"
-                        android:background="@drawable/circle_textview"
-                        android:gravity="center"
-                        android:text="6"
-                        android:textColor="@color/colorWhiteSmoke"
-                        android:textSize="@dimen/sp18" />
-
-                    <Space
-                        android:layout_width="@dimen/dimen_10dp"
-                        android:layout_height="wrap_content" />
-
-
-                    <com.webmyne.rentalapp.custom.TfTextView
-                        android:layout_width="@dimen/dimen_40dp"
-                        android:layout_height="@dimen/dimen_40dp"
-                        android:layout_margin="@dimen/dimen_6dp"
-                        android:background="@drawable/circle_textview"
-                        android:gravity="center"
-                        android:text="7"
-                        android:textColor="@color/colorWhiteSmoke"
-                        android:textSize="@dimen/sp18" />
-
-                    <Space
-                        android:layout_width="@dimen/dimen_10dp"
-                        android:layout_height="wrap_content" />
-
-
-                    <com.webmyne.rentalapp.custom.TfTextView
-                        android:layout_width="@dimen/dimen_40dp"
-                        android:layout_height="@dimen/dimen_40dp"
-                        android:layout_margin="@dimen/dimen_6dp"
-                        android:background="@drawable/circle_textview"
-                        android:gravity="center"
-                        android:text="8"
-                        android:textColor="@color/colorWhiteSmoke"
-                        android:textSize="@dimen/sp18" />
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-
 
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:id="@+id/buttonLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:background="@color/yellow"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <com.webmyne.rentalapp.custom.TfButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:text="@string/apply"
-                    android:textColor="@color/colorWhiteSmoke"
-                    android:textSize="@dimen/sp16" />
-            </LinearLayout>
-        </RelativeLayout>
     </LinearLayout>
-</FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/yellow"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.webmyne.rentalapp.custom.TfButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/apply"
+                android:textColor="@color/colorWhiteSmoke"
+                android:textSize="@dimen/sp16" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

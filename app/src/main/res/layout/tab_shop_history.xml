@@ -9,35 +9,6 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycleView_shop_hisrory"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
-
-    <LinearLayout
-        android:padding="@dimen/dimen_10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <com.webmyne.rentalapp.custom.TfTextView
-            android:id="@+id/txtBookTotal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/book_total"
-            android:textColor="@color/black"
-            android:textSize="@dimen/sp18"
-            app:ftype="bold" />
-
-        <com.webmyne.rentalapp.custom.TfTextView
-            android:id="@+id/txtBookPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:padding="@dimen/dimen_4dp"
-            android:text="₹ 1000"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/sp16"
-            app:ftype="medium" />
-
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
 </LinearLayout>
