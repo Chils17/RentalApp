@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/color4"
     tools:context="com.webmyne.rentalapp.ui.SplashActivity">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,13 +14,13 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/dimen_8dp"
             android:background="@drawable/auth_background"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="72dp"
-                android:layout_height="72dp"
+                android:layout_width="@dimen/dimen_72dp"
+                android:layout_height="@dimen/dimen_72dp"
                 android:src="@drawable/ic_book" />
 
         </RelativeLayout>
@@ -29,7 +28,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/dimen_8dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -40,29 +39,28 @@
                 <com.webmyne.rentalapp.custom.TfTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Book"
-                    android:layout_marginRight="8dp"
-                    android:textColor="#ffffff"
-                    android:textSize="36sp" />
+                    android:text="@string/book"
+                    android:layout_marginRight="@dimen/dimen_8dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp36" />
 
                 <com.webmyne.rentalapp.custom.TfTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rental"
-                    android:textColor="#2196f3"
-                    android:textSize="36sp" />
+                    android:text="@string/rental"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sp36" />
 
             </LinearLayout>
 
             <com.webmyne.rentalapp.custom.TfTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Better Books, Better Future"
-                android:textColor="#ffffff"
-                android:textSize="18sp" />
+                android:text="@string/better_books_better_future"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp18" />
 
         </LinearLayout>
 
     </LinearLayout>
-
 </RelativeLayout>

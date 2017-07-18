@@ -10,19 +10,22 @@ import android.view.ViewGroup;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.WishlistAdapter;
+import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.model.WishList;
 import com.webmyne.rentalapp.ui.BaseActivity;
 
 import java.util.ArrayList;
 
 public class WishListFragment extends BaseFragment {
+
     private WishlistAdapter wishlistAdapter;
     private ArrayList<WishList> wishLists;
     private RecyclerView recyclerView;
+    private TfTextView txtNoData;
 
-    private String[] bookName = {"Killing Hemingway","Infinity","Connection Culture","Product Lunch","Data Capture"};
-    private String[] bookPrice = {"₹1000","₹500","₹750","₹200","₹100"};
-    private String[] bookAuthor = {"Brian D. Meeks","Jenny Smith","Jason Pankau","Tom Weaver","Forte"};
+    private String[] bookName = {"Killing Hemingway", "Infinity", "Connection Culture", "Product Lunch", "Data Capture"};
+    private String[] bookPrice = {"₹1000", "₹500", "₹750", "₹200", "₹100"};
+    private String[] bookAuthor = {"Brian D. Meeks", "Jenny Smith", "Jason Pankau", "Tom Weaver", "Forte"};
     private Integer[] bookImage = {R.drawable.book1, R.drawable.book4, R.drawable.book1, R.drawable.book4, R.drawable.book1};
 
 
@@ -40,6 +43,7 @@ public class WishListFragment extends BaseFragment {
         BaseFragment fragment = new WishListFragment(activity);
         return fragment;
     }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,16 +65,19 @@ public class WishListFragment extends BaseFragment {
     }
 
     private void init(View itemView) {
+        txtNoData = (TfTextView) itemView.findViewById(R.id.txtNoData);
         recyclerView = (RecyclerView) itemView.findViewById(R.id.wishList_recycle);
         recyclerView.setLayoutManager(new LinearLayoutManager(getBaseActivity()));
         wishLists = new ArrayList<>();
-        for (int i = 0; i < bookName.length; i++){
+        for (int i = 0; i < bookName.length; i++) {
             wishLists.add(new WishList(
                     bookImage[i], bookName[i], bookPrice[i], bookAuthor[i]
             ));
         }
-        wishlistAdapter = new WishlistAdapter(getBaseActivity(), wishLists);
+       // wishlistAdapter = new WishlistAdapter(getBaseActivity(), wishLists);
+        wishlistAdapter = new WishlistAdapter(getBaseActivity(), wishLists, txtNoData, recyclerView);
         recyclerView.setAdapter(wishlistAdapter);
+
     }
 
 }

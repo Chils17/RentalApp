@@ -26,7 +26,8 @@
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true"
             android:orientation="vertical"
-            android:padding="@dimen/dimen_16dp">
+            android:paddingRight="@dimen/dimen_16dp"
+            android:paddingLeft="@dimen/dimen_16dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -67,7 +68,95 @@
                     android:textSize="@dimen/sp18"
                     app:ftype="bold"
                     android:textColor="@color/white"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:background="@drawable/login_edt"
+                android:minHeight="@dimen/dimen_48dp">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:src="@drawable/ic_avatar"
+                    android:tint="@color/half_black" />
+
+                <EditText
+                    android:id="@+id/edtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:background="#00000000"
+                    android:hint="@string/first_name"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:textSize="@dimen/sp16" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:background="@drawable/login_edt"
+                android:minHeight="@dimen/dimen_48dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:src="@drawable/ic_avatar"
+                    android:tint="@color/half_black" />
+
+                <EditText
+                    android:id="@+id/edtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:background="#00000000"
+                    android:hint="@string/middle_name"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:textSize="@dimen/sp16" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:background="@drawable/login_edt"
+                android:minHeight="@dimen/dimen_48dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:src="@drawable/ic_avatar"
+                    android:tint="@color/half_black" />
+
+                <EditText
+                    android:id="@+id/edtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:background="#00000000"
+                    android:hint="@string/last_name"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:textSize="@dimen/sp16" />
+
+            </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,8 +185,37 @@
                         android:maxLines="1"
                         android:textSize="@dimen/sp16" />
                 </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/dimen_48dp"
+                android:layout_marginTop="@dimen/dimen_12dp"
+                android:background="@drawable/login_edt">
 
-                <LinearLayout
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:src="@drawable/ic_smartphone_call"
+                    android:tint="@color/half_black" />
+
+                <EditText
+                    android:id="@+id/edtMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimen_10dp"
+                    android:layout_marginRight="@dimen/dimen_10dp"
+                    android:background="#00000000"
+                    android:hint="@string/mobile"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:maxLines="1"
+                    android:textSize="@dimen/sp16" />
+            </LinearLayout>
+
+            <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dimen_12dp"
@@ -238,95 +356,7 @@
                     app:ftype="bold"
                     android:textColor="@color/white"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_12dp"
-                    android:background="@drawable/login_edt"
-                    android:minHeight="@dimen/dimen_48dp">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/dimen_10dp"
-                        android:src="@drawable/ic_avatar"
-                        android:tint="@color/half_black" />
-
-                    <EditText
-                        android:id="@+id/edtName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/dimen_10dp"
-                        android:layout_marginRight="@dimen/dimen_10dp"
-                        android:background="#00000000"
-                        android:hint="@string/first_name"
-                        android:inputType="textPersonName"
-                        android:maxLines="1"
-                        android:textSize="@dimen/sp16" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_12dp"
-                    android:background="@drawable/login_edt"
-                    android:minHeight="@dimen/dimen_48dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/dimen_10dp"
-                        android:src="@drawable/ic_avatar"
-                        android:tint="@color/half_black" />
-
-                    <EditText
-                        android:id="@+id/edtName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/dimen_10dp"
-                        android:layout_marginRight="@dimen/dimen_10dp"
-                        android:background="#00000000"
-                        android:hint="@string/middle_name"
-                        android:inputType="textPersonName"
-                        android:maxLines="1"
-                        android:textSize="@dimen/sp16" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/dimen_12dp"
-                    android:background="@drawable/login_edt"
-                    android:minHeight="@dimen/dimen_48dp">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/dimen_10dp"
-                        android:src="@drawable/ic_avatar"
-                        android:tint="@color/half_black" />
-
-                    <EditText
-                        android:id="@+id/edtName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/dimen_10dp"
-                        android:layout_marginRight="@dimen/dimen_10dp"
-                        android:background="#00000000"
-                        android:hint="@string/last_name"
-                        android:inputType="textPersonName"
-                        android:maxLines="1"
-                        android:textSize="@dimen/sp16" />
-
-                </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -483,36 +513,6 @@
                         android:hint="@string/zipcode"
                         android:textSize="@dimen/sp16" />
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:minHeight="@dimen/dimen_48dp"
-                    android:layout_marginTop="@dimen/dimen_12dp"
-                    android:layout_marginBottom="@dimen/dimen_10dp"
-                    android:background="@drawable/login_edt">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/dimen_10dp"
-                        android:src="@drawable/ic_smartphone_call"
-                        android:tint="@color/half_black" />
-
-                    <EditText
-                        android:id="@+id/edtMobile"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="@dimen/dimen_10dp"
-                        android:layout_marginRight="@dimen/dimen_10dp"
-                        android:background="#00000000"
-                        android:hint="@string/mobile"
-                        android:inputType="number"
-                        android:maxLength="10"
-                        android:maxLines="1"
-                        android:textSize="@dimen/sp16" />
-                </LinearLayout>
 
             <com.webmyne.rentalapp.custom.TfButton
                 android:id="@+id/btnSubmit"
@@ -524,6 +524,30 @@
                 android:text="@string/submit"
                 android:textColor="@color/white" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:padding="@dimen/dimen_16dp"
+            android:orientation="horizontal">
+
+            <com.webmyne.rentalapp.custom.TfTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/don_t_have_an_account"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp16" />
+
+            <com.webmyne.rentalapp.custom.TfTextView
+                android:id="@+id/txtLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/login"
+                android:layout_marginLeft="@dimen/dimen_6dp"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/sp18" />
+            </LinearLayout>
         </LinearLayout>
 
     </ScrollView>

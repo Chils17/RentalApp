@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.webmyne.rentalapp.fragment.MemberShipFragment">
 
-
+    <include layout="@layout/app_bar"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

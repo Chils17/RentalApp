@@ -23,13 +23,13 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/dimen_8dp"
             android:background="@drawable/auth_background"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="72dp"
-                android:layout_height="72dp"
+                android:layout_width="@dimen/dimen_72dp"
+                android:layout_height="@dimen/dimen_72dp"
                 android:src="@drawable/ic_book" />
 
         </RelativeLayout>
@@ -37,7 +37,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/dimen_8dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -49,16 +49,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Book"
-                    android:layout_marginRight="8dp"
+                    android:layout_marginRight="@dimen/dimen_8dp"
                     android:textColor="#ffffff"
-                    android:textSize="36sp" />
+                    android:textSize="@dimen/sp36" />
 
                 <com.webmyne.rentalapp.custom.TfTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Rental"
                     android:textColor="#2196f3"
-                    android:textSize="36sp" />
+                    android:textSize="@dimen/sp36" />
 
             </LinearLayout>
 
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:text="Better Books, Better Future"
                 android:textColor="#ffffff"
-                android:textSize="18sp" />
+                android:textSize="@dimen/sp18" />
 
         </LinearLayout>
 

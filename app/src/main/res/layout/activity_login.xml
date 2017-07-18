@@ -47,17 +47,17 @@
             <com.webmyne.rentalapp.custom.TfTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="8dp"
-                android:text="Book"
+                android:layout_marginRight="@dimen/dimen_8dp"
+                android:text="@string/book"
                 android:textColor="@color/white"
-                android:textSize="36sp" />
+                android:textSize="@dimen/sp36" />
 
             <com.webmyne.rentalapp.custom.TfTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rental"
+                android:text="@string/rental"
                 android:textColor="@color/colorPrimary"
-                android:textSize="36sp" />
+                android:textSize="@dimen/sp36" />
 
         </LinearLayout>
 

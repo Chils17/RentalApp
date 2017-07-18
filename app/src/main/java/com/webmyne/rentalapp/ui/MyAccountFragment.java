@@ -104,9 +104,11 @@ public class MyAccountFragment extends BaseFragment implements View.OnClickListe
         switch (v.getId()) {
 
             case R.id.txtMembership:
-                Fragment fragmentToPushMemberShip = MemberShipFragment.getFragment(getBaseActivity());
-                getBaseActivity().pushAddFragments(fragmentToPushMemberShip, true, true);
+                Intent intentMembership = new Intent(getBaseActivity(), MemberShipFragment.class);
+                startActivity(intentMembership);
                 break;
+                /*Fragment fragmentToPushMemberShip = MemberShipFragment.getFragment(getBaseActivity());
+                getBaseActivity().pushAddFragments(fragmentToPushMemberShip, true, true);*/
 
             case R.id.txtOrderhistory:
                 Intent intentOderhistory = new Intent(getBaseActivity(), OrderhistoryActivity.class);

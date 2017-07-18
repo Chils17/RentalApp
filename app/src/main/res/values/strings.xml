@@ -113,7 +113,7 @@
     <string name="no">No</string>
     <string name="submit">Submit</string>
     <string name="viewer">Viewers</string>
-    <string name="review">Reviews</string>
+    <string name="review">Reviews)</string>
     <string name="check_out">Checkout</string>
     <string name="book_available">Available</string>
     <string name="order_history_details">Order Detail</string>
@@ -166,5 +166,24 @@
     <string name="publication">Publication :</string>
     <string name="book_code">Bookcode :</string>
     <string name="remove_item">Are you sure want to remove ?</string>
+    <string name="no_data_available">No Data Available</string>
+    <string name="rental">Rental</string>
+    <string name="book">Book</string>
+    <string name="plan_duration">Plan Duration</string>
+    <string name="registration">Registration</string>
+    <string name="refundable">Refundable</string>
+    <string name="_500">₹ 500</string>
+    <string name="better_books_better_future">Better Books, Better Future</string>
+    <string name="delivery">Delivery</string>
+    <string name="o">0</string>
+    <string name="discount">Discount</string>
+    <string name="_10">10%</string>
+    <string name="tariff">Tariff</string>
+    <string name="_8599">8599</string>
+    <string name="_8099">8099</string>
+    <string name="total_payable">Total Payable</string>
+    <string name="_300">₹ 300</string>
+    <string name="_5000">5000</string>
+    <string name="_5500">5500</string>
 
 </resources>

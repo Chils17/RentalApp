@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
+import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.model.WishList;
 import com.webmyne.rentalapp.ui.BaseActivity;
 import com.webmyne.rentalapp.ui.ProductActivity;
@@ -26,10 +27,19 @@ public class WishlistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private ArrayList<WishList> wishList;
     private BaseActivity context;
+    private TfTextView txtNoData;
+    private RecyclerView recyclerView;
 
-    public WishlistAdapter(BaseActivity context, ArrayList<WishList> wishList) {
+   /* public WishlistAdapter(BaseActivity context, ArrayList<WishList> wishList) {
         this.wishList = wishList;
         this.context = context;
+    }*/
+
+    public WishlistAdapter(BaseActivity context, ArrayList<WishList> wishList, TfTextView txtNoData, RecyclerView recyclerView) {
+        this.wishList = wishList;
+        this.context = context;
+        this.recyclerView = recyclerView;
+        this.txtNoData = txtNoData;
     }
 
     @Override
@@ -52,9 +62,8 @@ public class WishlistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                // wishList.remove(position);
-                                dialog.cancel();
                                 removeWishListData(wishList.get(position));
+                                dialog.cancel();
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -66,6 +75,13 @@ public class WishlistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
             }
         });
+
+        if (wishList == null || wishList.size() == 0){
+            recyclerView.setVisibility(View.GONE);
+            txtNoData.setVisibility(View.VISIBLE);
+        }else {
+            recyclerView.setVisibility(View.VISIBLE);
+        }
 
         myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,14 +103,11 @@ public class WishlistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
 
     private class MyViewHolder extends RecyclerView.ViewHolder {
-
-        private LinearLayout linearLayout;
         private TextView bookName, bookPrice, bookAuthor, remove, addCart;
         private ImageView bookImage;
 
         public MyViewHolder(View view) {
             super(view);
-            linearLayout = (LinearLayout) view.findViewById(R.id.mainLinear);
             bookImage = (ImageView) view.findViewById(R.id.imgBook);
             bookName = (TextView) view.findViewById(R.id.txtBookName);
             bookPrice = (TextView) view.findViewById(R.id.txtBookPrice);

@@ -30,18 +30,24 @@
         android:textSize="@dimen/sp18"
         app:ftype="bold" />
 
-    <com.rengwuxian.materialedittext.MaterialEditText
-        android:id="@+id/edtOldPassword"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/dimen_22dp"
-        android:layout_marginRight="@dimen/dimen_22dp"
-        android:layout_marginTop="@dimen/dimen_10dp"
-        android:hint="@string/old_password"
-        android:maxLines="1"
-        android:textSize="@dimen/sp16"
-        android:inputType="textPassword"
-        app:met_floatingLabel="normal" />
+        android:layout_height="wrap_content">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtOldPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen_22dp"
+            android:layout_marginRight="@dimen/dimen_22dp"
+            android:layout_marginTop="@dimen/dimen_10dp"
+            android:drawableRight="@drawable/eye_black"
+            android:hint="@string/old_password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textSize="@dimen/sp16"
+            app:met_floatingLabel="normal" />
+    </LinearLayout>
 
     <com.rengwuxian.materialedittext.MaterialEditText
         android:id="@+id/edtNewPassword"
@@ -51,10 +57,11 @@
         android:layout_marginRight="@dimen/dimen_22dp"
         android:layout_marginTop="@dimen/dimen_10dp"
         android:hint="@string/new_password"
+        android:inputType="textPassword"
         android:maxLength="25"
         android:maxLines="1"
         android:textSize="@dimen/sp16"
-        android:inputType="textPassword"
+        android:drawableRight="@drawable/eye_black"
         app:met_floatingLabel="normal" />
 
     <com.rengwuxian.materialedittext.MaterialEditText
@@ -65,39 +72,40 @@
         android:layout_marginRight="@dimen/dimen_22dp"
         android:layout_marginTop="@dimen/dimen_10dp"
         android:hint="@string/confirm_password"
+        android:inputType="textPassword"
         android:maxLength="10"
         android:maxLines="1"
         android:textSize="@dimen/sp16"
-        android:inputType="textPassword"
+        android:drawableRight="@drawable/eye_black"
         app:met_floatingLabel="normal" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/dimen_4dp"
         android:gravity="bottom|end"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="@dimen/dimen_4dp">
 
         <com.webmyne.rentalapp.custom.TfButton
             android:id="@+id/btnCancel"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cancel"
             android:textColor="#002060"
             android:textSize="@dimen/sp16"
-            app:ftype="bold"
-            style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+            app:ftype="bold" />
 
         <com.webmyne.rentalapp.custom.TfButton
             android:id="@+id/btnSave"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dimen_30dp"
             android:text="@string/save"
             android:textColor="#002060"
             android:textSize="@dimen/sp16"
-            app:ftype="bold"
-            style="@style/Base.Widget.AppCompat.Button.Borderless"/>
+            app:ftype="bold" />
     </LinearLayout>
 
 </LinearLayout>

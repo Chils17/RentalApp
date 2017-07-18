@@ -4,14 +4,18 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -121,7 +125,7 @@ public class ProfileActivity extends AppCompatActivity {
         lp.gravity = Gravity.CENTER;
         dialog.getWindow().setAttributes(lp);
 
-        MaterialEditText edtOldPassword, edtNewPassword, edtConformPassword;
+        final MaterialEditText edtOldPassword, edtNewPassword, edtConformPassword;
         TfButton btnCancel, btnSave;
 
         edtOldPassword = (MaterialEditText) dialog.findViewById(R.id.edtOldPassword);
@@ -131,7 +135,92 @@ public class ProfileActivity extends AppCompatActivity {
         btnCancel = (TfButton) dialog.findViewById(R.id.btnCancel);
 
 
+        edtOldPassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int DRAWABLE_LEFT = 0;
+                final int DRAWABLE_TOP = 1;
+                final int DRAWABLE_RIGHT = 2;
+                final int DRAWABLE_BOTTOM = 3;
 
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    if (event.getRawX() >= (edtOldPassword.getRight() - edtOldPassword.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+
+                        if (passwordPress) {
+                            edtOldPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            edtOldPassword.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(ProfileActivity.this, R.drawable.eye_black), null);
+                            edtOldPassword.setSelection(edtOldPassword.length());
+                            passwordPress = false;
+                        } else {
+                            edtOldPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            edtOldPassword.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(ProfileActivity.this, R.drawable.eye_red), null);
+                            passwordPress = true;
+                            edtOldPassword.setSelection(edtOldPassword.length());
+                        }
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+
+        edtNewPassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int DRAWABLE_LEFT = 0;
+                final int DRAWABLE_TOP = 1;
+                final int DRAWABLE_RIGHT = 2;
+                final int DRAWABLE_BOTTOM = 3;
+
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    if (event.getRawX() >= (edtNewPassword.getRight() - edtNewPassword.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+
+                        if (passwordPress) {
+                            edtNewPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            edtNewPassword.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(ProfileActivity.this, R.drawable.eye_black), null);
+                            edtNewPassword.setSelection(edtNewPassword.length());
+                            passwordPress = false;
+                        } else {
+                            edtNewPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            edtNewPassword.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(ProfileActivity.this, R.drawable.eye_red), null);
+                            passwordPress = true;
+                            edtNewPassword.setSelection(edtNewPassword.length());
+                        }
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+
+        edtConformPassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int DRAWABLE_LEFT = 0;
+                final int DRAWABLE_TOP = 1;
+                final int DRAWABLE_RIGHT = 2;
+                final int DRAWABLE_BOTTOM = 3;
+
+                if (event.getAction() == MotionEvent.ACTION_UP) {
+                    if (event.getRawX() >= (edtConformPassword.getRight() - edtConformPassword.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+
+                        if (passwordPress) {
+                            edtConformPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            edtConformPassword.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(ProfileActivity.this, R.drawable.eye_black), null);
+                            edtConformPassword.setSelection(edtConformPassword.length());
+                            passwordPress = false;
+                        } else {
+                            edtConformPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            edtConformPassword.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(ProfileActivity.this, R.drawable.eye_red), null);
+                            passwordPress = true;
+                            edtConformPassword.setSelection(edtConformPassword.length());
+                        }
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

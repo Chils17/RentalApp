@@ -41,6 +41,7 @@
                         android:layout_marginTop="@dimen/dimen_20dp"
                         android:src="@drawable/man" />
 
+
                     <ImageView
                         android:layout_width="@dimen/dimen_50dp"
                         android:layout_height="@dimen/dimen_50dp"
