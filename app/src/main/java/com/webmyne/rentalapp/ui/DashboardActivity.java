@@ -227,6 +227,8 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
             case R.id.left_drawer_tv_logout:
                 if (view.getId() != R.id.ll_footer_home) {
+
+
                     UIHelper.showAlertDialogWithYesNo(this, getResources().getString(R.string.dialog_logout), new UIHelper.DialogOptionsSelectedListener() {
                         @Override
                         public void onSelect(boolean isYes) {
