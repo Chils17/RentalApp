@@ -92,14 +92,14 @@ public class WishlistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private void removeWishListData(WishList wishListObject) {
         wishList.remove(wishListObject);
-        /*if (wishList.size() > 0) {
+        if (wishList.size() > 0) {
             notifyDataSetChanged();
             recyclerView.setVisibility(View.VISIBLE);
             txtNoData.setVisibility(View.GONE);
         } else {
             recyclerView.setVisibility(View.GONE);
             txtNoData.setVisibility(View.VISIBLE);
-        }*/
+        }
     }
 
     @Override
