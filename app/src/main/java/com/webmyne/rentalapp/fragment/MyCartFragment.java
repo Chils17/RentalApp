@@ -16,6 +16,7 @@ import com.webmyne.rentalapp.custom.TfButton;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.model.MyCart;
 import com.webmyne.rentalapp.ui.CheckoutOrderActivity;
+import com.webmyne.rentalapp.ui.ShippingBillingAddrssActivity;
 
 import java.util.ArrayList;
 
@@ -62,8 +63,8 @@ public class MyCartFragment extends Fragment {
         checkOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Functions.fireIntent(getActivity(), ShippingBillingAddrssActivity.class);*/
-                Functions.fireIntent(getActivity(), CheckoutOrderActivity.class);
+                Functions.fireIntent(getActivity(), ShippingBillingAddrssActivity.class);
+                /*Functions.fireIntent(getActivity(), CheckoutOrderActivity.class);*/
             }
         });
     }

@@ -9,6 +9,8 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.v7.app.AlertDialog;
+import android.text.TextUtils;
+import android.widget.EditText;
 
 import com.webmyne.rentalapp.R;
 
@@ -24,6 +26,54 @@ public class Functions {
         context.startActivity(i);
     }
 
+    public static void fireIntent(Context context, Intent intent) {
+        Activity activity = (Activity) context;
+        context.startActivity(intent);
+    }
+    public static void fireIntent(Activity context) {
+        context.finish();
+    }
+    public static void fireIntentForResult(Activity context, Class<?> cls, int requestCode) {
+
+        Intent intent = new Intent(context, cls);
+        context.startActivityForResult(intent, requestCode);
+    }
+    public static void fireIntentForResult(Activity context, Intent intent, int requestCode) {
+
+        context.startActivityForResult(intent, requestCode);
+    }
+    public static void fireIntentWithClearFlag(Activity context, Class cls) {
+        Intent intent = new Intent(context, cls);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        context.startActivity(intent);
+
+    }
+
+    public static void FunctionsfireIntentWithClearFlagWithWithPendingTransition(Activity context, Class cls) {
+        Intent intent = new Intent(context, cls);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        context.startActivity(intent);
+        context.finish();
+    }
+
+    public static void fireIntentWithClearFlagWithWithPendingTransition(Activity context, Intent intent) {
+
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        context.startActivity(intent);
+        context.finish();
+    }
+    public static void fireIntentWithClearFlagWithWithPendingTransition(Activity context, Class cls) {
+        Intent intent = new Intent(context, cls);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        context.startActivity(intent);
+        context.finish();
+    }
+
+    public static void fireIntentWithData(Context context, Intent intent) {
+        context.startActivity(intent);
+        Activity activity = (Activity) context;
+    }
+
     public static boolean isConnected(Context context) {
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -34,7 +84,13 @@ public class Functions {
     public static String jsonString(Object obj) {
         return "" + MyApplication.getGson().toJson(obj);
     }
+    public static String toStingEditText(EditText editText) {
+        return editText.getText().toString().trim();
+    }
 
+    public static boolean isEmptyEditText(EditText editText) {
+        return TextUtils.isEmpty(editText.getText().toString().trim());
+    }
     public static Typeface getFontType(Context _context, int typeValue) {
 
         Typeface typeface;

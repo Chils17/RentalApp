@@ -9,9 +9,12 @@ import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
+import android.view.WindowManager;
 
 
 import com.webmyne.rentalapp.R;
+import com.webmyne.rentalapp.custom.Functions;
 
 /**
  * Created by gulamhusen on 14-07-2017.
@@ -24,8 +27,11 @@ public class SplashActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_splash);
-
         init();
     }
 
@@ -33,9 +39,10 @@ public class SplashActivity extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashActivity.this, LoginActivity.class);
+                /*Intent i = new Intent(SplashActivity.this, LoginActivity.class);
                 startActivity(i);
-                finish();
+                finish();*/
+                Functions.fireIntentWithClearFlagWithWithPendingTransition(SplashActivity.this, LoginActivity.class);
             }
         }, SPLASH_TIME_OUT);
 

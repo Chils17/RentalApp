@@ -6,6 +6,11 @@
     <string name="common_message_under_development">This feature is under development and will be available in future releases.</string>
     <string name="common_message_coming_soon">Coming Soon</string>
 
+    <string name="hint_enter_shipping_address">Enter Shipping Address</string>
+    <string name="hint_enter_billing_address">Enter Billing Address</string>
+
+
+
     <string name="member_ship">Member ship</string>
     <string name="member_ship_plan">Member ship plan</string>
     <string name="membership_type">Membership Type</string>
@@ -130,6 +135,10 @@
     <string name="shipping_address">Shipping Address</string>
 
 
+
+    <string name="dialogue_ok">OK</string>
+
+
     <string-array name="book_edition">
         <item>1</item>
         <item>2</item>
@@ -146,7 +155,7 @@
     <string name="conatct_us">Contact Us</string>
     <string name="faq">FAQ</string>
     <string name="log_out">LogOut</string>
-    <string name="dailog_logOut">Are you sure you want to logout ?</string>
+    <string name="dialog_logout">Are you sure you want to logout ?</string>
     <string name="rewards_point">Rewards Point</string>
     <string name="avalable_balance">Available Balance</string>
     <string name="my_rewards">My Rewards</string>

@@ -1,12 +1,10 @@
 package com.webmyne.rentalapp.ui;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
@@ -24,6 +22,7 @@ import com.webmyne.rentalapp.fragment.SettingFragment;
 import com.webmyne.rentalapp.fragment.ShopFragment;
 import com.webmyne.rentalapp.fragment.WishListFragment;
 import com.webmyne.rentalapp.helper.LogUtils;
+import com.webmyne.rentalapp.helper.UIHelper;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -228,25 +227,20 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
             case R.id.left_drawer_tv_logout:
                 if (view.getId() != R.id.ll_footer_home) {
-                    logoutDialogue();
+                    UIHelper.showAlertDialogWithYesNo(this, getResources().getString(R.string.dialog_logout), new UIHelper.DialogOptionsSelectedListener() {
+                        @Override
+                        public void onSelect(boolean isYes) {
+                            if (isYes) {
+                                logout();
+                            }
+                        }
+                    });
                 }
             default:
                 break;
         }
     }
-
-    private void logoutDialogue() {
-        new AlertDialog.Builder(this)
-                .setMessage(R.string.dailog_logOut)
-                .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        Functions.fireIntent(DashboardActivity.this, LoginActivity.class);
-                        finish();
-                    }
-                })
-                .setNegativeButton("No", null)
-                .show();
+    private void logout() {
+        Functions.fireIntentWithClearFlagWithWithPendingTransition(DashboardActivity.this, LoginActivity.class);
     }
-
 }

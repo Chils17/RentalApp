@@ -12,8 +12,8 @@ import android.view.View;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.TabMenuAdapter;
 import com.webmyne.rentalapp.custom.TfTextView;
-import com.webmyne.rentalapp.fragment.MyCartFragment;
-import com.webmyne.rentalapp.fragment.RentalCartFragment;
+import com.webmyne.rentalapp.fragment.BillingAddressFragment;
+import com.webmyne.rentalapp.fragment.ShippingAddressFragment;
 
 /**
  * Created by chintans on 18-07-2017.
@@ -74,8 +74,8 @@ public class ShippingBillingAddrssActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager pageraddress) {
         tabMenuAdapter = new TabMenuAdapter(getSupportFragmentManager(), this);
-        tabMenuAdapter.addFragment(new MyCartFragment(), getString(R.string.billing_address));
-        tabMenuAdapter.addFragment(new RentalCartFragment(), getString(R.string.shipping_address));
+        tabMenuAdapter.addFragment(new ShippingAddressFragment(), getString(R.string.billing_address));
+        tabMenuAdapter.addFragment(new BillingAddressFragment(), getString(R.string.shipping_address));
         pageraddress.setAdapter(tabMenuAdapter);
     }
 

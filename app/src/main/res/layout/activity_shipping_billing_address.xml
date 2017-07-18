@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context="com.webmyne.rentalapp.fragment.CartFragment">
 
     <RelativeLayout
@@ -34,11 +35,13 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/pager_address"
             android:layout_width="match_parent"
+            android:layout_above="@+id/ll_save_address"
+            android:layout_below="@+id/tabs_address"
             android:layout_height="match_parent"
-            android:layout_marginBottom="?actionBarSize"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         <LinearLayout
+            android:id="@+id/ll_save_address"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:layout_alignParentBottom="true"
