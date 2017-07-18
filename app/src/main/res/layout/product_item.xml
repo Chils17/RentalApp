@@ -103,15 +103,86 @@
                           android:textSize="@dimen/sp14"
                           app:ftype="medium" />-->
 
-                    <RatingBar
-                        android:id="@+id/txtRating"
-                        style="@style/Widget.AppCompat.RatingBar.Small"
-                        android:layout_width="wrap_content"
+                    <!--  <RatingBar
+                          android:id="@+id/txtRating"
+                          style="@style/Widget.AppCompat.RatingBar.Small"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:numStars="5"
+                          android:progressTint="@color/colorPrimary"
+                          android:rating="4"
+                          android:secondaryProgressTint="@color/off_white" />-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:numStars="5"
-                        android:progressTint="@color/colorPrimary"
-                        android:rating="4"
-                        android:secondaryProgressTint="@color/off_white" />
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+
+                            <com.webmyne.rentalapp.custom.TfTextView
+                                android:id="@+id/txtRating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="4.3"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/sp14"
+                                app:ftype="medium" />
+
+                            <ImageView
+                                android:layout_width="@dimen/dimen_18dp"
+                                android:layout_height="@dimen/dimen_18dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_star" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="0.5dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/background"
+                            android:layout_margin="@dimen/dimen_4dp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <com.webmyne.rentalapp.custom.TfTextView
+                                android:id="@+id/txtReview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:maxLines="1"
+                                android:padding="@dimen/dimen_2dp"
+                                android:text="251"
+                                android:textColor="@color/half_black"
+                                android:textSize="@dimen/sp14"
+                                app:ftype="medium" />
+
+                            <com.webmyne.rentalapp.custom.TfTextView
+                                android:id="@+id/textAuthor"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:maxLines="1"
+                                android:padding="@dimen/dimen_2dp"
+                                android:text="@string/review"
+                                android:textColor="@color/half_black"
+                                android:textSize="@dimen/sp14"
+                                app:ftype="medium" />
+
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
 
             </RelativeLayout>

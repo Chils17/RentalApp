@@ -28,7 +28,7 @@ public class SettingFragment extends BaseFragment {
     private TfTextView txtAbout;
     private TfTextView txtContact;
     private TfTextView txtFaq;
-    private TfTextView txtLogOut;
+    private TfTextView txtChangeLang;
 
     @SuppressLint({"ValidFragment", "Unused"})
     private SettingFragment() {
@@ -70,7 +70,7 @@ public class SettingFragment extends BaseFragment {
         txtAbout = (TfTextView) view.findViewById(R.id.txtAbout);
         txtContact = (TfTextView) view.findViewById(R.id.txtContact);
         txtFaq = (TfTextView) view.findViewById(R.id.txtFaq);
-        txtLogOut = (TfTextView) view.findViewById(R.id.txtLogOut);
+        txtChangeLang = (TfTextView) view.findViewById(R.id.txtChangeLang);
 
         actionListener();
     }
@@ -97,20 +97,10 @@ public class SettingFragment extends BaseFragment {
             }
         });
 
-        txtLogOut.setOnClickListener(new View.OnClickListener() {
+        txtChangeLang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(getActivity())
-                        .setMessage(R.string.dailog_logOut)
-                        .setCancelable(false)
-                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                                Functions.fireIntent(getActivity(), LoginActivity.class);
-                                getActivity().finish();
-                            }
-                        })
-                        .setNegativeButton("No", null)
-                        .show();
+
             }
         });
 

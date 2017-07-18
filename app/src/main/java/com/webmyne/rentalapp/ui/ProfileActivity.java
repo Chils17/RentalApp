@@ -103,6 +103,7 @@ public class ProfileActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.password:
                 createDialog();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

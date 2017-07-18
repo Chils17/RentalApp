@@ -59,11 +59,11 @@
             android:background="@color/off_white" />
 
         <com.webmyne.rentalapp.custom.TfTextView
-            android:id="@+id/txtLogOut"
+            android:id="@+id/txtChangeLang"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/dimen_14dp"
-            android:text="@string/log_out"
+            android:text="@string/change_lang"
             android:textColor="@color/black"
             android:textSize="@dimen/sp16"
             app:ftype="medium" />

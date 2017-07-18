@@ -113,7 +113,7 @@
     <string name="no">No</string>
     <string name="submit">Submit</string>
     <string name="viewer">Viewers</string>
-    <string name="review">Reviews)</string>
+    <string name="review">Reviews</string>
     <string name="check_out">Checkout</string>
     <string name="book_available">Available</string>
     <string name="order_history_details">Order Detail</string>
@@ -158,5 +158,13 @@
     <string name="skip">Skip</string>
     <string name="finish">Finish</string>
     <string name="left_drawer_tv_rewards">My Rewards</string>
+    <string name="total">Total Amount :-</string>
+    <string name="order_successfully">Your Order placed Successfully !</string>
+    <string name="order_confirm">Order Confirmation</string>
+    <string name="change_lang">Change Language</string>
+    <string name="pages">Pages :</string>
+    <string name="publication">Publication :</string>
+    <string name="book_code">Bookcode :</string>
+    <string name="remove_item">Are you sure want to remove ?</string>
 
 </resources>

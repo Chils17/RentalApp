@@ -121,10 +121,18 @@ public class ProductActivity extends AppCompatActivity {
             }
         });*/
 
+        viewPager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Functions.fireIntent(getApplicationContext(), FullScreenActivity.class);
+            }
+        });
+
+
+
         floatingCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
             }
         });
 

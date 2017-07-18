@@ -19,9 +19,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <ImageView
+            android:id="@+id/imgRemove"
+            android:layout_width="@dimen/dimen_28dp"
+            android:layout_height="@dimen/dimen_28dp"
+            android:layout_gravity="end"
+            android:padding="@dimen/dimen_2dp"
+            android:src="@drawable/ic_close" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,7 +36,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical"
@@ -89,6 +96,8 @@
                     android:background="@color/libon_blue"
                     app:qv_addButtonBackground="@color/colorPrimary"
                     app:qv_addButtonTextColor="@color/colorWhiteSmoke"
+                    app:qv_maxQuantity="10"
+                    app:qv_minQuantity="1"
                     app:qv_quantity="10"
                     app:qv_quantityBackground="@color/colorPrimaryDark"
                     app:qv_quantityDialog="false"

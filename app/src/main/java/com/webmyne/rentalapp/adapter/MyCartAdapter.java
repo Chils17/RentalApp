@@ -1,6 +1,8 @@
 package com.webmyne.rentalapp.adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +13,7 @@ import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.model.MyCart;
+import com.webmyne.rentalapp.model.WishList;
 import com.webmyne.rentalapp.ui.CheckoutOrderActivity;
 import com.webmyne.rentalapp.ui.ProductActivity;
 
@@ -38,7 +41,7 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.MyViewHold
     }
 
     @Override
-    public void onBindViewHolder(MyCartAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyCartAdapter.MyViewHolder holder, final int position) {
         holder.setValues(myCartArrayList.get(position));
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +49,35 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.MyViewHold
                 Functions.fireIntent(context, ProductActivity.class);
             }
         });
+
+        holder.imgRemove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(context)
+                        .setTitle("")
+                        .setMessage(R.string.remove_item)
+                        .setCancelable(false)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // wishList.remove(position);
+                                dialog.cancel();
+                                removeMyCartList(myCartArrayList.get(position));
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        }).show();
+            }
+        });
+    }
+
+    private void removeMyCartList(MyCart wishListObject) {
+        myCartArrayList.remove(wishListObject);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -59,10 +91,12 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.MyViewHold
         private final TfTextView txtBookCategory;
         private final QuantityView numQty;
         private final ImageView imgBook;
+        private final ImageView imgRemove;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             imgBook = (ImageView) itemView.findViewById(R.id.imgBook);
+            imgRemove = (ImageView) itemView.findViewById(R.id.imgRemove);
             txtBookName = (TfTextView) itemView.findViewById(R.id.txtBookName);
             txtBookPrice = (TfTextView) itemView.findViewById(R.id.txtBookPrice);
             txtBookCategory = (TfTextView) itemView.findViewById(R.id.txtBookCategory);

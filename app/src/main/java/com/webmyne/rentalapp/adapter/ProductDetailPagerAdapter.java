@@ -1,6 +1,7 @@
 package com.webmyne.rentalapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.webmyne.rentalapp.R;
+import com.webmyne.rentalapp.custom.Functions;
+import com.webmyne.rentalapp.ui.FullScreenActivity;
 
 /**
  * Created by chiragpatel on 11-07-2017.
@@ -36,18 +39,22 @@ public class ProductDetailPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, final int position) {
+    public Object instantiateItem(final ViewGroup container, final int position) {
         View itemView = layoutInflater.inflate(R.layout.item, container, false);
 
-        ImageView imageView = (ImageView) itemView.findViewById(R.id.imageView);
+        final ImageView imageView = (ImageView) itemView.findViewById(R.id.imageView);
         imageView.setImageResource(images[position]);
 
         container.addView(itemView);
+
 
         //listening to image click
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(context, FullScreenActivity.class);
+                intent.putExtra("image", images[position]);
+                context.startActivity(intent);
                 //Toast.makeText(context, "you clicked image " + (position + 1), Toast.LENGTH_LONG).show();
             }
         });

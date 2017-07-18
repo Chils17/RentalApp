@@ -23,11 +23,12 @@ public class ProductImageAdapter extends RecyclerView.Adapter<ProductImageAdapte
     private final OnClickItem onClickItem;
     private List<ProductImage> productImageList;
 
-    public ProductImageAdapter(Context context, List<ProductImage> productImageList,OnClickItem onClickItem) {
+    public ProductImageAdapter(Context context, List<ProductImage> productImageList, OnClickItem onClickItem) {
         this.context = context;
-        this.onClickItem  = onClickItem;
+        this.onClickItem = onClickItem;
         this.productImageList = productImageList;
     }
+
     @Override
     public ProductImageAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.image_item, parent, false);
@@ -63,14 +64,15 @@ public class ProductImageAdapter extends RecyclerView.Adapter<ProductImageAdapte
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            imageView=(ImageView)itemView.findViewById(R.id.imageView);
+            imageView = (ImageView) itemView.findViewById(R.id.imageView);
         }
 
         public void setValues(ProductImage productImage) {
             imageView.setImageResource(productImage.getImg());
         }
     }
-    public interface OnClickItem{
+
+    public interface OnClickItem {
         void onClickItem(int position);
     }
 }

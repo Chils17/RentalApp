@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.varunest.sparkbutton.SparkButton;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
+import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.model.Product;
 import com.webmyne.rentalapp.ui.ProductActivity;
 
@@ -62,8 +63,9 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
         private final SparkButton img_like;
         private final TextView textName;
         private final TextView txtPrice;
-        private final RatingBar txtRating;
+        private final TfTextView txtRating;
         private final TextView textAuthor;
+        private final TfTextView txtReview;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -72,8 +74,8 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             textName = (TextView) itemView.findViewById(R.id.textName);
             textAuthor = (TextView) itemView.findViewById(R.id.textAuthor);
             txtPrice = (TextView) itemView.findViewById(R.id.txtPrice);
-            txtRating = (RatingBar) itemView.findViewById(R.id.txtRating);
-
+            txtRating = (TfTextView) itemView.findViewById(R.id.txtRating);
+            txtReview = (TfTextView) itemView.findViewById(R.id.txtReview);
         }
 
         public void setValues(Product product) {
@@ -81,7 +83,8 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             textName.setText(product.getName());
             textAuthor.setText(product.getAuthor());
             txtPrice.setText(product.getPrice());
-            txtRating.setRating(product.getRating());
+            txtRating.setText(product.getRating());
+            txtReview.setText(product.getReview());
         }
     }
 

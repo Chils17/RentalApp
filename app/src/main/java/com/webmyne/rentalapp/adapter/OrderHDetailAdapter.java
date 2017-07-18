@@ -9,8 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.webmyne.rentalapp.R;
+import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.model.OrderDetail;
 import com.webmyne.rentalapp.model.OrderHistory;
+import com.webmyne.rentalapp.ui.ProductActivity;
 
 import java.util.ArrayList;
 
@@ -35,6 +37,13 @@ public class OrderHDetailAdapter extends RecyclerView.Adapter<OrderHDetailAdapte
     @Override
     public void onBindViewHolder(OrderHDetailAdapter.MyViewHolder holder, int position) {
         holder.setValues(orderHistoryArrayList.get(position));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Functions.fireIntent(context, ProductActivity.class);
+            }
+        });
     }
 
     @Override

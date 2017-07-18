@@ -27,7 +27,7 @@ public class OrderSuccessfullActivity extends AppCompatActivity {
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
         //toolbar.setTitleTextColor(Color.WHITE);
-        txtTitle.setText("");
+        txtTitle.setText(R.string.order_confirm);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         init();
 
@@ -53,5 +53,12 @@ public class OrderSuccessfullActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Functions.fireIntent(getApplicationContext(), DashboardActivity.class);
+
     }
 }

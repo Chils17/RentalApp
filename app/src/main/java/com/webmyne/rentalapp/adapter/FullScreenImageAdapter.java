@@ -24,20 +24,19 @@ import java.util.ArrayList;
 
 public class FullScreenImageAdapter extends PagerAdapter {
 
-    private Activity _activity;
-    private ArrayList<String> _imagePaths;
+    private Context context;
+    int images[];
     private LayoutInflater inflater;
 
     // constructor
-    public FullScreenImageAdapter(Activity activity,
-                                  ArrayList<String> imagePaths) {
-        this._activity = activity;
-        this._imagePaths = imagePaths;
+    public FullScreenImageAdapter(Context context, int images[]) {
+        this.context = context;
+        this.images = images;
     }
 
     @Override
     public int getCount() {
-        return this._imagePaths.size();
+        return images.length;
     }
 
     @Override
@@ -48,28 +47,14 @@ public class FullScreenImageAdapter extends PagerAdapter {
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         TouchImageView imgDisplay;
-        Button btnClose;
 
-        inflater = (LayoutInflater) _activity
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View viewLayout = inflater.inflate(R.layout.fullscreen_image, container,
-                false);
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+        View viewLayout = inflater.inflate(R.layout.fullscreen_image, container, false);
 
         imgDisplay = (TouchImageView) viewLayout.findViewById(R.id.imgDisplay);
-        // btnClose = (Button) viewLayout.findViewById(R.id.btnClose);
 
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-        Bitmap bitmap = BitmapFactory.decodeFile(_imagePaths.get(position), options);
-        imgDisplay.setImageBitmap(bitmap);
-
-        /*// close button click event
-        btnClose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                _activity.finish();
-            }
-        });*/
+        imgDisplay.setImageResource(images[position]);
 
         ((ViewPager) container).addView(viewLayout);
 

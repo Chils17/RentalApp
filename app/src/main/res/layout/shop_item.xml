@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="@dimen/dimen_6dp"
     android:orientation="vertical">
 
     <com.webmyne.rentalapp.custom.TfTextView
@@ -12,6 +11,7 @@
         android:layout_height="wrap_content"
         android:text="Art and Painting"
         app:ftype="semibold"
+        android:padding="@dimen/dimen_12dp"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/sp16" />
 

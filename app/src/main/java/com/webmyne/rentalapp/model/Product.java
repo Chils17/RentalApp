@@ -9,21 +9,31 @@ public class Product {
     private String name;
     private String author;
     private String price;
-    private float rating;
+    private String rating;
+    private String review;
 
-    public Product(int img, String name, String author, String price, float rating) {
+    public Product(int img, String name, String author, String price, String rating, String review) {
         this.img = img;
         this.name = name;
         this.author = author;
         this.price = price;
         this.rating = rating;
+        this.review = review;
     }
 
-    public float getRating() {
+    public String getReview() {
+        return review;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
+    }
+
+    public String getRating() {
         return rating;
     }
 
-    public void setRating(float rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
 

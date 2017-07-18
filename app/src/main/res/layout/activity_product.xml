@@ -161,7 +161,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:padding="@dimen/dimen_4dp">
+                    android:padding="@dimen/dimen_8dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -271,7 +271,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:padding="@dimen/dimen_2dp"
-                                    android:text="(215"
+                                    android:text="215"
                                     android:textColor="@color/half_black"
                                     android:textSize="@dimen/sp14"
                                     app:ftype="medium" />
@@ -334,7 +334,7 @@
                                 android:layout_gravity="center"
                                 android:maxLines="1"
                                 android:padding="@dimen/dimen_2dp"
-                                android:text="Category :"
+                                android:text="@string/category"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/sp14"
                                 app:ftype="semibold" />
@@ -364,7 +364,7 @@
                                 android:layout_gravity="center"
                                 android:maxLines="1"
                                 android:padding="@dimen/dimen_2dp"
-                                android:text="Pages :"
+                                android:text="@string/pages"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/sp14"
                                 app:ftype="semibold" />
@@ -394,7 +394,7 @@
                                 android:layout_gravity="center"
                                 android:maxLines="1"
                                 android:padding="@dimen/dimen_2dp"
-                                android:text="Publication :"
+                                android:text="@string/publication"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/sp14"
                                 app:ftype="semibold" />
@@ -424,7 +424,7 @@
                                 android:layout_gravity="center"
                                 android:maxLines="1"
                                 android:padding="@dimen/dimen_2dp"
-                                android:text="Bookcode :"
+                                android:text="@string/book_code"
                                 android:textColor="@color/black"
                                 android:textSize="@dimen/sp14"
                                 app:ftype="semibold" />
@@ -475,6 +475,7 @@
                             android:textSize="@dimen/sp14"
                             app:ftype="medium" />
                     </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
