@@ -10,5 +10,7 @@ import android.support.v7.app.AlertDialog;
 public class AppConstants {
 
     public static final String DEFAULT_STRING = "";
+    public static int HEIGHT;
+    public static int WIDTH;
 
 }

@@ -8,19 +8,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.MyCartAdapter;
-import com.webmyne.rentalapp.adapter.ShopCategoryAdapter;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfButton;
-import com.webmyne.rentalapp.custom.TfEditText;
 import com.webmyne.rentalapp.custom.TfTextView;
-import com.webmyne.rentalapp.helper.DividerDecoration;
 import com.webmyne.rentalapp.model.MyCart;
-import com.webmyne.rentalapp.model.Product;
-import com.webmyne.rentalapp.model.Shop;
 import com.webmyne.rentalapp.ui.CheckoutOrderActivity;
 
 import java.util.ArrayList;
@@ -32,7 +26,7 @@ public class MyCartFragment extends Fragment {
 
 
     private TfTextView emptyView;
-    private RecyclerView rvMyCart;
+    public RecyclerView rvMyCart;
     private ArrayList<MyCart> myCartList;
     private MyCartAdapter adapter;
     private TfButton checkOut;
@@ -68,6 +62,7 @@ public class MyCartFragment extends Fragment {
         checkOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*Functions.fireIntent(getActivity(), ShippingBillingAddrssActivity.class);*/
                 Functions.fireIntent(getActivity(), CheckoutOrderActivity.class);
             }
         });

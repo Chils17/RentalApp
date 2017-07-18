@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.webmyne.rentalapp.fragment.CartFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:id="@+id/ll_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/app_bar" />
+        </LinearLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ll_app_bar"
+            android:background="@color/colorPrimary"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="#fff"
+            app:tabIndicatorHeight="2dp"
+            app:tabMode="fixed" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager_address"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="?actionBarSize"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:layout_alignParentBottom="true"
+            android:background="@color/light_blue"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.webmyne.rentalapp.custom.TfButton
+                android:id="@+id/btnSaveAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="@string/save_address"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhiteSmoke"
+                android:textSize="@dimen/sp16" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

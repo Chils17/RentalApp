@@ -34,7 +34,8 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
     private static int currentPage = 0;
     private CircleIndicator indicator;
     private static final Integer[] mBookArray = {R.drawable.book, R.drawable.book_4, R.drawable.album3, R.drawable.album4, R.drawable.album5};
-    private ArrayList<Integer> mBookArrayList = new ArrayList<Integer>();
+    /*private ArrayList<Integer> mBookArrayList = new ArrayList<Integer>();*/
+    private ArrayList<String> mBookArrayList = new ArrayList<>();
     private Handler handler = null;
     private Timer swipeTimer;
     //region views
@@ -100,9 +101,10 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
         if (mBookArrayList != null) {
             mBookArrayList.clear();
         }
-        for (int i = 0; i < mBookArray.length; i++) {
-            mBookArrayList.add(mBookArray[i]);
-        }
+        mBookArrayList.add("http://demo.webmynehost.com/core/libonsite/images/slider/slider_5/slider1.jpg");
+        mBookArrayList.add("http://demo.webmynehost.com/core/libonsite/images/slider/slider_3/slider3.jpg");
+        mBookArrayList.add("http://demo.webmynehost.com/core/libonsite/images/slider/slider_2/slider4.jpg");
+        mBookArrayList.add("http://demo.webmynehost.com/core/libonsite/images/slider/slider_4/slider2.jpg");
         if (mBookArrayList.size() > 0) {
             mProductPager.setAdapter(new ProductPagerAdapter(getBaseActivity(), mBookArrayList));
             indicator.setViewPager(mProductPager);

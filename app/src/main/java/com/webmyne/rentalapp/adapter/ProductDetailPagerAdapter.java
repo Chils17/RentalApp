@@ -52,9 +52,9 @@ public class ProductDetailPagerAdapter extends PagerAdapter {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, FullScreenActivity.class);
+                /*Intent intent = new Intent(context, FullScreenActivity.class);
                 intent.putExtra("image", images[position]);
-                context.startActivity(intent);
+                context.startActivity(intent);*/
                 //Toast.makeText(context, "you clicked image " + (position + 1), Toast.LENGTH_LONG).show();
             }
         });

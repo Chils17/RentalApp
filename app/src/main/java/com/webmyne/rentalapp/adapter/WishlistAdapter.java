@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.webmyne.rentalapp.R;
@@ -93,7 +92,14 @@ public class WishlistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     private void removeWishListData(WishList wishListObject) {
         wishList.remove(wishListObject);
-        notifyDataSetChanged();
+        /*if (wishList.size() > 0) {
+            notifyDataSetChanged();
+            recyclerView.setVisibility(View.VISIBLE);
+            txtNoData.setVisibility(View.GONE);
+        } else {
+            recyclerView.setVisibility(View.GONE);
+            txtNoData.setVisibility(View.VISIBLE);
+        }*/
     }
 
     @Override

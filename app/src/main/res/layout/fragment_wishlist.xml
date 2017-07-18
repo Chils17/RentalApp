@@ -12,7 +12,8 @@
         android:id="@+id/wishList_recycle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:overScrollMode="never" />
+        android:overScrollMode="never"
+        android:visibility="gone"/>
 
     <com.webmyne.rentalapp.custom.TfTextView
         android:id="@+id/txtNoData"
@@ -21,6 +22,5 @@
         android:text="@string/no_data_available"
         android:textAlignment="center"
         android:textSize="@dimen/sp18"
-        android:layout_marginTop="@dimen/dimen_20dp"
-        android:visibility="gone"/>
+        android:layout_marginTop="@dimen/dimen_20dp" />
 </RelativeLayout>

@@ -46,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Functions.fireIntent(LoginActivity.this, IntroActivity.class);
+                finish();
             }
         });
         txtRegister.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(context, RegisterActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         btnExplore.setOnClickListener(new View.OnClickListener() {

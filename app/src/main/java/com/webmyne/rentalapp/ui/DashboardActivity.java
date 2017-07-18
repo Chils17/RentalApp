@@ -1,7 +1,6 @@
 package com.webmyne.rentalapp.ui;
 
 import android.content.DialogInterface;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,6 +8,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -111,12 +111,16 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         super.onPostCreate(savedInstanceState);
         mDrawerToggle.syncState();
     }
-
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return mDrawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
+    }
+
+    /*@Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         mDrawerToggle.onConfigurationChanged(newConfig);
-    }
+    }*/
 
     private void init() {
         //left drawer
@@ -160,81 +164,78 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.left_drawer_tv_home:
-                selectItem(0);
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
+                selectItem(0);
                 break;
             case R.id.left_drawer_tv_membership:
+                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 Fragment fragmentToPushMemberShip = MemberShipPlansFragment.getFragment(this);
                 pushAddFragments(fragmentToPushMemberShip, true, true);
-                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.left_drawer_tv_search:
-                Toast.makeText(this, getResources().getString(R.string.common_message_under_development), Toast.LENGTH_SHORT).show();
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
+                Toast.makeText(this, getResources().getString(R.string.common_message_under_development), Toast.LENGTH_SHORT).show();
                 break;
             case R.id.left_drawer_tv_rent:
+                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 Fragment fragmentToPushRent = RentFragment.getFragment(this);
                 pushAddFragments(fragmentToPushRent, true, true);
-                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.left_drawer_tv_shop:
+                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 Fragment fragmentToPushShop = ShopFragment.getFragment(this);
                 pushAddFragments(fragmentToPushShop, true, true);
-                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.left_drawer_tv_my_cart:
+                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 Fragment fragmentToPushCart = CartFragment.getFragment(this);
                 pushAddFragments(fragmentToPushCart, true, true);
-                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.left_drawer_tv_wishlist:
+                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 Fragment fragmentToPushWishList = WishListFragment.getFragment(this);
                 pushAddFragments(fragmentToPushWishList, true, true);
-                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.left_drawer_tv_my_account:
+                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 Fragment fragmentToPushAccount = MyAccountFragment.getFragment(this);
                 pushAddFragments(fragmentToPushAccount, true, true);
-                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.ll_footer_account:
                 Fragment fragmentToPushAccountFooter = MyAccountFragment.getFragment(this);
                 pushAddFragments(fragmentToPushAccountFooter, true, true);
-                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.ll_footer_shop:
                 Fragment fragmentToPushShopFooter = ShopFragment.getFragment(this);
                 pushAddFragments(fragmentToPushShopFooter, true, true);
-                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
             case R.id.ll_footer_rent:
                 Fragment fragmentToPushRentFooter = RentFragment.getFragment(this);
                 pushAddFragments(fragmentToPushRentFooter, true, true);
-                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 break;
-
             case R.id.left_drawer_tv_rewards:
+                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 Fragment fragmentToPushMyRewards = MyRewardsFragment.getFragment(this);
                 pushAddFragments(fragmentToPushMyRewards, true, true);
                 break;
-
             case R.id.left_drawer_tv_settings:
+                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 Fragment fragmentToPushSetting = SettingFragment.getFragment(this);
                 pushAddFragments(fragmentToPushSetting, true, true);
                 break;
-
             case R.id.ll_footer_home:
                 loadHomeFragment();
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
             case R.id.left_drawer_tv_logout:
-                logOutDialogue();
-                getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
+                if (view.getId() != R.id.ll_footer_home) {
+                    logoutDialogue();
+                }
             default:
                 break;
         }
     }
 
-    private void logOutDialogue() {
+    private void logoutDialogue() {
         new AlertDialog.Builder(this)
                 .setMessage(R.string.dailog_logOut)
                 .setCancelable(false)

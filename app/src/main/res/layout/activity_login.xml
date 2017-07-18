@@ -191,14 +191,14 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_facebook"/>
+                android:background="@drawable/fb_btn"/>
             <Space
                 android:layout_width="@dimen/dimen_26dp"
                 android:layout_height="wrap_content" />
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_google_plus"/>
+                android:src="@drawable/google_btn"/>
 
         </LinearLayout>
     </LinearLayout>

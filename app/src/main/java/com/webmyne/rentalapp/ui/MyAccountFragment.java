@@ -37,11 +37,11 @@ public class MyAccountFragment extends BaseFragment implements View.OnClickListe
 
 
     @SuppressLint({"ValidFragment", "Unused"})
-    private MyAccountFragment() {
+    public MyAccountFragment() {
     }
 
     @SuppressLint("ValidFragment")
-    private MyAccountFragment(BaseActivity activity) {
+    public MyAccountFragment(BaseActivity activity) {
         setBaseActivity(activity);
     }
 

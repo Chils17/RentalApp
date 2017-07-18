@@ -2,12 +2,19 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/iv_product"
+
+    <ImageView android:id="@+id/iv_product"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_200"
         android:adjustViewBounds="true"
         android:layout_gravity="center"
-        android:src="@drawable/book"
         android:scaleType="centerCrop"/>
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="@dimen/height_50"
+        android:progressBackgroundTint="@color/colorPrimary"
+        android:layout_gravity="center"
+        android:progressTint="@color/colorPrimary"
+        android:layout_height="@dimen/height_50"
+        />
 </FrameLayout>

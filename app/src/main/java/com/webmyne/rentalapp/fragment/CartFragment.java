@@ -16,8 +16,6 @@ import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.ui.BaseActivity;
 
 public class CartFragment extends BaseFragment {
-    private Toolbar toolbar;
-    private TfTextView txtTitle;
     private ViewPager mViewPager;
     private TabLayout tabLayout;
     private TabMenuAdapter tabMenuAdapter;
