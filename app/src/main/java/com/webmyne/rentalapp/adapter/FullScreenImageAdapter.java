@@ -1,69 +1,82 @@
 package com.webmyne.rentalapp.adapter;
 
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.helper.TouchImageView;
+import com.webmyne.rentalapp.model.ProductImage;
+import com.webmyne.rentalapp.ui.FullScreenActivity;
 
 import java.util.ArrayList;
 
 /**
- * Created by chiragpatel on 17-07-2017.
+ * Created by chiragpatel on 18-07-2017.
  */
 
 public class FullScreenImageAdapter extends PagerAdapter {
+    Context context;
+    private ArrayList<ProductImage> imagesList = new ArrayList<>();
+    LayoutInflater layoutInflater;
 
-    private Context context;
-    int images[];
-    private LayoutInflater inflater;
-
-    // constructor
-    public FullScreenImageAdapter(Context context, int images[]) {
+    public FullScreenImageAdapter(Context context, ArrayList<ProductImage> images) {
         this.context = context;
-        this.images = images;
+        this.imagesList = images;
+        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
-        return images.length;
+        return imagesList.size();
     }
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        return view == ((LinearLayout) object);
+        return view == ((FrameLayout) object);
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
-        TouchImageView imgDisplay;
+    public Object instantiateItem(final ViewGroup container, final int position) {
+        View itemView = layoutInflater.inflate(R.layout.fullscreen_image, container, false);
 
-        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final TouchImageView imageView = (TouchImageView) itemView.findViewById(R.id.imgDisplay);
+        final ProgressBar progress = (ProgressBar) itemView.findViewById(R.id.progress);
 
-        View viewLayout = inflater.inflate(R.layout.fullscreen_image, container, false);
+        progress.setVisibility(View.VISIBLE);
+        Glide.with(context)
+                .load(imagesList.get(position).getImg_url())
+                .listener(new RequestListener<String, GlideDrawable>() {
+                    @Override
+                    public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                        return false;
+                    }
 
-        imgDisplay = (TouchImageView) viewLayout.findViewById(R.id.imgDisplay);
+                    @Override
+                    public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                        progress.setVisibility(View.GONE);
+                        return false;
+                    }
+                })
+                .into(imageView);
 
-        imgDisplay.setImageResource(images[position]);
+        container.addView(itemView);
 
-        ((ViewPager) container).addView(viewLayout);
-
-        return viewLayout;
+        return itemView;
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        ((ViewPager) container).removeView((LinearLayout) object);
-
+        container.removeView((FrameLayout) object);
     }
 }

@@ -198,5 +198,6 @@
     <string name="_300">₹ 300</string>
     <string name="_5000">5000</string>
     <string name="_5500">5500</string>
+    <string name="qty">Qty</string>
 
 </resources>

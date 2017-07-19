@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
+import com.webmyne.rentalapp.helper.UIHelper;
 import com.webmyne.rentalapp.model.MyCart;
 import com.webmyne.rentalapp.model.WishList;
 import com.webmyne.rentalapp.ui.CheckoutOrderActivity;
@@ -28,6 +29,7 @@ import me.himanshusoni.quantityview.QuantityView;
 public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.MyViewHolder> {
     private ArrayList<MyCart> myCartArrayList;
     private Context context;
+    private int count=0;
 
     public MyCartAdapter(Context context, ArrayList<MyCart> myCartArrayList) {
         this.myCartArrayList = myCartArrayList;
@@ -53,7 +55,7 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.MyViewHold
         holder.imgRemove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(context)
+               /* new AlertDialog.Builder(context)
                         .setTitle("")
                         .setMessage(R.string.remove_item)
                         .setCancelable(false)
@@ -70,7 +72,19 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.MyViewHold
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.cancel();
                             }
-                        }).show();
+                        }).show();*/
+
+                UIHelper.showAlertDialogWithYesNo(context, context.getResources().getString(R.string.remove_item),
+                        new UIHelper.DialogOptionsSelectedListener() {
+                            @Override
+                            public void onSelect(boolean isYes) {
+                                if (isYes) {
+                                    removeMyCartList(myCartArrayList.get(position));
+                                } else {
+
+                                }
+                            }
+                        });
             }
         });
     }
@@ -92,6 +106,8 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.MyViewHold
         private final QuantityView numQty;
         private final ImageView imgBook;
         private final ImageView imgRemove;
+       // private final ImageView imgPlus;
+      //  private final ImageView imgMinus;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -101,6 +117,8 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.MyViewHold
             txtBookPrice = (TfTextView) itemView.findViewById(R.id.txtBookPrice);
             txtBookCategory = (TfTextView) itemView.findViewById(R.id.txtBookCategory);
             numQty = (QuantityView) itemView.findViewById(R.id.numQty);
+            //imgPlus = (ImageView) itemView.findViewById(R.id.imgPlus);
+            //imgMinus = (ImageView) itemView.findViewById(R.id.imgMinus);
         }
 
         public void setValues(MyCart myCart) {
@@ -109,6 +127,7 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.MyViewHold
             txtBookPrice.setText(myCart.getPrice());
             txtBookCategory.setText(myCart.getCategory());
             numQty.setQuantity(myCart.getQty());
+
         }
     }
 }

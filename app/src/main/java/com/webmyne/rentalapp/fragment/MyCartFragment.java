@@ -74,14 +74,14 @@ public class MyCartFragment extends Fragment {
 
         myCartList = new ArrayList<>();
 
-        myCartList.add(new MyCart(R.drawable.image1, "Killing", "J. K. Rowling", "₹ 500", 2));
-        myCartList.add(new MyCart(R.drawable.image1, "Infinite of Cloud", "J. K. Rowling", "₹ 2000", 3));
-        myCartList.add(new MyCart(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹ 500", 4));
-        myCartList.add(new MyCart(R.drawable.image1, "MyCart Launch Secrets", "J. K. Rowling", "₹ 2500", 5));
-        myCartList.add(new MyCart(R.drawable.image1, "Forte", "J. K. Rowling", "₹ 500", 5));
-        myCartList.add(new MyCart(R.drawable.image1, "Killing", "J. K. Rowling", "₹ 2050", 4));
-        myCartList.add(new MyCart(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹ 500", 3));
-        myCartList.add(new MyCart(R.drawable.image1, "Product Launch Secret", "J. K. Rowling", "₹ 2500", 2));
+        myCartList.add(new MyCart(R.drawable.image1, "Killing Hemingway", "J. K. Rowling", "₹ 500", 1));
+        myCartList.add(new MyCart(R.drawable.image1, "Infinite of Cloud", "J. K. Rowling", "₹ 2000", 1));
+        myCartList.add(new MyCart(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹ 500", 1));
+        myCartList.add(new MyCart(R.drawable.image1, "MyCart Launch Secrets", "J. K. Rowling", "₹ 2500", 1));
+        myCartList.add(new MyCart(R.drawable.image1, "Forte", "J. K. Rowling", "₹ 500", 1));
+        myCartList.add(new MyCart(R.drawable.image1, "Killing Hemingway", "J. K. Rowling", "₹ 2050", 1));
+        myCartList.add(new MyCart(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹ 500", 1));
+        myCartList.add(new MyCart(R.drawable.image1, "Product Launch Secret", "J. K. Rowling", "₹ 2500", 1));
 
 
         adapter = new MyCartAdapter(getContext(), myCartList);

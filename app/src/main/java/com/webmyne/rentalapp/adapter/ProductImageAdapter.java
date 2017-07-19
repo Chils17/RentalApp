@@ -6,7 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.RequestListener;
+import com.bumptech.glide.request.target.Target;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.model.ProductImage;
 import com.webmyne.rentalapp.model.Shop;
@@ -61,14 +66,33 @@ public class ProductImageAdapter extends RecyclerView.Adapter<ProductImageAdapte
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private final ImageView imageView;
+        private final ProgressBar progress;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             imageView = (ImageView) itemView.findViewById(R.id.imageView);
+            progress = (ProgressBar) itemView.findViewById(R.id.progress);
         }
 
         public void setValues(ProductImage productImage) {
-            imageView.setImageResource(productImage.getImg());
+           // imageView.setImageResource(productImage.getImg());
+
+            progress.setVisibility(View.VISIBLE);
+            Glide.with(context)
+                    .load(productImage.getImg_url())
+                    .listener(new RequestListener<String, GlideDrawable>() {
+                        @Override
+                        public boolean onException(Exception e, String model, Target<GlideDrawable> target, boolean isFirstResource) {
+                            return false;
+                        }
+
+                        @Override
+                        public boolean onResourceReady(GlideDrawable resource, String model, Target<GlideDrawable> target, boolean isFromMemoryCache, boolean isFirstResource) {
+                            progress.setVisibility(View.GONE);
+                            return false;
+                        }
+                    })
+                    .into(imageView);
         }
     }
 

@@ -15,6 +15,5 @@
         android:progressBackgroundTint="@color/colorPrimary"
         android:layout_gravity="center"
         android:progressTint="@color/colorPrimary"
-        android:layout_height="@dimen/height_50"
-        />
+        android:layout_height="@dimen/height_50" />
 </FrameLayout>

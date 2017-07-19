@@ -13,6 +13,7 @@ import android.widget.NumberPicker;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
+import com.webmyne.rentalapp.helper.UIHelper;
 import com.webmyne.rentalapp.model.MyCart;
 import com.webmyne.rentalapp.model.RentCart;
 import com.webmyne.rentalapp.ui.ProductActivity;
@@ -51,7 +52,7 @@ public class RentalCartAdapter extends RecyclerView.Adapter<RentalCartAdapter.My
         holder.imgRemove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(context)
+               /* new AlertDialog.Builder(context)
                         .setTitle("")
                         .setMessage(R.string.remove_item)
                         .setCancelable(false)
@@ -68,7 +69,19 @@ public class RentalCartAdapter extends RecyclerView.Adapter<RentalCartAdapter.My
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.cancel();
                             }
-                        }).show();
+                        }).show();*/
+
+                UIHelper.showAlertDialogWithYesNo(context, context.getResources().getString(R.string.remove_item),
+                        new UIHelper.DialogOptionsSelectedListener() {
+                            @Override
+                            public void onSelect(boolean isYes) {
+                                if (isYes) {
+                                    removeMyCartList(rentCartArrayList.get(position));
+                                } else {
+
+                                }
+                            }
+                        });
 
             }
         });

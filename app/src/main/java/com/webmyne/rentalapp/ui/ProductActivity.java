@@ -41,13 +41,14 @@ public class ProductActivity extends AppCompatActivity {
     private ImageButton leftnav;
     private SparkButton imgLike;
     private ViewPager viewPager;
-    int images[] = {R.drawable.album1, R.drawable.album2, R.drawable.album3, R.drawable.album4};
+    //  int images[] = {R.drawable.album1, R.drawable.album2, R.drawable.album3, R.drawable.album4};
     private Toolbar toolbar;
     private FloatingActionButton floatingCart;
     private ProductDetailPagerAdapter productDetailPagerAdapter;
     private RecyclerView rvProductImages;
     private ArrayList<ProductImage> productImageList;
     private ProductImageAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,9 +62,14 @@ public class ProductActivity extends AppCompatActivity {
         //toolbar.setTitleTextColor(Color.WHITE);
         txtTitle.setText(R.string.harry);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         init();
-        actionListener();
+
         initRecyclerView();
+
+        initViewPager();
+
+        actionListener();
     }
 
 
@@ -85,11 +91,6 @@ public class ProductActivity extends AppCompatActivity {
         //imgLike = (SparkButton) findViewById(R.id.img_like);
         floatingCart = (FloatingActionButton) findViewById(R.id.floatingCart);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
-
-
-        productDetailPagerAdapter = new ProductDetailPagerAdapter(ProductActivity.this, images);
-        viewPager.setAdapter(productDetailPagerAdapter);
-        // indicator.setViewPager(viewPager);
     }
 
     private void actionListener() {
@@ -99,6 +100,7 @@ public class ProductActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
        /* leftnav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -121,14 +123,6 @@ public class ProductActivity extends AppCompatActivity {
             }
         });*/
 
-        viewPager.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Functions.fireIntent(getApplicationContext(), FullScreenActivity.class);
-            }
-        });
-
-
 
         floatingCart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,8 +133,7 @@ public class ProductActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
-        rvProductImages.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
-
+        rvProductImages.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         productImageList = new ArrayList<>();
 
        /* for (int i = 1; i <= 4; i++) {
@@ -150,10 +143,20 @@ public class ProductActivity extends AppCompatActivity {
             productImageList.add(productImage);
         }*/
 
-        productImageList.add(new ProductImage(R.drawable.album1));
+        /*productImageList.add(new ProductImage(R.drawable.album1));
         productImageList.add(new ProductImage(R.drawable.album2));
         productImageList.add(new ProductImage(R.drawable.album3));
-        productImageList.add(new ProductImage(R.drawable.album4));
+        productImageList.add(new ProductImage(R.drawable.album4));*/
+
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_5/slider1.jpg"));
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_3/slider3.jpg"));
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_2/slider4.jpg"));
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_4/slider2.jpg"));
+
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_5/slider1.jpg"));
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_3/slider3.jpg"));
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_2/slider4.jpg"));
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_4/slider2.jpg"));
 
 
         adapter = new ProductImageAdapter(getApplicationContext(), productImageList, new ProductImageAdapter.OnClickItem() {
@@ -162,8 +165,27 @@ public class ProductActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(position);
             }
         });
-        rvProductImages.setAdapter(adapter);
 
+        rvProductImages.setAdapter(adapter);
     }
+
+    private void initViewPager() {
+        productImageList = new ArrayList<>();
+
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_5/slider1.jpg"));
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_3/slider3.jpg"));
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_2/slider4.jpg"));
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_4/slider2.jpg"));
+
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_5/slider1.jpg"));
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_3/slider3.jpg"));
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_2/slider4.jpg"));
+        productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_4/slider2.jpg"));
+
+        productDetailPagerAdapter = new ProductDetailPagerAdapter(ProductActivity.this, productImageList);
+        viewPager.setAdapter(productDetailPagerAdapter);
+        // indicator.setViewPager(viewPager);
+    }
+
 
 }

@@ -32,11 +32,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <android.support.v4.view.ViewPager
-                        android:id="@+id/viewPager"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/dimen_280dp" />
-
                     <com.varunest.sparkbutton.SparkButton
                         android:id="@+id/img_like"
                         android:layout_width="@dimen/dimen_30dp"
@@ -46,6 +41,11 @@
                         app:sparkbutton_activeImage="@drawable/ic_heart_on"
                         app:sparkbutton_iconSize="@dimen/dimen_28dp"
                         app:sparkbutton_inActiveImage="@drawable/ic_heart_off" />
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dimen_280dp" />
 
                     <!-- <ImageView
                          android:layout_width="match_parent"
@@ -154,8 +154,7 @@
                     android:id="@+id/rvProductImages"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:overScrollMode="never"
-                    android:scrollbars="horizontal" />
+                    android:overScrollMode="never"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -254,7 +253,7 @@
                                 android:layout_gravity="center"
                                 android:orientation="horizontal">
 
-                                <RatingBar
+                               <!-- <RatingBar
                                     style="@style/Widget.AppCompat.RatingBar.Small"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -263,7 +262,33 @@
                                     android:numStars="5"
                                     android:progressTint="@color/colorPrimary"
                                     android:rating="4"
-                                    android:secondaryProgressTint="@color/off_white" />
+                                    android:secondaryProgressTint="@color/off_white" />-->
+
+                               <!-- <RatingBar
+                                    style="@style/CustomRatingBar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:scaleX=".7"
+                                    android:scaleY=".7"
+                                    android:transformPivotX="1dp"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    android:numStars="5"
+                                    android:rating="4"/>-->
+
+                                <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    app:srb_starSize="@dimen/dimen_14dp"
+                                    android:layout_margin="@dimen/dimen_2dp"
+                                    app:srb_numberOfStars="5"
+                                    app:srb_rating="3"
+                                    app:srb_isIndicator="true"
+                                    app:srb_stepSize="0.5"
+                                    app:srb_borderColor="@color/colorPrimary"
+                                    app:srb_fillColor="@color/colorPrimary"
+                                    app:srb_starBackgroundColor="@color/colorWhiteSmoke" />
 
                                 <com.webmyne.rentalapp.custom.TfTextView
                                     android:id="@+id/textViewer"
