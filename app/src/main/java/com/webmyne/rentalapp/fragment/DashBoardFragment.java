@@ -14,6 +14,7 @@ import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.ProductPagerAdapter;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.ui.BaseActivity;
+import com.webmyne.rentalapp.ui.ProductActivity;
 import com.webmyne.rentalapp.ui.ProductListActivity;
 import com.webmyne.rentalapp.ui.customviews.LayoutView;
 
@@ -133,39 +134,86 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
         }
         for (int i = 0; i < 2; i++) {
             View hiddenInfo = getBaseActivity().getLayoutInflater().inflate(R.layout.item_product_dashboard_adapter, ll_new_arrivals_content_top, false);
+            LinearLayout card_view = (LinearLayout) hiddenInfo.findViewById(R.id.card_view);
+            card_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Functions.fireIntent(getBaseActivity(), ProductActivity.class);
+                }
+            });
             ll_new_arrivals_content_bottom.addView(hiddenInfo);
 
         }
         for (int i = 0; i < 2; i++) {
             View hiddenInfo = getBaseActivity().getLayoutInflater().inflate(R.layout.item_product_dashboard_adapter, ll_new_arrivals_content_top, false);
+            LinearLayout card_view = (LinearLayout) hiddenInfo.findViewById(R.id.card_view);
+            card_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Functions.fireIntent(getBaseActivity(), ProductActivity.class);
+                }
+            });
             ll_populars_content_top.addView(hiddenInfo);
         }
         for (int i = 0; i < 2; i++) {
             View hiddenInfo = getBaseActivity().getLayoutInflater().inflate(R.layout.item_product_dashboard_adapter, ll_new_arrivals_content_top, false);
+            LinearLayout card_view = (LinearLayout) hiddenInfo.findViewById(R.id.card_view);
+            card_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Functions.fireIntent(getBaseActivity(), ProductActivity.class);
+                }
+            });
             ll_popular_content_bottom.addView(hiddenInfo);
 
         }
         for (int i = 0; i < 2; i++) {
             View hiddenInfo = getBaseActivity().getLayoutInflater().inflate(R.layout.item_product_dashboard_adapter, ll_new_arrivals_content_top, false);
+            LinearLayout card_view = (LinearLayout) hiddenInfo.findViewById(R.id.card_view);
+            card_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Functions.fireIntent(getBaseActivity(), ProductActivity.class);
+                }
+            });
             ll_featured_content_top.addView(hiddenInfo);
 
         }
         for (int i = 0; i < 2; i++) {
             View hiddenInfo = getBaseActivity().getLayoutInflater().inflate(R.layout.item_product_dashboard_adapter, ll_new_arrivals_content_top, false);
+            LinearLayout card_view = (LinearLayout) hiddenInfo.findViewById(R.id.card_view);
+            card_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Functions.fireIntent(getBaseActivity(), ProductActivity.class);
+                }
+            });
             ll_featured_content_bottom.addView(hiddenInfo);
 
         }
         for (int i = 0; i < 2; i++) {
             View hiddenInfo = getBaseActivity().getLayoutInflater().inflate(R.layout.item_product_dashboard_adapter, ll_new_arrivals_content_top, false);
+            LinearLayout card_view = (LinearLayout) hiddenInfo.findViewById(R.id.card_view);
+            card_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Functions.fireIntent(getBaseActivity(), ProductActivity.class);
+                }
+            });
             ll_products_for_you_content_top.addView(hiddenInfo);
 
         }
         for (int i = 0; i < 2; i++) {
             View hiddenInfo = getBaseActivity().getLayoutInflater().inflate(R.layout.item_product_dashboard_adapter, ll_new_arrivals_content_top, false);
+            LinearLayout card_view = (LinearLayout) hiddenInfo.findViewById(R.id.card_view);
+            card_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Functions.fireIntent(getBaseActivity(), ProductActivity.class);
+                }
+            });
             ll_products_for_you_content_bottom.addView(hiddenInfo);
-
         }
-
     }
 
     @Override

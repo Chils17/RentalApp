@@ -259,6 +259,17 @@ public class BaseActivity extends AppCompatActivity {
             imm.hideSoftInputFromWindow(editText.getWindowToken(), 0);
         }
     }
-
+    /**
+     * Common net error.
+     *
+     * @param cause the cause
+     */
+    public void commonNetError(String cause, boolean isPop) {
+        /*closeProgress();
+        new ToastUtils(this).showToast(cause);*/
+        if (isPop) {
+            this.popFragments(true);
+        }
+    }
 
 }

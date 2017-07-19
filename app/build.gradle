@@ -19,6 +19,7 @@ android {
         }
         release {
             minifyEnabled false
+            "multiDexKeepFile file('main-dex-list.txt')"
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }

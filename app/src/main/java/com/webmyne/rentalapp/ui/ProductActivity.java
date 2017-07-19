@@ -60,7 +60,7 @@ public class ProductActivity extends AppCompatActivity {
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
         //toolbar.setTitleTextColor(Color.WHITE);
-        txtTitle.setText(R.string.harry);
+        txtTitle.setText(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         init();

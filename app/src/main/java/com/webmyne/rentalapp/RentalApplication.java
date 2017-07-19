@@ -63,6 +63,5 @@ public class RentalApplication extends MultiDexApplication {
         super.attachBaseContext(base);
         MultiDex.install(this);
         MultiDex.install(mInstance);
-        MultiDex.install(getBaseContext());
     }
 }
