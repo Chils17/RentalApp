@@ -1,14 +1,11 @@
 package com.webmyne.rentalapp.adapter;
 
 import android.content.Context;
-import android.os.Handler;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.varunest.sparkbutton.SparkButton;
@@ -20,29 +17,27 @@ import com.webmyne.rentalapp.ui.ProductActivity;
 
 import java.util.ArrayList;
 
-import static com.webmyne.rentalapp.R.id.img_like;
-
 /**
- * Created by chiragpatel on 11-07-2017.
+ * Created by chiragpatel on 19-07-2017.
  */
 
-public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.MyViewHolder> {
+public class ProductGridAdapter extends RecyclerView.Adapter<ProductGridAdapter.MyViewHolder> {
     private ArrayList<Product> productArrayList;
     private Context context;
 
-    public ProductListAdapter(Context context, ArrayList<Product> productArrayList) {
+    public ProductGridAdapter(Context context, ArrayList<Product> productArrayList) {
         this.context = context;
         this.productArrayList = productArrayList;
     }
 
     @Override
-    public ProductListAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.product_item_list, parent, false);
-        return new MyViewHolder(view);
+    public ProductGridAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.product_item, parent, false);
+        return new ProductGridAdapter.MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ProductListAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(ProductGridAdapter.MyViewHolder holder, int position) {
         holder.setValues(productArrayList.get(position));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -87,5 +82,4 @@ public class ProductListAdapter extends RecyclerView.Adapter<ProductListAdapter.
             txtReview.setText(product.getReview());
         }
     }
-
 }

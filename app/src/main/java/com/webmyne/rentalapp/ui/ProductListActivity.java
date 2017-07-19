@@ -32,6 +32,7 @@ import com.crystal.crystalrangeseekbar.interfaces.OnRangeSeekbarFinalValueListen
 import com.crystal.crystalrangeseekbar.widgets.CrystalRangeSeekbar;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.CustomSpinnerAdapter;
+import com.webmyne.rentalapp.adapter.ProductGridAdapter;
 import com.webmyne.rentalapp.adapter.ProductListAdapter;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
@@ -46,7 +47,7 @@ public class ProductListActivity extends AppCompatActivity {
     private TfTextView txtTitle;
     private Toolbar toolbar;
     private ArrayList<Product> productArrayList;
-    private ProductListAdapter adapter;
+    private ProductGridAdapter gridAdapter;
     private DrawerLayout mDrawerLayout;
     private LinearLayout lv;
     private TabLayout tabLayout;
@@ -60,6 +61,10 @@ public class ProductListActivity extends AppCompatActivity {
     private RadioButton rbLH;
     private RadioButton rbHL;
     private RadioButton rbNewest;
+    private GridLayoutManager gridLayoutManager;
+    private LinearLayoutManager linearLayoutManager;
+    private boolean isSelected = false;
+    private ProductListAdapter listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -143,20 +148,25 @@ public class ProductListActivity extends AppCompatActivity {
     }
 
     private void initRecyclerView() {
-        GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 2);
-        rvProduct.setLayoutManager(manager);
+        gridLayoutManager = new GridLayoutManager(getApplicationContext(), 2);
+
+        linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+
+        rvProduct.setLayoutManager(gridLayoutManager);
 
         productArrayList = new ArrayList<>();
-        productArrayList.add(new Product(R.drawable.image1, "Killing", "J. K. Rowling", "₹ 500", "4.2","212"));
-        productArrayList.add(new Product(R.drawable.image1, "Infinite of Cloud", "J. K. Rowling", "₹ 2000", "3.7","651"));
-        productArrayList.add(new Product(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹ 500", "3.9","544"));
-        productArrayList.add(new Product(R.drawable.image1, "Product Launch Secrets", "J. K. Rowling", "₹ 2500", "4.1","725"));
-        productArrayList.add(new Product(R.drawable.image1, "Forte", "J. K. Rowling", "₹ 500", "4.4","154"));
-        productArrayList.add(new Product(R.drawable.image1, "Killing", "J. K. Rowling", "₹ 2050","4.6","123"));
-        productArrayList.add(new Product(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹ 500", "4.8","153"));
-        productArrayList.add(new Product(R.drawable.image1, "Product Launch Secret", "J. K. Rowling", "₹ 2500","4.2","754"));
-        adapter = new ProductListAdapter(getApplicationContext(), productArrayList);
-        rvProduct.setAdapter(adapter);
+
+        productArrayList.add(new Product(R.drawable.image1, "Killing", "J. K. Rowling", "₹ 500", "4.2", "212"));
+        productArrayList.add(new Product(R.drawable.image1, "Infinite of Cloud", "J. K. Rowling", "₹ 2000", "3.7", "651"));
+        productArrayList.add(new Product(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹ 500", "3.9", "544"));
+        productArrayList.add(new Product(R.drawable.image1, "Product Launch Secrets", "J. K. Rowling", "₹ 2500", "4.1", "725"));
+        productArrayList.add(new Product(R.drawable.image1, "Forte", "J. K. Rowling", "₹ 500", "4.4", "154"));
+        productArrayList.add(new Product(R.drawable.image1, "Killing", "J. K. Rowling", "₹ 2050", "4.6", "123"));
+        productArrayList.add(new Product(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹ 500", "4.8", "153"));
+        productArrayList.add(new Product(R.drawable.image1, "Product Launch Secret", "J. K. Rowling", "₹ 2500", "4.2", "754"));
+
+        gridAdapter = new ProductGridAdapter(getApplicationContext(), productArrayList);
+        rvProduct.setAdapter(gridAdapter);
     }
 
     @Override
@@ -170,6 +180,22 @@ public class ProductListActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.action_filter:
                 mDrawerLayout.openDrawer(Gravity.END);
+                break;
+
+            case R.id.action_list:
+                if (isSelected) {
+                    rvProduct.setLayoutManager(gridLayoutManager);
+                    item.setIcon(R.drawable.ic_list_toolbar);
+                    gridAdapter = new ProductGridAdapter(getApplicationContext(), productArrayList);
+                    rvProduct.setAdapter(gridAdapter);
+                    isSelected = false;
+                } else {
+                    rvProduct.setLayoutManager(linearLayoutManager);
+                    item.setIcon(R.drawable.ic_grid_toolbar);
+                    listAdapter = new ProductListAdapter(getApplicationContext(), productArrayList);
+                    rvProduct.setAdapter(listAdapter);
+                    isSelected = true;
+                }
                 break;
         }
 

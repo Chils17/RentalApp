@@ -44,7 +44,7 @@ public class ProductImageAdapter extends RecyclerView.Adapter<ProductImageAdapte
     public void onBindViewHolder(ProductImageAdapter.MyViewHolder holder, final int position) {
         holder.setValues(productImageList.get(position));
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onClickItem.onClickItem(position);
