@@ -19,11 +19,11 @@ import java.util.ArrayList;
  * Created by chintans on 14-07-2017.
  */
 
-public class CheckoutOrderActivity extends AppCompatActivity {
+public class CheckoutOrderActivity extends AppCompatActivity implements View.OnClickListener {
     private ArrayList<MyCart> myCartList;
     private MyCartAdapter adapter;
     private Toolbar toolbar;
-    private TfTextView txtTitle;
+    private TfTextView txtTitle, txt_edit_shipping_address, txt_edit_billing_address;
     private TfButton btnConfirm;
     private LinearLayout ll_cart_content, ll_cart_content_parent;
 
@@ -46,9 +46,13 @@ public class CheckoutOrderActivity extends AppCompatActivity {
     }
 
     private void init() {
+        txt_edit_shipping_address = (TfTextView) findViewById(R.id.txt_edit_shipping_address);
+        txt_edit_billing_address = (TfTextView) findViewById(R.id.txt_edit_billing_address);
         ll_cart_content = (LinearLayout) findViewById(R.id.ll_cart_content);
         ll_cart_content_parent = (LinearLayout) findViewById(R.id.ll_cart_content_parent);
         btnConfirm = (TfButton) findViewById(R.id.btnConfirm);
+        txt_edit_billing_address.setOnClickListener(this);
+        txt_edit_shipping_address.setOnClickListener(this);
     }
 
     private void actionListener() {
@@ -71,6 +75,22 @@ public class CheckoutOrderActivity extends AppCompatActivity {
         for (int i = 0; i < 10; i++) {
             View hiddenInfo = this.getLayoutInflater().inflate(R.layout.cart_item, ll_cart_content, false);
             ll_cart_content_parent.addView(hiddenInfo);
+        }
+    }
+    @Override
+    public void onClick(View v) {
+        onOptionClick(v);
+    }
+
+    private void onOptionClick(View view) {
+        switch (view.getId()) {
+            case R.id.txt_edit_billing_address:
+                Functions.fireIntent(CheckoutOrderActivity.this, ShippingBillingAddrssActivity.class);
+                break;
+            case R.id.txt_edit_shipping_address:
+                Functions.fireIntent(CheckoutOrderActivity.this, ShippingBillingAddrssActivity.class);
+                break;
+
         }
     }
 }

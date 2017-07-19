@@ -16,7 +16,6 @@
     <color name="strip5">#5A29A4</color>
 
     <color name="white">#ffffff</color>
-    <color name="red">#F44336</color>
     <color name="off_white">#eeeeee</color>
     <color name="black">#000000</color>
     <color name="half_black">#5d5d5d</color>
@@ -35,6 +34,7 @@
     <color name="colorPurple">#d500f9</color>
     <color name="colorOrange">#ff6d00</color>
     <color name="colorRed">#F5511E</color>
+    <color name="red">#E92F38</color>
     <color name="colorGreen">#7AB439</color>
 
     <color name="colorLightGreen">#00D498</color>

@@ -1,20 +1,15 @@
 package com.webmyne.rentalapp.ui;
 
 import android.app.Activity;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
-
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
+import com.webmyne.rentalapp.helper.UIHelper;
 
 /**
  * Created by gulamhusen on 14-07-2017.
@@ -45,7 +40,9 @@ public class SplashActivity extends Activity {
                 Functions.fireIntentWithClearFlagWithWithPendingTransition(SplashActivity.this, LoginActivity.class);
             }
         }, SPLASH_TIME_OUT);
-
-
+        if (getIntent() != null && getIntent().hasExtra("CRASHED")) {
+            UIHelper.showMessage(SplashActivity.this, getResources().getString(R.string.err_something_went_wrong));
+            Throwable throwable = (Throwable) getIntent().getSerializableExtra("EXCEPTION");
+        }
     }
 }

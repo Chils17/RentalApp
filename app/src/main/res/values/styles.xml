@@ -32,7 +32,6 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:textColor">@color/menu_text_color</item>
         <item name="android:paddingLeft">@dimen/dimen_10dp</item>
-        <item name="android:background">@drawable/view_clickable_state</item>
         <item name="android:paddingRight">@dimen/dimen_8dp</item>
         <item name="android:paddingTop">@dimen/dimen_10dp</item>
         <item name="android:paddingBottom">@dimen/dimen_10dp</item>

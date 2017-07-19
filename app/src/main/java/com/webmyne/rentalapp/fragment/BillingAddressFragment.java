@@ -17,8 +17,8 @@ import com.webmyne.rentalapp.custom.TfTextView;
 
 public class BillingAddressFragment extends Fragment {
     //region views
-    EditText edtaddressshippingbilling;
-    TfTextView tvlabeladdress;
+    public static EditText edtaddressshippingbilling;
+    public TfTextView tvlabeladdress;
 
     public BillingAddressFragment() {
         // Required empty public constructor

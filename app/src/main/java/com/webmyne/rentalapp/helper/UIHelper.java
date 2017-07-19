@@ -2,9 +2,11 @@ package com.webmyne.rentalapp.helper;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Point;
 import android.support.v7.app.AlertDialog;
 import android.text.Spanned;
+import android.util.TypedValue;
 import android.view.Display;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -144,6 +146,19 @@ public class UIHelper {
         AlertDialog alert = builder.create();
         alert.show();
     }
+    /**
+     * this method is used to convert dp value to pixel value
+     *
+     * @param context the context
+     * @param dp      the dp
+     * @return the int
+     */
+    public static int dpToPx(Context context, int dp)
+    {
+        Resources r = context.getResources();
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, r.getDisplayMetrics());
+    }
+
 
     public interface OkDialogDismissListener {
         void onDismiss();

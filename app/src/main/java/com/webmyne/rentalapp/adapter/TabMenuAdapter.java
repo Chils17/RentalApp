@@ -34,8 +34,6 @@ public class TabMenuAdapter extends FragmentStatePagerAdapter {
     }
 
 
-
-
     @Override
     public Fragment getItem(int position) {
         return mFragmentList.get(position);

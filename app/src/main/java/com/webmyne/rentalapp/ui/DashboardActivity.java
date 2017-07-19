@@ -77,7 +77,6 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
             selectItem(0);
         }
     }
-
     private void initToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_menu_toolbar));
@@ -244,5 +243,11 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
     }
     private void logout() {
         Functions.fireIntentWithClearFlagWithWithPendingTransition(DashboardActivity.this, LoginActivity.class);
+    }
+
+    @Override
+    protected void onDestroy() {
+        setHomeActivity(null);
+        super.onDestroy();
     }
 }

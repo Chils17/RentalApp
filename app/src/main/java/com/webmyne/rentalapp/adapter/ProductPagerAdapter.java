@@ -1,6 +1,7 @@
 package com.webmyne.rentalapp.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.helper.AppConstants;
+import com.webmyne.rentalapp.ui.ProfileActivity;
 
 import java.util.ArrayList;
 

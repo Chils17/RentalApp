@@ -32,6 +32,7 @@
             android:background="@drawable/textbox_group"
             android:inputType="textMultiLine"
             android:gravity="center|top|start"
+            android:imeOptions="actionDone"
             android:hint="@string/hint_enter_shipping_address"
             android:maxLength="500"
             android:maxLines="@integer/max3"

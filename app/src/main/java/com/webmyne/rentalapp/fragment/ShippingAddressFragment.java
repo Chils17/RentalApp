@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import com.webmyne.rentalapp.R;
-import com.webmyne.rentalapp.custom.TfEditText;
 import com.webmyne.rentalapp.custom.TfTextView;
 
 /**
@@ -17,8 +16,8 @@ import com.webmyne.rentalapp.custom.TfTextView;
 
 public class ShippingAddressFragment extends Fragment {
     //region views
-    EditText edtaddressshippingbilling;
-    TfTextView tvlabeladdress;
+    public static EditText edtaddressshippingbilling;
+    public TfTextView tvlabeladdress;
 
     public ShippingAddressFragment() {
         // Required empty public constructor

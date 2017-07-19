@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
@@ -102,15 +101,14 @@ public class BaseActivity extends AppCompatActivity {
             manager.executePendingTransactions();
             if (drawerLayout != null && fragmentBackStack.size() > 1) {
                 Fragment currentFragment = fragmentBackStack.get(fragmentBackStack.size() - 1);
-                if (currentFragment instanceof DashBoardFragment/* || currentFragment instanceof NotificationCenterFragment*/) {
+                if (currentFragment instanceof DashBoardFragment) {
                     drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
                 } else {
-                    drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+                    drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
                 }
             }
         }
     }
-
     /**
      * Select the second last fragment in current tab's stack.. which will be shown after the fragment transaction given below
      *

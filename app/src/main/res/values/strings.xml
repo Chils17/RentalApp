@@ -5,6 +5,7 @@
     <string name="new_arrivals">New Arrivals</string>
     <string name="common_message_under_development">This feature is under development and will be available in future releases.</string>
     <string name="common_message_coming_soon">Coming Soon</string>
+    <string name="err_something_went_wrong">Something went wrong,please try again later.</string>
 
     <string name="hint_enter_shipping_address">Enter Shipping Address</string>
     <string name="hint_enter_billing_address">Enter Billing Address</string>
@@ -131,12 +132,13 @@
     <string name="confirm_order">CONFIRM ORDER</string>
     <string name="old_password">Old Password</string>
     <string name="new_password">New Password</string>
-    <string name="billing_address">Billing Address</string>
-    <string name="shipping_address">Shipping Address</string>
+    <string name="billing_address">Billing Address :-</string>
+    <string name="shipping_address">Shipping Address :-</string>
 
 
 
     <string name="dialogue_ok">OK</string>
+    <string name="edit">Edit</string>
 
 
     <string-array name="book_edition">
