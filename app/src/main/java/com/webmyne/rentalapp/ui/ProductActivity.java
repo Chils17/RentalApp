@@ -1,5 +1,7 @@
 package com.webmyne.rentalapp.ui;
 
+import android.animation.Animator;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
@@ -9,22 +11,24 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.varunest.sparkbutton.SparkButton;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.ProductDetailPagerAdapter;
 import com.webmyne.rentalapp.adapter.ProductImageAdapter;
-import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
-import com.webmyne.rentalapp.fragment.CartFragment;
 import com.webmyne.rentalapp.model.ProductImage;
+import com.webmyne.rentalapp.ui.animutils.CircleAnimationUtil;
 
 import java.util.ArrayList;
 
 import me.relex.circleindicator.CircleIndicator;
 
 public class ProductActivity extends AppCompatActivity {
-
     private TfTextView txtTitle;
     private TfTextView txtFullDesc;
     private TfTextView txtDesc;
@@ -34,6 +38,8 @@ public class ProductActivity extends AppCompatActivity {
     private TfTextView txtPage;
     private TfTextView txtPrice;
     private TfTextView txtCategory;
+    private TfTextView txt_cart_counter;
+    private RelativeLayout cartRelativeLayout;
     private TfTextView txtAuthor;
     private TfTextView txtItemName;
     private CircleIndicator indicator;
@@ -41,37 +47,45 @@ public class ProductActivity extends AppCompatActivity {
     private ImageButton leftnav;
     private SparkButton imgLike;
     private ViewPager viewPager;
-    //  int images[] = {R.drawable.album1, R.drawable.album2, R.drawable.album3, R.drawable.album4};
     private Toolbar toolbar;
     private FloatingActionButton floatingCart;
     private ProductDetailPagerAdapter productDetailPagerAdapter;
     private RecyclerView rvProductImages;
     private ArrayList<ProductImage> productImageList;
     private ProductImageAdapter adapter;
+    private int itemCounter = 0;
+    private Drawable drawable;
+    private ImageView imageview;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        txtTitle = (TfTextView) findViewById(R.id.txtTitle);
-        // toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
-        toolbar.setTitle("");
-        setSupportActionBar(toolbar);
-        //toolbar.setTitleTextColor(Color.WHITE);
-        txtTitle.setText(0);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
+        imageview = (ImageView) findViewById(R.id.itemCopyIV);
+        initToolbar();
         init();
-
         initRecyclerView();
-
         initViewPager();
-
         actionListener();
     }
 
+    private void initToolbar() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        txtTitle = (TfTextView) findViewById(R.id.txtTitle);
+        txt_cart_counter = (TfTextView) findViewById(R.id.txt_cart_counter);
+        cartRelativeLayout = (RelativeLayout) findViewById(R.id.cartRelativeLayout);
+        cartRelativeLayout.setVisibility(View.VISIBLE);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        txtTitle.setText(R.string.harry);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 
     private void init() {
         rvProductImages = (RecyclerView) findViewById(R.id.rvProductImages);
@@ -100,6 +114,12 @@ public class ProductActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+        floatingCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                makeFlyAnimation(imageview);
+            }
+        });
 
        /* leftnav.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,14 +142,38 @@ public class ProductActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(tab);
             }
         });*/
+    }
 
+    private void makeFlyAnimation(ImageView targetView) {
+        RelativeLayout destView = (RelativeLayout) findViewById(R.id.cartRelativeLayout);
 
-        floatingCart.setOnClickListener(new View.OnClickListener() {
+        new CircleAnimationUtil().attachActivity(this).setTargetView(targetView).setMoveDuration(1000).setDestView(destView).setAnimationListener(new Animator.AnimatorListener() {
             @Override
-            public void onClick(View v) {
-            }
-        });
+            public void onAnimationStart(Animator animation) {
 
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                addItemToCart();
+                Toast.makeText(ProductActivity.this, "Continue Shopping...", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        }).startAnimation();
+
+    }
+
+    private void addItemToCart() {
+        txt_cart_counter.setText(String.valueOf(++itemCounter));
     }
 
     private void initRecyclerView() {
@@ -167,6 +211,7 @@ public class ProductActivity extends AppCompatActivity {
         });
 
         rvProductImages.setAdapter(adapter);
+        /*Glide.with(this).load(productImageList.get(0).getImg_url()).fitCenter().into(imageview);*/
     }
 
     private void initViewPager() {
@@ -181,7 +226,7 @@ public class ProductActivity extends AppCompatActivity {
         productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_3/slider3.jpg"));
         productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_2/slider4.jpg"));
         productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_4/slider2.jpg"));
-
+        Glide.with(this).load(productImageList.get(2).getImg_url()).into(imageview);
         productDetailPagerAdapter = new ProductDetailPagerAdapter(ProductActivity.this, productImageList);
         viewPager.setAdapter(productDetailPagerAdapter);
         // indicator.setViewPager(viewPager);

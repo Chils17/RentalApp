@@ -114,7 +114,7 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
         handler = new Handler();
         final Runnable Update = new Runnable() {
             public void run() {
-                if (currentPage == mBookArray.length) {
+                if (currentPage == mBookArrayList.size()) {
                     currentPage = 0;
                 }
                 mProductPager.setCurrentItem(currentPage++, true);
@@ -129,6 +129,13 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
         }, 3000, 3000);
         for (int i = 0; i < 2; i++) {
             View hiddenInfo = getBaseActivity().getLayoutInflater().inflate(R.layout.item_product_dashboard_adapter, ll_new_arrivals_content_top, false);
+            LinearLayout card_view = (LinearLayout) hiddenInfo.findViewById(R.id.card_view);
+            card_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Functions.fireIntent(getBaseActivity(), ProductActivity.class);
+                }
+            });
             ll_new_arrivals_content_top.addView(hiddenInfo);
 
         }
@@ -177,7 +184,6 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
                 }
             });
             ll_featured_content_top.addView(hiddenInfo);
-
         }
         for (int i = 0; i < 2; i++) {
             View hiddenInfo = getBaseActivity().getLayoutInflater().inflate(R.layout.item_product_dashboard_adapter, ll_new_arrivals_content_top, false);
@@ -189,7 +195,6 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
                 }
             });
             ll_featured_content_bottom.addView(hiddenInfo);
-
         }
         for (int i = 0; i < 2; i++) {
             View hiddenInfo = getBaseActivity().getLayoutInflater().inflate(R.layout.item_product_dashboard_adapter, ll_new_arrivals_content_top, false);
@@ -201,7 +206,6 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
                 }
             });
             ll_products_for_you_content_top.addView(hiddenInfo);
-
         }
         for (int i = 0; i < 2; i++) {
             View hiddenInfo = getBaseActivity().getLayoutInflater().inflate(R.layout.item_product_dashboard_adapter, ll_new_arrivals_content_top, false);
@@ -243,7 +247,6 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
                 break;
             default:
                 break;
-
         }
     }
 }

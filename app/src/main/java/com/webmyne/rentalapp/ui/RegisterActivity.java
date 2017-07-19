@@ -2,22 +2,24 @@ package com.webmyne.rentalapp.ui;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfButton;
 import com.webmyne.rentalapp.custom.TfTextView;
-import com.webmyne.rentalapp.model.ProductImage;
+import com.webmyne.rentalapp.helper.UIHelper;
 
 import net.cachapa.expandablelayout.ExpandableLayout;
 
@@ -30,7 +32,8 @@ public class RegisterActivity extends AppCompatActivity {
     private LinearLayout llPersonal, llAddress;
     private ImageView personal_arrow, address_arrow;
     private ExpandableLayout presonal_expandableLayout, address_expandableLayout;
-    private TfButton btnNext;
+    private RelativeLayout rv_root_main;
+    private TfButton btnNext, btnSubmit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +50,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void init() {
         context = this;
         llPersonal = (LinearLayout) findViewById(R.id.linear_personal);
+        rv_root_main = (RelativeLayout) findViewById(R.id.rv_root_main);
         llAddress = (LinearLayout) findViewById(R.id.linear_address);
         personal_arrow = (ImageView) findViewById(R.id.personal_arrow);
         address_arrow = (ImageView) findViewById(R.id.address_arrow);
@@ -55,14 +59,23 @@ public class RegisterActivity extends AppCompatActivity {
         address_expandableLayout = (ExpandableLayout) findViewById(R.id.address_detail_expandable);
         address_expandableLayout.collapse();
         btnNext = (TfButton) findViewById(R.id.btnNext);
-
-
+        btnSubmit = (TfButton) findViewById(R.id.btnSubmit);
         edtPassword = (EditText) findViewById(R.id.edtPassword);
         edtConPassword = (EditText) findViewById(R.id.edtConformPassword);
         txtLogin = (TfTextView) findViewById(R.id.txtLogin);
-
         clickAction();
-
+        rv_root_main.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                int heightDiff = rv_root_main.getRootView().getHeight() - rv_root_main.getHeight();
+                if (heightDiff > UIHelper.dpToPx(RegisterActivity.this, 160)) { // if more than 200 dp, it's probably a keyboard...
+                    // ... do something here
+                    btnSubmit.setVisibility(View.GONE);
+                } else {
+                    btnSubmit.setVisibility(View.VISIBLE);
+                }
+            }
+        });
     }
 
     private void clickAction() {

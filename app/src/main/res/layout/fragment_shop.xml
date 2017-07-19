@@ -20,6 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_search"
+            android:drawableTint="@color/colorPrimary"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
             android:hint="@string/search"
             android:textSize="@dimen/sp16" />
 

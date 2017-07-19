@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.TabMenuAdapter;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.ui.BaseActivity;
+import com.webmyne.rentalapp.ui.ProductActivity;
 
 public class CartFragment extends BaseFragment {
     private ViewPager mViewPager;
@@ -34,6 +36,15 @@ public class CartFragment extends BaseFragment {
         return fragment;
     }
 
+    /**
+     *
+     * @param productActivity return productactivity
+     * @return
+     *//*
+    public static Fragment getFragment(ProductActivity productActivity) {
+        BaseFragment fragment = new CartFragment(productActivity);
+        return fragment;
+    }*/
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,4 +116,6 @@ public class CartFragment extends BaseFragment {
         tab.setCustomView(tabMenuAdapter.getSelectedTabView(position));
 
     }
+
+
 }

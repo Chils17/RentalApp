@@ -15,7 +15,8 @@
 
         <com.webmyne.rentalapp.custom.TfTextView
             android:id="@+id/txtTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="1"
@@ -23,8 +24,44 @@
             android:textColor="@color/white"
             android:textSize="@dimen/sp18"
             app:ftype="semibold" />
+        <RelativeLayout
+            android:id="@+id/cartRelativeLayout"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:gravity="center"
+            android:paddingRight="@dimen/dimen_6dp">
+
+            <ImageView
+                android:id="@+id/cartButtonIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:clickable="false"
+                android:padding="@dimen/dimen_6dp"
+                android:src="@drawable/ic_cart_toolbar" />
+
+            <com.webmyne.rentalapp.custom.TfTextView
+                android:id="@+id/txt_cart_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@id/cartButtonIV"
+                android:layout_alignTop="@id/cartButtonIV"
+                android:layout_marginTop="@dimen/dimen_3dp"
+                android:background="@drawable/notification_circle"
+                android:gravity="center"
+                android:minHeight="@dimen/height_20"
+                android:minWidth="@dimen/height_20"
+                android:padding="@dimen/dimen_3dp"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp12" />
+        </RelativeLayout>
+
 
     </LinearLayout>
-
 
 </android.support.v7.widget.Toolbar>

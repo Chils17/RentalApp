@@ -10,8 +10,10 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.webmyne.rentalapp.R;
@@ -246,6 +248,7 @@ public class BaseActivity extends AppCompatActivity {
                 doubleBackToExitPressedOnce = false;
             }
         }, 2000);
+
     }
 
     /**
@@ -269,6 +272,13 @@ public class BaseActivity extends AppCompatActivity {
         new ToastUtils(this).showToast(cause);*/
         if (isPop) {
             this.popFragments(true);
+        }
+    }
+    public void isVisibleCartLayout(boolean isVisible){
+        if(isVisible){
+            ((RelativeLayout) findViewById(R.id.cartRelativeLayout)).setVisibility(View.VISIBLE);
+        }else {
+            ((RelativeLayout) findViewById(R.id.cartRelativeLayout)).setVisibility(View.GONE);
         }
     }
 

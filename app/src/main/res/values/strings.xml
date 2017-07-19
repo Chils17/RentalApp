@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Book Rental</string>
-    <string name="click_back_to_exit">Press again to exit</string>
+    <string name="click_back_to_exit">Press back again to exit</string>
     <string name="str_no_new_arrivals">No new arrivals found.</string>
     <string name="new_arrivals">New Arrivals</string>
     <string name="common_message_under_development">This feature is under development and will be available in future releases.</string>
@@ -64,6 +64,7 @@
     <string name="rent">Rent</string>
     <string name="search">Search your Book Name, Author</string>
     <string name="shop_category">Categories for Shop</string>
+    <string name="search_by_product">Search Product</string>
     <string name="no_found">No result found</string>
     <string name="rent_category">Categories for Rent</string>
     <string name="name">Name</string>

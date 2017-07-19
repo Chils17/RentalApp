@@ -154,7 +154,8 @@
                     android:id="@+id/rvProductImages"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:overScrollMode="never"/>
+                    android:overScrollMode="never"
+                     />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -253,7 +254,7 @@
                                 android:layout_gravity="center"
                                 android:orientation="horizontal">
 
-                               <!-- <RatingBar
+                                <!-- <RatingBar
                                     style="@style/Widget.AppCompat.RatingBar.Small"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -264,7 +265,7 @@
                                     android:rating="4"
                                     android:secondaryProgressTint="@color/off_white" />-->
 
-                               <!-- <RatingBar
+                                <!-- <RatingBar
                                     style="@style/CustomRatingBar"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -280,15 +281,15 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    app:srb_starSize="@dimen/dimen_14dp"
                                     android:layout_margin="@dimen/dimen_2dp"
-                                    app:srb_numberOfStars="5"
-                                    app:srb_rating="3"
-                                    app:srb_isIndicator="true"
-                                    app:srb_stepSize="0.5"
                                     app:srb_borderColor="@color/colorPrimary"
                                     app:srb_fillColor="@color/colorPrimary"
-                                    app:srb_starBackgroundColor="@color/colorWhiteSmoke" />
+                                    app:srb_isIndicator="true"
+                                    app:srb_numberOfStars="5"
+                                    app:srb_rating="3"
+                                    app:srb_starBackgroundColor="@color/colorWhiteSmoke"
+                                    app:srb_starSize="@dimen/dimen_14dp"
+                                    app:srb_stepSize="0.5" />
 
                                 <com.webmyne.rentalapp.custom.TfTextView
                                     android:id="@+id/textViewer"
@@ -315,9 +316,10 @@
                             </LinearLayout>
                         </LinearLayout>
 
-                        <LinearLayout
+                        <FrameLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_gravity="center"
                             android:layout_weight="2"
                             android:gravity="center"
                             android:orientation="vertical">
@@ -333,7 +335,17 @@
                                 app:backgroundTint="@color/yellow"
                                 app:fabSize="normal"
                                 app:layout_anchorGravity="right" />
-                        </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/itemCopyIV"
+                                android:layout_width="@dimen/height_50"
+                                android:layout_height="@dimen/height_50"
+                                android:layout_centerVertical="true"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="10dp"
+                                android:padding="@dimen/height_5"
+                                />
+                        </FrameLayout>
 
                     </LinearLayout>
 

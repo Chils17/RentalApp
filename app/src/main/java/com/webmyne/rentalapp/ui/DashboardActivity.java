@@ -1,5 +1,6 @@
 package com.webmyne.rentalapp.ui;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,7 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
@@ -18,6 +18,7 @@ import com.webmyne.rentalapp.fragment.DashBoardFragment;
 import com.webmyne.rentalapp.fragment.MemberShipPlansFragment;
 import com.webmyne.rentalapp.fragment.MyRewardsFragment;
 import com.webmyne.rentalapp.fragment.RentFragment;
+import com.webmyne.rentalapp.fragment.SearchProductFragment;
 import com.webmyne.rentalapp.fragment.SettingFragment;
 import com.webmyne.rentalapp.fragment.ShopFragment;
 import com.webmyne.rentalapp.fragment.WishListFragment;
@@ -97,6 +98,7 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
 
             public void onDrawerOpened(View drawerView) {
                 LogUtils.showInfo(drawerView.toString());
+                UIHelper.hideKeyPad(DashboardActivity.this, drawerView);
                 invalidateOptionsMenu();
             }
         };
@@ -114,11 +116,11 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         return mDrawerToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
 
-    /*@Override
+    @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         mDrawerToggle.onConfigurationChanged(newConfig);
-    }*/
+    }
 
     private void init() {
         //left drawer
@@ -172,7 +174,8 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 break;
             case R.id.left_drawer_tv_search:
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
-                Toast.makeText(this, getResources().getString(R.string.common_message_under_development), Toast.LENGTH_SHORT).show();
+                Fragment fragmentToPushSearch = SearchProductFragment.getFragment(this);
+                pushAddFragments(fragmentToPushSearch, true, true);
                 break;
             case R.id.left_drawer_tv_rent:
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));

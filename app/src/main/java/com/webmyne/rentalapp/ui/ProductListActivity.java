@@ -144,11 +144,9 @@ public class ProductListActivity extends AppCompatActivity {
 
     private void initRecyclerView() {
         GridLayoutManager manager = new GridLayoutManager(getApplicationContext(), 2);
-
         rvProduct.setLayoutManager(manager);
 
         productArrayList = new ArrayList<>();
-
         productArrayList.add(new Product(R.drawable.image1, "Killing", "J. K. Rowling", "₹ 500", "4.2","212"));
         productArrayList.add(new Product(R.drawable.image1, "Infinite of Cloud", "J. K. Rowling", "₹ 2000", "3.7","651"));
         productArrayList.add(new Product(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹ 500", "3.9","544"));
@@ -157,8 +155,6 @@ public class ProductListActivity extends AppCompatActivity {
         productArrayList.add(new Product(R.drawable.image1, "Killing", "J. K. Rowling", "₹ 2050","4.6","123"));
         productArrayList.add(new Product(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹ 500", "4.8","153"));
         productArrayList.add(new Product(R.drawable.image1, "Product Launch Secret", "J. K. Rowling", "₹ 2500","4.2","754"));
-
-
         adapter = new ProductListAdapter(getApplicationContext(), productArrayList);
         rvProduct.setAdapter(adapter);
     }

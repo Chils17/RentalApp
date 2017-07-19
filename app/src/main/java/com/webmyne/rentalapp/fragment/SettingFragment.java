@@ -2,10 +2,8 @@ package com.webmyne.rentalapp.fragment;
 
 
 import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,15 +11,12 @@ import android.view.ViewGroup;
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfTextView;
+import com.webmyne.rentalapp.helper.UIHelper;
 import com.webmyne.rentalapp.ui.AboutUsActivity;
 import com.webmyne.rentalapp.ui.BaseActivity;
 import com.webmyne.rentalapp.ui.ContactUsActivity;
 import com.webmyne.rentalapp.ui.FAQActivity;
-import com.webmyne.rentalapp.ui.LoginActivity;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class SettingFragment extends BaseFragment {
 
 
@@ -100,7 +95,7 @@ public class SettingFragment extends BaseFragment {
         txtChangeLang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                UIHelper.showMessage(getBaseActivity(), getResources().getString(R.string.common_message_under_development));
             }
         });
 
