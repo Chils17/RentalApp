@@ -223,7 +223,7 @@
             android:layout_height="wrap_content"
             android:text="@string/register"
             android:layout_marginLeft="@dimen/dimen_6dp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/yellow"
             android:textSize="@dimen/sp18" />
 
     </LinearLayout>

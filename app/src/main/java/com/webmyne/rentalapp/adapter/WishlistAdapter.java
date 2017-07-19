@@ -109,8 +109,8 @@ public class WishlistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
 
     private class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView bookName, bookPrice, bookAuthor, remove, addCart;
-        private ImageView bookImage;
+        private TextView bookName, bookPrice, bookAuthor, addCart;
+        private ImageView bookImage,remove;
 
         public MyViewHolder(View view) {
             super(view);
@@ -118,7 +118,7 @@ public class WishlistAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             bookName = (TextView) view.findViewById(R.id.txtBookName);
             bookPrice = (TextView) view.findViewById(R.id.txtBookPrice);
             bookAuthor = (TextView) view.findViewById(R.id.txtBookAuthor);
-            remove = (TextView) view.findViewById(R.id.txtRemove);
+            remove = (ImageView) view.findViewById(R.id.imgRemove);
             addCart = (TextView) view.findViewById(R.id.txtMovetoCart);
 
 

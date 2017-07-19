@@ -105,7 +105,7 @@
     <string name="register">Register</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="referance_code">Referance Code</string>
-    <string name="profile_detail">Profile Detail</string>
+    <string name="profile_detail">Personal Profile</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="middle_name">Middle Name</string>
@@ -200,6 +200,8 @@
     <string name="_300">₹ 300</string>
     <string name="_5000">5000</string>
     <string name="_5500">5500</string>
+    <string name="do_you_want_to_receive_newsletter_from_the_site">Do you want to receive newsletter from the site?</string>
+    <string name="have_any_referral_code">Have any Referral Code?</string>
     <string name="qty">Qty</string>
 
 </resources>
