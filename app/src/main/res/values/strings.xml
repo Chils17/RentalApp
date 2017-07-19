@@ -16,6 +16,7 @@
     <string name="member_ship_plan">Member ship plan</string>
     <string name="membership_type">Membership Type</string>
     <string name="gold">Gold</string>
+    <string name="gold_Capital">GOLD</string>
     <string name="validity">Validity</string>
     <string name="from">From</string>
     <string name="june_2017">June 2017</string>
@@ -204,5 +205,10 @@
     <string name="do_you_want_to_receive_newsletter_from_the_site">Do you want to receive newsletter from the site?</string>
     <string name="have_any_referral_code">Have any Referral Code?</string>
     <string name="qty">Qty</string>
+    <string name="duration">Duration</string>
+    <string name="silver">SILVER</string>
+    <string name="rs_8000">Rs. 8000</string>
+    <string name="login_with">Login With</string>
+    <string name="rs_5500">Rs. 5500</string>
 
 </resources>

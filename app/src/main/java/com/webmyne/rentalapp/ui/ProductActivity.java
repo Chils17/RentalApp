@@ -156,7 +156,7 @@ public class ProductActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animator animation) {
                 addItemToCart();
-                Toast.makeText(ProductActivity.this, "Continue Shopping...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProductActivity.this, "Item Added to car successfully.", Toast.LENGTH_SHORT).show();
             }
 
             @Override

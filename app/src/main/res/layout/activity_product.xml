@@ -342,7 +342,6 @@
                                 android:layout_height="@dimen/height_50"
                                 android:layout_centerVertical="true"
                                 android:layout_gravity="center"
-                                android:layout_marginLeft="10dp"
                                 android:padding="@dimen/height_5"
                                 />
                         </FrameLayout>

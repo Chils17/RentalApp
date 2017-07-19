@@ -56,13 +56,13 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
-        btnExplore.setOnClickListener(new View.OnClickListener() {
+        /*btnExplore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Functions.fireIntentWithClearFlagWithWithPendingTransition(LoginActivity.this, DashboardActivity.class);
                 finish();
             }
-        });
+        });*/
 
         edtPassword.setOnTouchListener(new View.OnTouchListener() {
             @Override

@@ -245,7 +245,7 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
         }
     }
     private void logout() {
-        Functions.fireIntentWithClearFlagWithWithPendingTransition(DashboardActivity.this, LoginActivity.class);
+        Functions.fireIntentWithClearFlagWithWithPendingTransition(DashboardActivity.this, SplashActivity.class);
     }
 
     @Override
