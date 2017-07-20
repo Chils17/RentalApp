@@ -62,6 +62,11 @@
                         android:textSize="@dimen/sp14"
                         app:ftype="medium" />
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -88,6 +93,46 @@
                             android:layout_gravity="center"
                             android:src="@drawable/ic_star" />
                     </LinearLayout>
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/dimen_4dp"
+                        android:background="@color/background" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.webmyne.rentalapp.custom.TfTextView
+                            android:id="@+id/txtReview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:maxLines="1"
+                            android:padding="@dimen/dimen_2dp"
+                            android:text="251"
+                            android:textColor="@color/half_black"
+                            android:textSize="@dimen/sp14"
+                            app:ftype="medium" />
+
+                        <com.webmyne.rentalapp.custom.TfTextView
+                            android:id="@+id/textAuthor"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:maxLines="1"
+                            android:padding="@dimen/dimen_2dp"
+                            android:text="@string/review"
+                            android:textColor="@color/half_black"
+                            android:textSize="@dimen/sp14"
+                            app:ftype="medium" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
                 </LinearLayout>
 
             </RelativeLayout>

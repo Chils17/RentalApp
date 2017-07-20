@@ -23,8 +23,8 @@
 
         <ImageView
             android:id="@+id/imgRemove"
-            android:layout_width="@dimen/dimen_28dp"
-            android:layout_height="@dimen/dimen_28dp"
+            android:layout_width="@dimen/dimen_32dp"
+            android:layout_height="@dimen/dimen_32dp"
             android:layout_gravity="end"
             android:padding="@dimen/dimen_2dp"
             android:src="@drawable/ic_cancel" />

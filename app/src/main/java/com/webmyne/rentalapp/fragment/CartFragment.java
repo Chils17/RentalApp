@@ -4,18 +4,14 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.adapter.TabMenuAdapter;
-import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.ui.BaseActivity;
-import com.webmyne.rentalapp.ui.ProductActivity;
 
 public class CartFragment extends BaseFragment {
     private ViewPager mViewPager;
@@ -57,7 +53,7 @@ public class CartFragment extends BaseFragment {
 
         tabLayout = (TabLayout) itemView.findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
+        getBaseActivity().isVisibleCartLayout(false);
         highLightCurrentTab(0);
     }
 

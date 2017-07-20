@@ -211,4 +211,39 @@
     <string name="login_with">Login With</string>
     <string name="rs_5500">Rs. 5500</string>
 
+    <bool name="is_class_name">true</bool>
+    <bool name="show_exception_stack_trace">true</bool>
+    <bool name="is_device_rooted">true</bool>
+    <bool name="show_size_of_internal_memory">true</bool>
+    <bool name="show_internal_free_space_available">true</bool>
+    <bool name="show_size_of_external_memory">true</bool>
+    <bool name="show_external_free_space_available">true</bool>
+    <bool name="show_sd_card_status">true</bool>
+    <bool name="show_device_sdk_version">true</bool>
+    <bool name="show_user_device_name">true</bool>
+    <bool name="show_user_device_model_number">true</bool>
+    <bool name="show_app_release_version">true</bool>
+    <bool name="show_app_version">true</bool>
+    <bool name="show_name_of_product">true</bool>
+    <bool name="show_name_of_brand">true</bool>
+    <bool name="show_message">true</bool>
+    <bool name="show_causes">true</bool>
+    <bool name="show_device_orientation">true</bool>
+    <bool name="show_screen_layout">true</bool>
+    <bool name="show_height">true</bool>
+    <bool name="show_incremental">true</bool>
+    <bool name="show_width">true</bool>
+    <bool name="is_tablet">true</bool>
+    <bool name="show_name_of_package">true</bool>
+    <bool name="show_vm_heap_size">true</bool>
+    <bool name="show_free_vm_heap_size">true</bool>
+    <bool name="show_max_vm_heap_size">true</bool>
+    <bool name="show_allocated_vm_size">true</bool>
+    <bool name="show_natively_allocated_size">true</bool>
+    <bool name="is_battery_charging">true</bool>
+    <bool name="show_battery_charging_via_which_method">true</bool>
+    <bool name="show_percentage_of_battery_remaining">true</bool>
+    <bool name="show_device_location">true</bool>
+    <bool name="show_which_network_mode_is_on">true</bool>
+
 </resources>

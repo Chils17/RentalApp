@@ -74,6 +74,7 @@ public class ShopFragment extends BaseFragment {
 
     private void initToolbar() {
         getBaseActivity().setHeader(getResources().getString(R.string.shop_category));
+        getBaseActivity().isVisibleCartLayout(true);
     }
     private void actionListener() {
 

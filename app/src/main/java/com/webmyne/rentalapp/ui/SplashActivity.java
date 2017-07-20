@@ -74,11 +74,8 @@ public class SplashActivity extends Activity {
             }
         });
         animation();
-
         clickListener();
-
     }
-
     private void animation() {
         final Animation sideOut = AnimationUtils.loadAnimation(SplashActivity.this, R.anim.slide_out_up);
         final Animation sidein = AnimationUtils.loadAnimation(SplashActivity.this, R.anim.slide_in_up);

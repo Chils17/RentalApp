@@ -20,8 +20,11 @@ import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.fragment.BaseFragment;
 import com.webmyne.rentalapp.fragment.DashBoardFragment;
+import com.webmyne.rentalapp.fragment.MemberShipPlansFragment;
+import com.webmyne.rentalapp.fragment.MyRewardsFragment;
 import com.webmyne.rentalapp.fragment.RentFragment;
 import com.webmyne.rentalapp.fragment.ShopFragment;
+import com.webmyne.rentalapp.fragment.WishListFragment;
 import com.webmyne.rentalapp.helper.LogUtils;
 
 import java.util.Stack;
@@ -201,6 +204,12 @@ public class BaseActivity extends AppCompatActivity {
                 } else if (currentFragment instanceof RentFragment) {
                     loadHomeFragment();
                 } else if (currentFragment instanceof MyAccountFragment) {
+                    loadHomeFragment();
+                } else if (currentFragment instanceof WishListFragment) {
+                    loadHomeFragment();
+                } else if (currentFragment instanceof MemberShipPlansFragment) {
+                    loadHomeFragment();
+                } else if (currentFragment instanceof MyRewardsFragment) {
                     loadHomeFragment();
                 } else if (currentFragment instanceof DashBoardFragment) {
                     doubleTapOnBackPress();

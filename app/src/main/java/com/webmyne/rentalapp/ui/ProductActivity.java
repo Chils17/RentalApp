@@ -26,6 +26,7 @@ import com.webmyne.rentalapp.ui.animutils.CircleAnimationUtil;
 
 import java.util.ArrayList;
 
+import crashreport.QuickCrashReportInitClass;
 import me.relex.circleindicator.CircleIndicator;
 
 public class ProductActivity extends AppCompatActivity {
@@ -62,6 +63,7 @@ public class ProductActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
+        QuickCrashReportInitClass.init(this, ProductActivity.class);
         imageview = (ImageView) findViewById(R.id.itemCopyIV);
         initToolbar();
         init();
@@ -78,7 +80,7 @@ public class ProductActivity extends AppCompatActivity {
         cartRelativeLayout.setVisibility(View.VISIBLE);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
-        txtTitle.setText(R.string.harry);
+        txtTitle.setText(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

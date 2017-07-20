@@ -75,6 +75,7 @@ public class RentFragment extends BaseFragment {
 
     private void initToolbar() {
         getBaseActivity().setHeader(getResources().getString(R.string.rent_category));
+        getBaseActivity().isVisibleCartLayout(true);
     }
 
 

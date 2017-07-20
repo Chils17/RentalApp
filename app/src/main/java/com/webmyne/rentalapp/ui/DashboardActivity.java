@@ -6,13 +6,16 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
+import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.fragment.CartFragment;
 import com.webmyne.rentalapp.fragment.DashBoardFragment;
 import com.webmyne.rentalapp.fragment.MemberShipPlansFragment;
@@ -44,6 +47,8 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
      */
     private ActionBarDrawerToggle mDrawerToggle;
     private Toolbar toolbar;
+    private TfTextView txt_cart_counter;
+    private RelativeLayout cartRelativeLayout ;
     /*private Toolbar toolbar;*/
 
     /**
@@ -80,6 +85,11 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
     }
     private void initToolbar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        txt_cart_counter = (TfTextView) findViewById(R.id.txt_cart_counter);
+        cartRelativeLayout = (RelativeLayout) findViewById(R.id.cartRelativeLayout);
+        cartRelativeLayout.setVisibility(View.VISIBLE);
+        txt_cart_counter.setVisibility(View.VISIBLE);
+        cartRelativeLayout.setOnClickListener(this);
         toolbar.setNavigationIcon(getResources().getDrawable(R.drawable.ic_menu_toolbar));
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,6 +173,9 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
+            case R.id.cartRelativeLayout:
+                pushCartFragment();
+                break;
             case R.id.left_drawer_tv_home:
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
                 selectItem(0);
@@ -189,8 +202,7 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 break;
             case R.id.left_drawer_tv_my_cart:
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
-                Fragment fragmentToPushCart = CartFragment.getFragment(this);
-                pushAddFragments(fragmentToPushCart, true, true);
+                pushCartFragment();
                 break;
             case R.id.left_drawer_tv_wishlist:
                 getDrawerLayout().closeDrawer(findViewById(R.id.drawer));
@@ -244,6 +256,12 @@ public class DashboardActivity extends BaseActivity implements View.OnClickListe
                 break;
         }
     }
+
+    private void pushCartFragment() {
+        Fragment fragmentToPushCart = CartFragment.getFragment(this);
+        pushAddFragments(fragmentToPushCart, true, true);
+    }
+
     private void logout() {
         Functions.fireIntentWithClearFlagWithWithPendingTransition(DashboardActivity.this, SplashActivity.class);
     }

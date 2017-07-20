@@ -17,6 +17,9 @@
         android:scaleType="fitXY"
         android:src="@drawable/book1" />
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -81,45 +84,37 @@
                 app:ftype="regular" />
         </LinearLayout>
 
-        <!-- <LinearLayout
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_marginTop="@dimen/dimen_24dp"
-             android:gravity="bottom|end"
-             android:orientation="horizontal">
-
-             <com.webmyne.rentalapp.custom.TfTextView
-                 android:id="@+id/txtRemove"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:padding="@dimen/dimen_4dp"
-                 android:text="@string/remove"
-                 android:textColor="@color/yellow"
-                 android:textSize="@dimen/sp16"
-                 app:ftype="bold" />-->
-
-        <com.webmyne.rentalapp.custom.TfTextView
-            android:id="@+id/txtMovetoCart"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="@dimen/dimen_20dp"
-            android:gravity="bottom|end"
-            android:padding="@dimen/dimen_8dp"
-            android:text="@string/move_to_cart"
-            android:textColor="@color/yellow"
-            android:textSize="@dimen/sp16"
+            android:layout_marginRight="@dimen/dimen_8dp"
+            android:gravity="bottom|end|right">
 
-            app:ftype="bold" />
+            <com.webmyne.rentalapp.custom.TfTextView
+                android:id="@+id/txtMovetoCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|right"
+                android:padding="@dimen/dimen_8dp"
+                android:text="@string/move_to_cart"
+                android:textColor="@color/yellow"
+                android:textSize="@dimen/sp16"
+                app:ftype="bold" />
+
+        </LinearLayout>
 
 
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imgRemove"
-        android:layout_width="@dimen/dimen_28dp"
-        android:layout_height="@dimen/dimen_28dp"
-        android:layout_gravity="top|right"
-        android:padding="@dimen/dimen_2dp"
-        android:src="@drawable/ic_cancel" />
+        <ImageView
+            android:id="@+id/imgRemove"
+            android:layout_width="@dimen/dimen_32dp"
+            android:layout_height="@dimen/dimen_32dp"
+            android:layout_gravity="top|right"
+            android:padding="@dimen/dimen_2dp"
+            android:src="@drawable/ic_cancel" />
+
+
+    </FrameLayout>
 </LinearLayout>
 

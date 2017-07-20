@@ -80,6 +80,7 @@ public class DashBoardFragment extends BaseFragment implements View.OnClickListe
     }
     private void initToolbar() {
         getBaseActivity().setHeader(getResources().getString(R.string.app_name));
+        getBaseActivity().isVisibleCartLayout(true);
     }
     private void init(View view) {
         ll_new_arrivals_content = (LinearLayout) view.findViewById(R.id.ll_new_arrivals_content);

@@ -65,11 +65,10 @@ public class MyAccountFragment extends BaseFragment implements View.OnClickListe
         initToolbar();
         return itemView;
     }
-
     private void initToolbar() {
         getBaseActivity().setHeader(getResources().getString(R.string.left_drawer_tv_my_account));
+        getBaseActivity().isVisibleCartLayout(true);
     }
-
     private void init(View itemView) {
         txtOrderhistory = (TfTextView) itemView.findViewById(R.id.txtOrderhistory);
         txtReferfriend = (TfTextView) itemView.findViewById(R.id.txtReferfriend);
@@ -130,8 +129,8 @@ public class MyAccountFragment extends BaseFragment implements View.OnClickListe
                 break;
 
             case  R.id.imgUser:
-                Intent intentSplash = new Intent(getBaseActivity(),SplashActivity.class);
-                startActivity(intentSplash);
+                Functions.fireIntent(getBaseActivity(), ProfileActivity.class);
+                getBaseActivity().finish();
                 break;
         }
     }

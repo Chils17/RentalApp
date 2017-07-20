@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.webmyne.rentalapp.R;
+import com.webmyne.rentalapp.adapter.ProductGridAdapter;
 import com.webmyne.rentalapp.adapter.ProductListAdapter;
 import com.webmyne.rentalapp.custom.TfEditText;
 import com.webmyne.rentalapp.custom.TfTextView;
@@ -29,7 +30,7 @@ public class SearchProductFragment extends BaseFragment {
     private TfEditText edtSearch;
     private RecyclerView rvProduct;
 
-    private ProductListAdapter adapter;
+    private ProductGridAdapter adapter;
     private ArrayList<Product> productArrayList = new ArrayList<>();
 
     @SuppressLint({"ValidFragment", "Unused"})
@@ -77,12 +78,13 @@ public class SearchProductFragment extends BaseFragment {
         productArrayList.add(new Product(R.drawable.image1, "Killing", "J. K. Rowling", "₹ 2050", "4.6", "123"));
         productArrayList.add(new Product(R.drawable.image1, "Connection Culture", "J. K. Rowling", "₹ 500", "4.8", "153"));
         productArrayList.add(new Product(R.drawable.image1, "Product Launch Secret", "J. K. Rowling", "₹ 2500", "4.2", "754"));
-        adapter = new ProductListAdapter(getBaseActivity(), productArrayList);
+        adapter = new ProductGridAdapter(getBaseActivity(), productArrayList);
         rvProduct.setAdapter(adapter);
     }
 
     private void initToolbar() {
         getBaseActivity().setHeader(getResources().getString(R.string.search_by_product));
+        getBaseActivity().isVisibleCartLayout(true);
     }
 
 
