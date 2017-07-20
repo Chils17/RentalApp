@@ -3,13 +3,10 @@ package com.webmyne.rentalapp.ui;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.MotionEvent;
@@ -18,20 +15,16 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-
+import android.widget.Toast;
 
 import com.webmyne.rentalapp.R;
 import com.webmyne.rentalapp.custom.Functions;
 import com.webmyne.rentalapp.custom.TfButton;
 import com.webmyne.rentalapp.custom.TfTextView;
 import com.webmyne.rentalapp.helper.UIHelper;
-import com.webmyne.rentalapp.model.ProductImage;
-
-import static android.R.attr.duration;
 
 /**
  * Created by gulamhusen on 14-07-2017.
@@ -132,7 +125,7 @@ public class SplashActivity extends Activity {
             }
         }, SPLASH_TIME_OUT);
         if (getIntent() != null && getIntent().hasExtra("CRASHED")) {
-            UIHelper.showMessage(SplashActivity.this, getResources().getString(R.string.err_something_went_wrong));
+            Toast.makeText(this, getResources().getString(R.string.err_something_went_wrong), Toast.LENGTH_SHORT).show();
             Throwable throwable = (Throwable) getIntent().getSerializableExtra("EXCEPTION");
         }
     }
