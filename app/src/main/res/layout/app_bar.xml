@@ -24,6 +24,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/sp18"
             app:ftype="semibold" />
+
         <RelativeLayout
             android:id="@+id/cartRelativeLayout"
             android:visibility="gone"

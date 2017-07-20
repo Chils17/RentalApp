@@ -80,7 +80,7 @@ public class ProductActivity extends AppCompatActivity {
         cartRelativeLayout.setVisibility(View.VISIBLE);
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
-        txtTitle.setText(0);
+        txtTitle.setText(R.string.harry);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -228,6 +228,7 @@ public class ProductActivity extends AppCompatActivity {
         productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_3/slider3.jpg"));
         productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_2/slider4.jpg"));
         productImageList.add(new ProductImage("http://demo.webmynehost.com/core/libonsite/images/slider/slider_4/slider2.jpg"));
+
         Glide.with(this).load(productImageList.get(2).getImg_url()).into(imageview);
         productDetailPagerAdapter = new ProductDetailPagerAdapter(ProductActivity.this, productImageList);
         viewPager.setAdapter(productDetailPagerAdapter);
